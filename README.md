@@ -1,7 +1,7 @@
 # Animatify
 Animation & effects for your iOS Projects - Will be uploading the project soon.
 
-## Frameworks / Languages Used
+## Languages / Frameworks Used
 - Swift 5
 - UIKit
 - CoreGraphics
