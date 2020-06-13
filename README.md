@@ -8,7 +8,7 @@ Animation & effects for your iOS Projects - Will be uploading the project soon.
 - CoreAnimation
 
 # Contributing
-Covered in the contributing document.
+Covered in the [contributing document](CONTRIBUTING.md).
 
 ## Running the project
 * Download the zip file or clone the project.
