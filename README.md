@@ -1,6 +1,9 @@
 # Animatify iOS
 Animation & effects for your iOS Projects - Will be uploading the project soon.
 
+Animatify iOS app.
+
+
 License: Apache 2.0
 
 ## Languages / Frameworks Used
