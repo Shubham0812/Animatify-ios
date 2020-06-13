@@ -1,5 +1,4 @@
 # Animatify
-
 Animation & effects for your iOS Projects - Will be uploading the project soon.
 
 ## Frameworks / Languages Used
@@ -8,18 +7,14 @@ Animation & effects for your iOS Projects - Will be uploading the project soon.
 - CoreGraphics
 - CoreAnimation
 
-## How to use ?
+# Contributing
+Covered in the contributing document.
+
+## Running the project
 * Download the zip file or clone the project.
 * Run the project using Xcode
 
-#### Prerequisites
-
-- An active internet connection.
-- OS X
-- Xcode
-
-
-## Having trouble?
+## Having trouble ?
 If you are having trouble using this project, please open a new issue and describe your problem.
 
 ## Spread the word!
