@@ -15,7 +15,7 @@ Covered in the contributing document.
 * Run the project using Xcode
 
 ## Having trouble ?
-If you are having trouble using this project, please open a new issue and describe your problem.
+If you are having trouble with this project or if you find any bugs, do open a new issue and describe the problem.
 
 ## Spread the word!
 Liked the project? Just give it a star ⭐️ and spread the word!
