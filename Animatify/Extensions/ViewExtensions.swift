@@ -6,4 +6,13 @@
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIView {
+    
+    /// For rounding the corners of the view
+    func roundCorners(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+    }
+}
