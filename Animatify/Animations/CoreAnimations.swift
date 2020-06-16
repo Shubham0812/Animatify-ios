@@ -6,4 +6,29 @@
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum LayerAnimation {
+    case strokeStart(duration: TimeInterval)
+    case strokeEnd(duration: TimeInterval)
+    
+    func getAnimation() -> CABasicAnimation {
+        switch self {
+        case .strokeStart(let duration):
+            let strokeStart = CABasicAnimation(keyPath: "strokeStart")
+                strokeStart.duration = duration
+                strokeStart.toValue = 1
+                strokeStart.isRemovedOnCompletion = false
+                strokeStart.fillMode = .forwards
+                return strokeStart
+            
+        case .strokeEnd(let duration):
+            let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+            strokeEnd.duration = duration
+            strokeEnd.toValue = 1
+            strokeEnd.isRemovedOnCompletion = false
+            strokeEnd.fillMode = .forwards
+            return strokeEnd
+        }
+    }
+}

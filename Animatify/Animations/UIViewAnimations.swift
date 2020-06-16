@@ -9,15 +9,12 @@
 import Foundation
 import UIKit
 
-
-enum ViewAnimations {
-    
+enum ViewAnimationFactory {
     static func makeEaseInAnimation(duration: Double, delay: Double, action: @escaping() -> Void) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseIn, animations: {
             action()
         })
     }
-    
     static func makeEaseInOutAnimation(duration: Double, delay: Double, action: @escaping() -> Void) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut, animations: {
             action()
