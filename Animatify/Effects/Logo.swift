@@ -13,7 +13,7 @@ final class LogoLayer: CAShapeLayer {
     
     var lineW: CGFloat = 0
     var logoFrame: CGRect = CGRect()
-    var scaleFactor: CGFloat = 0
+    var scaleFactor: CGFloat = 1
     var animationDuration: TimeInterval = 0
     
     var trackColor = UIColor()
@@ -27,7 +27,13 @@ final class LogoLayer: CAShapeLayer {
         super.init(coder: coder)
     }
     
-    init(for view: UIView, scale: CGFloat, duration: TimeInterval, lineWidth: CGFloat, trackColor: UIColor, strokeColor: UIColor) {
+    /// Initializer for the LogoLayer
+    /// view - determines the container to which the logo get's added
+    /// scale - the scale factor for the logo. Default Logo Size is 74 * 48 - To increase or decrease the size of the logo. Default scale is 1
+    /// lineWidth - determines the width of the stroke
+    /// trackColor - determines the color of the path
+    /// strokeColor - determines the color of the fill
+    init(for view: UIView, scale: CGFloat = 1, duration: TimeInterval, lineWidth: CGFloat, trackColor: UIColor, strokeColor: UIColor) {
         super.init()
         self.lineW = lineWidth
         self.logoFrame = view.bounds
@@ -43,6 +49,7 @@ final class LogoLayer: CAShapeLayer {
         }
     }
     
+    // MARK:- function to draw the logo
     func drawLogo(with center: CGPoint){
         let offset: CGFloat = 5
         let cX = center.x + offset / 2
@@ -58,20 +65,18 @@ final class LogoLayer: CAShapeLayer {
         path.addLine(to: CGPoint(x: cX + (18 * scaleFactor), y: cY))
         
         /// Now we add the layers
-        let logo = CAShapeLayer()
-        logo.path = path.cgPath
-        logo.frame = self.logoFrame
-        logo.fillColor = UIColor.clear.cgColor
-        logo.lineWidth = self.lineW
-        logo.strokeEnd = 1
-        logo.lineCap = .round
-        logo.strokeColor = self.trackColor.cgColor
-        
+        let logoLayer = CAShapeLayer()
+        logoLayer.path = path.cgPath
+        logoLayer.frame = self.logoFrame
+        logoLayer.fillColor = UIColor.clear.cgColor
+        logoLayer.lineWidth = self.lineW
+        logoLayer.strokeEnd = 1
+        logoLayer.lineCap = .round
+        logoLayer.strokeColor = self.trackColor.cgColor
         
         let fillLayer = CAShapeLayer()
         fillLayer.fillColor = UIColor.clear.cgColor
         fillLayer.frame = self.logoFrame
-        
         fillLayer.strokeColor = self.fillingColor.cgColor
         fillLayer.path = path.cgPath
         fillLayer.lineWidth = self.lineW + 1
@@ -79,10 +84,12 @@ final class LogoLayer: CAShapeLayer {
         fillLayer.strokeStart = 0
         fillLayer.strokeEnd = 0
         
-        self.addSublayer(logo)
+        // add the 2 layers into the parent
+        self.addSublayer(logoLayer)
         self.insertSublayer(fillLayer, above: self)
         
-        let strokeEndAnimation = LayerAnimation.getAnimation(.strokeEnd(duration: self.animationDuration))
+        // animate the fillAnimation based on the duration
+        let strokeEndAnimation = LayerAnimationFactory.getAnimation(.strokeEnd(duration: self.animationDuration))
         fillLayer.add(strokeEndAnimation(), forKey: "anim")
     }
 }

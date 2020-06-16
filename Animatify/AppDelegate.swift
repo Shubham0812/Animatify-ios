@@ -10,28 +10,30 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        /// add logo animation for the launchScreen
+        guard let window = window else { return true }
+        
+        let logoView = UIView()
+        logoView.frame = window.frame
+        logoView.backgroundColor = UIColor(named: "background")
+        guard let accentColor = UIColor(named: "accentColor") else { return true }
+        let logoLayer = LogoLayer(for: logoView, scale: 2, duration: 0.95, lineWidth: 6, trackColor: accentColor, strokeColor: UIColor.white)
+        logoView.layer.insertSublayer(logoLayer, below: logoView.layer)
+        
+        window.makeKeyAndVisible()
+        window.addSubview(logoView)
+        
+        // remove the animation
+        Timer.scheduledTimer(withTimeInterval: 1.05, repeats: false) { (Timer) in
+            ViewAnimationFactory.makeEaseOutAnimation(duration: 0.25, delay: 0) {
+                logoView.layer.opacity = 0
+            }
+        }
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
