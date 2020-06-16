@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum LayerAnimation {
+/// CoreAnimation
+enum LayerAnimationFactory {
     case strokeStart(duration: TimeInterval)
     case strokeEnd(duration: TimeInterval)
     

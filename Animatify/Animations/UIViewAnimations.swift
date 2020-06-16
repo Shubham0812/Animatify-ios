@@ -10,13 +10,18 @@ import Foundation
 import UIKit
 
 enum ViewAnimationFactory {
-    static func makeEaseInAnimation(duration: Double, delay: Double, action: @escaping() -> Void) {
+    static func makeEaseInAnimation(duration: TimeInterval, delay: TimeInterval, action: @escaping() -> Void) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseIn, animations: {
             action()
         })
     }
-    static func makeEaseInOutAnimation(duration: Double, delay: Double, action: @escaping() -> Void) {
+    static func makeEaseInOutAnimation(duration: TimeInterval, delay: TimeInterval, action: @escaping() -> Void) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut, animations: {
+            action()
+        })
+    }
+    static func makeEaseOutAnimation(duration: TimeInterval, delay: TimeInterval, action: @escaping() -> Void) {
+        UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut, animations: {
             action()
         })
     }
