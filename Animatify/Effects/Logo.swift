@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-final class LogoLayer: CAShapeLayer {
+protocol CoreAnimationDelgate {
+    func animationFinished()
+}
+
+final class LogoLayer: CAShapeLayer, CAAnimationDelegate {
     
     var lineW: CGFloat = 0
     var logoFrame: CGRect = CGRect()
@@ -17,8 +21,16 @@ final class LogoLayer: CAShapeLayer {
     var animationDuration: TimeInterval = 0
     
     var trackColor = UIColor()
+    var glideColor = UIColor()
     var fillingColor = UIColor()
-
+    
+    var logoLayer = CAShapeLayer()
+    var glideLayer = CAShapeLayer()
+    var fillLayer = CAShapeLayer()
+    
+    var sliderFinished = false
+    var coreAnimationDelegate: CoreAnimationDelgate?
+    
     // MARK:- initializers for the CALayer
     override init() {
         super.init()
@@ -33,12 +45,13 @@ final class LogoLayer: CAShapeLayer {
     /// lineWidth - determines the width of the stroke
     /// trackColor - determines the color of the path
     /// strokeColor - determines the color of the fill
-    init(for view: UIView, scale: CGFloat = 1, duration: TimeInterval, lineWidth: CGFloat, trackColor: UIColor, strokeColor: UIColor) {
+    init(for view: UIView, scale: CGFloat = 1, duration: TimeInterval, lineWidth: CGFloat, trackColor: UIColor, glideColor: UIColor, strokeColor: UIColor) {
         super.init()
         self.lineW = lineWidth
         self.logoFrame = view.bounds
         
         self.trackColor = trackColor
+        self.glideColor = glideColor
         self.fillingColor = strokeColor
         
         self.scaleFactor = scale
@@ -49,12 +62,23 @@ final class LogoLayer: CAShapeLayer {
         }
     }
     
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if (!sliderFinished) {
+            let strokeEndAnimation = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration)
+            strokeEndAnimation.delegate = self
+            fillLayer.add(strokeEndAnimation, forKey: "strokeEnd")
+            sliderFinished = true
+        } else {
+            self.coreAnimationDelegate?.animationFinished()
+        }
+    }
+    
     // MARK:- function to draw the logo
     func drawLogo(with center: CGPoint){
         let offset: CGFloat = 5
         let cX = center.x + offset / 2
         let cY = center.y + offset
-                
+        
         /// Little Mathematics for drawing the path of the animation
         let path = UIBezierPath()
         path.move(to: CGPoint(x: cX, y: cY))
@@ -64,32 +88,26 @@ final class LogoLayer: CAShapeLayer {
         path.addLine(to: CGPoint(x: cX + (30 * scaleFactor), y: cY))
         path.addLine(to: CGPoint(x: cX + (18 * scaleFactor), y: cY))
         
-        /// Now we add the layers
-        let logoLayer = CAShapeLayer()
-        logoLayer.path = path.cgPath
-        logoLayer.frame = self.logoFrame
-        logoLayer.fillColor = UIColor.clear.cgColor
-        logoLayer.lineWidth = self.lineW
-        logoLayer.strokeEnd = 1
-        logoLayer.lineCap = .round
-        logoLayer.strokeColor = self.trackColor.cgColor
+        /// for static logo pass the animationDuration as 0
+        let strokeEnd: CGFloat = self.animationDuration > 0 ? 0 : 1
         
-        let fillLayer = CAShapeLayer()
-        fillLayer.fillColor = UIColor.clear.cgColor
-        fillLayer.frame = self.logoFrame
-        fillLayer.strokeColor = self.fillingColor.cgColor
-        fillLayer.path = path.cgPath
-        fillLayer.lineWidth = self.lineW + 1
-        fillLayer.lineCap = .round
-        fillLayer.strokeStart = 0
-        fillLayer.strokeEnd = 0
+        logoLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW, strokeStart: 0, strokeEnd: 1, strokeColor: self.trackColor, position: center)
+        glideLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: 0.0008, strokeColor: glideColor, position: center)
+        fillLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: strokeEnd, strokeColor: self.fillingColor, position: center)
         
-        // add the 2 layers into the parent
+        // add the layers into the parent layer
         self.addSublayer(logoLayer)
         self.insertSublayer(fillLayer, above: self)
+        self.insertSublayer(glideLayer, above: logoLayer)
         
-        // animate the fillAnimation based on the duration
-        let strokeEndAnimation = LayerAnimationFactory.getAnimation(.strokeEnd(duration: self.animationDuration))
-        fillLayer.add(strokeEndAnimation(), forKey: "anim")
+        // animate the glideAnimation based on the duration
+        let strokeStartAnimation = LayerAnimationFactory.getStrokeStartAnimation(duration: self.animationDuration * 0.75)
+        let strokeEndAnimation = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration * 0.75)
+        strokeEndAnimation.delegate = self
+        strokeEndAnimation.isRemovedOnCompletion = true
+        
+        glideLayer.add(strokeStartAnimation, forKey: "strokeStart")
+        glideLayer.add(strokeEndAnimation, forKey: "strokeEnd")
+        
     }
 }
