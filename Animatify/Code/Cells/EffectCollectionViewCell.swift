@@ -9,10 +9,24 @@
 import UIKit
 
 class EffectCollectionViewCell: UICollectionViewCell {
+    
+    override class func description() -> String {
+        return "EffectCollectionViewCell"
+    }
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var collectionViewHeight: CGFloat = 180
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.containerView.layer.cornerRadius = 12
+        self.containerView.backgroundColor = UIColor(named: "accentColor")?.withAlphaComponent(0.25)
+    }
+    
+    func setupCell(effect: Effects){
+        self.titleLabel.text = effect.title
     }
 
 }

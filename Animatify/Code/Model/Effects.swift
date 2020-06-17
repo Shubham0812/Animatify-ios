@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Effects {
+    let action: String
+    let title: String
+}
