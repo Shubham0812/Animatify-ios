@@ -1,5 +1,5 @@
 # Animatify iOS
-Animation & effects for your iOS Projects - Will be uploading the project soon.
+Animation & effects for your iOS Projects
 
 - License: Apache 2.0
 
