@@ -1,7 +1,11 @@
 # Animatify iOS
-Animation & effects for your iOS Projects
+Animation, Effects & Transitions for iOS projects.
 
+It's an iOS application, that will contain tutorials and guides for achieving the effects.
+Since it's an open-source project feel free to add animations of your own :D
 - License: Apache 2.0
+
+![alt text](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/1.png)
 
 ## Languages / Frameworks Used
 - Swift 5
