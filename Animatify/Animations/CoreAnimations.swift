@@ -8,28 +8,23 @@
 
 import UIKit
 
-/// CoreAnimation
+/// CoreAnimations
 enum LayerAnimationFactory {
-    case strokeStart(duration: TimeInterval)
-    case strokeEnd(duration: TimeInterval)
+    static func getStrokeStartAnimation(duration: TimeInterval, toValue: CGFloat = 1.0) -> CABasicAnimation {
+        let strokeStart = CABasicAnimation(keyPath: "strokeStart")
+        strokeStart.duration = duration
+        strokeStart.toValue = toValue
+        strokeStart.isRemovedOnCompletion = false
+        strokeStart.fillMode = .forwards
+        return strokeStart
+    }
     
-    func getAnimation() -> CABasicAnimation {
-        switch self {
-        case .strokeStart(let duration):
-            let strokeStart = CABasicAnimation(keyPath: "strokeStart")
-                strokeStart.duration = duration
-                strokeStart.toValue = 1
-                strokeStart.isRemovedOnCompletion = false
-                strokeStart.fillMode = .forwards
-                return strokeStart
-            
-        case .strokeEnd(let duration):
-            let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
-            strokeEnd.duration = duration
-            strokeEnd.toValue = 1
-            strokeEnd.isRemovedOnCompletion = false
-            strokeEnd.fillMode = .forwards
-            return strokeEnd
-        }
+    static func getStrokeEndAnimation(duration: TimeInterval, toValue: CGFloat = 1.0) -> CABasicAnimation {
+        let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+        strokeEnd.duration = duration
+        strokeEnd.toValue = toValue
+        strokeEnd.isRemovedOnCompletion = false
+        strokeEnd.fillMode = .forwards
+        return strokeEnd
     }
 }
