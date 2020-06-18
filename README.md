@@ -19,6 +19,7 @@ Covered in the [contributing document](CONTRIBUTING.md).
 
 ## Running the project
 * Download the zip file or clone the project.
+* Switch to the `dev` branch (it's where all the active code is present).
 * Run the project using Xcode
 
 ## Having trouble ?
