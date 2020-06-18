@@ -34,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvB-17-mX3">
-                                        <rect key="frame" x="367.5" y="28.5" width="22.5" height="22"/>
+                                        <rect key="frame" x="354" y="21.5" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="CBE-D0-QEd"/>
                                             <constraint firstAttribute="height" constant="36" id="xmh-HT-gbe"/>

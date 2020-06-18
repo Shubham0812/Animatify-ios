@@ -35,7 +35,6 @@
 		5161E1ED249A22E5008D1368 /* EffectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5161E1EB249A22E5008D1368 /* EffectCollectionViewCell.swift */; };
 		5161E1EE249A22E5008D1368 /* EffectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1EC249A22E5008D1368 /* EffectCollectionViewCell.xib */; };
 		5161E1F8249A4770008D1368 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5161E1F7249A4770008D1368 /* Effects.swift */; };
-		5161E1FD249A4ECA008D1368 /* asset1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1FC249A4ECA008D1368 /* asset1.png */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Main.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -71,7 +70,6 @@
 		5161E1EB249A22E5008D1368 /* EffectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCollectionViewCell.swift; sourceTree = "<group>"; };
 		5161E1EC249A22E5008D1368 /* EffectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectCollectionViewCell.xib; sourceTree = "<group>"; };
 		5161E1F7249A4770008D1368 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
-		5161E1FC249A4ECA008D1368 /* asset1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asset1.png; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		5161E1F9249A4E92008D1368 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				5161E1FC249A4ECA008D1368 /* asset1.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 				5161E1D02496383D008D1368 /* Montserrat-SemiBold.ttf in Resources */,
 				5161E1EE249A22E5008D1368 /* EffectCollectionViewCell.xib in Resources */,
 				5161E1BC249637A8008D1368 /* Raleway-Bold.ttf in Resources */,
-				5161E1FD249A4ECA008D1368 /* asset1.png in Resources */,
 				5161E1CA2496382A008D1368 /* Montserrat-Bold.ttf in Resources */,
 				51DCDF3E2495006800911EAB /* Main.storyboard in Resources */,
 			);
