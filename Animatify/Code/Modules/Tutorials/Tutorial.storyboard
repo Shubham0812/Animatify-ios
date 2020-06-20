@@ -3,18 +3,19 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Table Animation View Controller-->
         <scene sceneID="JFC-9j-MBB">
             <objects>
-                <viewController id="XcV-8o-Bdp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableAnimationViewController" id="XcV-8o-Bdp" customClass="TableAnimationViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LOU-4t-Chu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <viewLayoutGuide key="safeArea" id="t4a-m3-5PU"/>
                     </view>
                 </viewController>
@@ -23,4 +24,9 @@
             <point key="canvasLocation" x="116" y="92"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -14,10 +14,13 @@ class TutorialTableViewCell: UITableViewCell {
         return "TutorialTableViewCell"
     }
     
+    // MARK:- outlets for the viewController
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var tutorialDifficulyLabel: UILabel!
+    
+    var tableViewHeight: CGFloat = 87
     
     override func awakeFromNib() {
         super.awakeFromNib()

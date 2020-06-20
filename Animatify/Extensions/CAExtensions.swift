@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-
 extension CAShapeLayer {
     func setShapeLayer(path: UIBezierPath, frame: CGRect, fillColor: UIColor, lineWidth: CGFloat,strokeStart: CGFloat, strokeEnd: CGFloat, strokeColor: UIColor, position: CGPoint){
         self.path = path.cgPath
