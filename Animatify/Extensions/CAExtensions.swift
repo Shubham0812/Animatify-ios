@@ -10,7 +10,6 @@ import UIKit
 
 
 extension CAShapeLayer {
-    
     func setShapeLayer(path: UIBezierPath, frame: CGRect, fillColor: UIColor, lineWidth: CGFloat,strokeStart: CGFloat, strokeEnd: CGFloat, strokeColor: UIColor, position: CGPoint){
         self.path = path.cgPath
         self.frame = frame
@@ -20,7 +19,17 @@ extension CAShapeLayer {
         self.strokeEnd = strokeEnd
         self.lineCap = .round
         self.strokeColor = strokeColor.cgColor
-//        self.position = position
+        //        self.position = position
+    }
+}
+
+extension CAGradientLayer {
+    func setGradientLayer(color1: UIColor, color2: UIColor, for containerView: UIView, cornerRadius: CGFloat) {
+        self.colors = [color1.cgColor, color2.cgColor]
+        self.startPoint = CGPoint(x: 0.0, y: 0.0)
+        self.endPoint = CGPoint(x: 1.0, y: 0.5)
+        self.frame = containerView.bounds
+        self.cornerRadius = cornerRadius
     }
 }
 

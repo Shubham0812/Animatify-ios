@@ -8,6 +8,43 @@
 
 import UIKit
 
-class ShimmerEffect: CAShapeLayer {
-
+final class ShimmerLayer: CAGradientLayer {
+    
+    // MARK:- initializers for the CALayer
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    init(for view: UIView,cornerRadius: CGFloat) {
+        super.init()
+        let gradientColorOne = UIColor.systemGray.withAlphaComponent(0.9).cgColor
+        let gradientColorTwo = UIColor.systemGray.withAlphaComponent(0.75).cgColor
+        
+        self.frame = view.bounds
+        self.startPoint = CGPoint(x: 0.0, y: 1.0)
+        self.endPoint = CGPoint(x: 1.0, y: 1.0)
+        self.colors = [gradientColorOne, gradientColorTwo, gradientColorOne]
+        self.locations = [0.0, 0.5, 1.0]
+        self.position = view.center
+        self.cornerRadius = cornerRadius
+    }
+    
+    func startAnimation() {
+        let animation = CABasicAnimation(keyPath: "locations")
+        animation.fromValue = [-1.0, -0.5, 0.0]
+        animation.toValue = [1.0, 1.5, 2.0]
+        animation.repeatCount = .infinity
+        animation.duration = 0.7
+        self.add(animation, forKey: animation.keyPath)
+    }
+    
+    func removeAnimation(){
+        self.removeAllAnimations()
+    }
+    
+    
 }
