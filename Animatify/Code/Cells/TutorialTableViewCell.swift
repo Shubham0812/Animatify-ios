@@ -19,17 +19,13 @@ class TutorialTableViewCell: UITableViewCell {
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var tutorialDifficulyLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        tutorialButton.layer.cornerRadius = tutorialButton.layer.frame.width / 2.0 - 3
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+        tutorialButton.roundCorners(cornerRadius: tutorialButton.layer.frame.width / 2.0 - 3)
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }
