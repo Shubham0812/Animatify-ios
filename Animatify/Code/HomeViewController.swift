@@ -15,7 +15,9 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var effectsCollectionView: UICollectionView!
-    
+    @IBOutlet weak var tableView: UITableView!
+        
+    // MARK:- variables for the viewController
     var containerToggled: Bool = false {
         didSet {
             if (containerToggled) {
@@ -31,19 +33,24 @@ class HomeViewController: UIViewController{
     }
     
     // hardcoding the tableView data for now
-    var effects: [Effects] = [Effects](repeatElement(Effects(action: "", title: "Coming soon"), count: 4))
+    var effects: [Effects] = [Effects(action: .pulse, title: "Pulse Effect", description: "Pulse effect that can be applied to different views and buttons. Color, size, and duration can be set accordingly.", instructions: ["The effect is created with CALayer, applied to the layer of the view.","For a circular pulse, turn your view into a circle and pass the radius as 2.", "You can also modify animation and play with it"], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671")), Effects(action: .shimmer, title: "Shimmer Effect", description: "Shimmer Effect is an unobtrusive loading indicator that provides an engaging way to show the loading.", instructions: [], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671"))]
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        self.effects.append(contentsOf: [Effects](repeatElement(Effects(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: UIColor(named: "background")!, gradientColor2: UIColor(named: "alternateBackground")!), count: 4)))
         self.effectsCollectionView.delegate = self
         self.effectsCollectionView.dataSource = self
         self.effectsCollectionView.register(UINib(nibName: EffectCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: EffectCollectionViewCell.description())
         self.view.bringSubviewToFront(containerView)
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        
         self.setupViews()
         self.drawLogo()
+        
     }
     
     // MARK:- outlets for the viewController
@@ -68,12 +75,29 @@ class HomeViewController: UIViewController{
         containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
         self.containerView.transform = containerViewTransform
         self.containerToggled = !self.containerToggled
+        
+        
     }
     
     func drawLogo(){
         guard let accentColor = UIColor(named: "accentColor") else { return }
         let logoLayer = LogoLayer(for: logoView, scale: 1.1, duration: 0, lineWidth: 4, trackColor: accentColor, glideColor: UIColor.clear, strokeColor: UIColor.white)
         self.view.layer.insertSublayer(logoLayer, below: self.logoView.layer)
+    }
+    
+    func setShimmer(){
+        let shimmerLayer = ShimmerLayer(for: testView, cornerRadius: 0)
+        self.view.layer.insertSublayer(shimmerLayer, above: testView.layer)
+        
+        
+        shimmerLayer.startAnimation()
+        //
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (Timer) in
+        }
+        
+        
+        
     }
 }
 
@@ -93,11 +117,37 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let columns: CGFloat = 2.5
-             let collectionViewWidth = collectionView.bounds.width
-             let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-             
-             let adjustedWidth = (collectionViewWidth * 1.225) - (flowLayout.minimumLineSpacing * (columns - 1))
-             let width = floor(adjustedWidth / columns)
+        let collectionViewWidth = collectionView.bounds.width
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let adjustedWidth = (collectionViewWidth * 1.225) - (flowLayout.minimumLineSpacing * (columns - 1))
+        let width = floor(adjustedWidth / columns)
         return CGSize(width: width, height: EffectCollectionViewCell().collectionViewHeight)
     }
+    
+    func  collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let effectDetailsVC = self.storyboard?.instantiateViewController(identifier: EffectDetailsViewController.description()) as? EffectDetailsViewController else { return }
+        effectDetailsVC.effect = self.effects[indexPath.item]
+        self.navigationController?.pushViewController(effectDetailsVC, animated: true)
+    }
+}
+
+// MARK:- Extension for TableView
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 87
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            return cell
+        }
+        fatalError()
+    }
+    
+    
 }

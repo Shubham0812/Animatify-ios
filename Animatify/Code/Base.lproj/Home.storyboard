@@ -31,13 +31,13 @@
                                 <rect key="frame" x="0.0" y="327" width="414" height="569"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Q-jq-9XG">
-                                        <rect key="frame" x="24" y="24" width="104.5" height="31"/>
+                                        <rect key="frame" x="24" y="24" width="97.5" height="31"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvB-17-mX3">
-                                        <rect key="frame" x="354" y="21.5" width="36" height="36"/>
+                                        <rect key="frame" x="367.5" y="28.5" width="22.5" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="CBE-D0-QEd"/>
                                             <constraint firstAttribute="height" constant="36" id="xmh-HT-gbe"/>
@@ -50,7 +50,7 @@
                                             <action selector="expandButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2xt-sw-YNS"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aYq-Mq-cCM">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aYq-Mq-cCM">
                                         <rect key="frame" x="0.0" y="79" width="414" height="490"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
@@ -77,7 +77,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCv-xN-TgW">
-                                <rect key="frame" x="24" y="128" width="83" height="31"/>
+                                <rect key="frame" x="24" y="128" width="80.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -122,11 +122,12 @@
                         <outlet property="effectsCollectionView" destination="r7Q-pM-Gcm" id="Ud9-qN-cbA"/>
                         <outlet property="expandButton" destination="JvB-17-mX3" id="dPL-ej-sQS"/>
                         <outlet property="logoView" destination="lz0-SH-1tv" id="yA6-W1-up6"/>
+                        <outlet property="tableView" destination="aYq-Mq-cCM" id="tUj-B6-9ci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="106"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="105.80357142857143"/>
         </scene>
         <!--Effect Details View Controller-->
         <scene sceneID="Rxa-pv-fzz">
@@ -147,48 +148,103 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pulse Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-hd-AOK">
-                                <rect key="frame" x="24" y="119.5" width="145" height="31"/>
-                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="26"/>
+                                <rect key="frame" x="24" y="119.5" width="167.5" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-cw-0ZC">
-                                <rect key="frame" x="24" y="180.5" width="366" height="158"/>
+                                <rect key="frame" x="24" y="185" width="366" height="158"/>
                                 <color key="backgroundColor" name="accentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="158" id="igH-FG-OYj"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-ow-3c8">
-                                <rect key="frame" x="24" y="356.5" width="366" height="94"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-ow-3c8">
+                                <rect key="frame" x="24" y="361" width="366" height="94"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="wTx-6d-9Xx"/>
                                 </constraints>
-                                <string key="text">Pulse effect that can be applied to different views and buttons. It's configurable and the color, size and the duration of the pulse can be set.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-t0-J7R">
+                                <rect key="frame" x="0.0" y="487" width="414" height="409"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAy-sI-Wiz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMo-Br-Gmf">
+                                                <rect key="frame" x="24" y="20" width="131.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unU-qP-vz4">
+                                                <rect key="frame" x="354" y="16.5" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="Wip-pW-cn4"/>
+                                                    <constraint firstAttribute="width" constant="36" id="cma-PI-DA1"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="chevron.down" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium" weight="medium"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="expandButtonPressed:" destination="weq-KA-Eli" eventType="touchUpInside" id="GXK-jW-ZD5"/>
+                                                    <action selector="expandButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7q-dg-twf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="alternateBackground"/>
+                                        <constraints>
+                                            <constraint firstItem="KMo-Br-Gmf" firstAttribute="leading" secondItem="VAy-sI-Wiz" secondAttribute="leading" constant="24" id="0cv-F3-djY"/>
+                                            <constraint firstItem="KMo-Br-Gmf" firstAttribute="top" secondItem="VAy-sI-Wiz" secondAttribute="top" constant="20" id="4V6-AI-5eg"/>
+                                            <constraint firstItem="unU-qP-vz4" firstAttribute="centerY" secondItem="KMo-Br-Gmf" secondAttribute="centerY" id="5n5-rl-fe3"/>
+                                            <constraint firstAttribute="trailing" secondItem="unU-qP-vz4" secondAttribute="trailing" constant="24" id="ct0-9O-3YT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="alternateBackground"/>
+                                <constraints>
+                                    <constraint firstItem="VAy-sI-Wiz" firstAttribute="top" secondItem="pcU-t0-J7R" secondAttribute="top" id="12q-3h-Fb4"/>
+                                    <constraint firstAttribute="bottom" secondItem="VAy-sI-Wiz" secondAttribute="bottom" id="YlU-cs-2jB"/>
+                                    <constraint firstItem="VAy-sI-Wiz" firstAttribute="centerY" secondItem="pcU-t0-J7R" secondAttribute="centerY" id="dAd-TV-l12"/>
+                                    <constraint firstItem="VAy-sI-Wiz" firstAttribute="leading" secondItem="pcU-t0-J7R" secondAttribute="leading" id="hYi-4G-srY"/>
+                                    <constraint firstAttribute="trailing" secondItem="VAy-sI-Wiz" secondAttribute="trailing" id="uG3-tE-IHl"/>
+                                    <constraint firstItem="VAy-sI-Wiz" firstAttribute="centerX" secondItem="pcU-t0-J7R" secondAttribute="centerX" id="ubV-s6-FmL"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
+                            <constraint firstItem="pcU-t0-J7R" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" id="01L-pd-KHg"/>
                             <constraint firstItem="XY6-Eq-UhV" firstAttribute="top" secondItem="nr2-8t-xaV" secondAttribute="top" constant="20" id="0zI-H8-1kL"/>
                             <constraint firstItem="nr2-8t-xaV" firstAttribute="trailing" secondItem="Raz-cw-0ZC" secondAttribute="trailing" constant="24" id="20r-Ej-GEa"/>
                             <constraint firstItem="XY6-Eq-UhV" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" constant="24" id="KKV-ja-TTN"/>
+                            <constraint firstItem="pcU-t0-J7R" firstAttribute="top" secondItem="Hce-ow-3c8" secondAttribute="bottom" constant="32" id="Qba-mG-LLG"/>
                             <constraint firstItem="Hce-ow-3c8" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" constant="24" id="Sgw-Kp-v3W"/>
                             <constraint firstItem="sNM-hd-AOK" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" constant="24" id="TbM-Yd-79k"/>
                             <constraint firstItem="sNM-hd-AOK" firstAttribute="top" secondItem="XY6-Eq-UhV" secondAttribute="bottom" constant="28" id="a9a-xV-i1d"/>
+                            <constraint firstAttribute="bottom" secondItem="pcU-t0-J7R" secondAttribute="bottom" id="eHm-21-14k"/>
                             <constraint firstItem="Hce-ow-3c8" firstAttribute="top" secondItem="Raz-cw-0ZC" secondAttribute="bottom" constant="18" id="gK4-EF-xxl"/>
                             <constraint firstItem="Raz-cw-0ZC" firstAttribute="top" secondItem="sNM-hd-AOK" secondAttribute="bottom" constant="30" id="gOa-gp-HAN"/>
                             <constraint firstItem="nr2-8t-xaV" firstAttribute="trailing" secondItem="Hce-ow-3c8" secondAttribute="trailing" constant="24" id="hrT-AR-OWA"/>
                             <constraint firstItem="Raz-cw-0ZC" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" constant="24" id="lUN-24-dC0"/>
+                            <constraint firstItem="nr2-8t-xaV" firstAttribute="trailing" secondItem="pcU-t0-J7R" secondAttribute="trailing" id="zHE-Mi-LOv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nr2-8t-xaV"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="XY6-Eq-UhV" id="5sZ-HT-Mka"/>
+                        <outlet property="descriptionTextView" destination="Hce-ow-3c8" id="gyD-Vo-W3U"/>
                         <outlet property="effectContainerView" destination="Raz-cw-0ZC" id="XB7-vT-Xih"/>
+                        <outlet property="expandButton" destination="unU-qP-vz4" id="vUN-Hz-EyC"/>
+                        <outlet property="instructionLabel" destination="KMo-Br-Gmf" id="KNF-Xh-BBI"/>
+                        <outlet property="scrollView" destination="pcU-t0-J7R" id="Yxr-ys-5Om"/>
+                        <outlet property="stepsView" destination="VAy-sI-Wiz" id="Cx2-yS-TgQ"/>
                         <outlet property="titleLabel" destination="sNM-hd-AOK" id="sYk-CB-ptc"/>
                     </connections>
                 </viewController>

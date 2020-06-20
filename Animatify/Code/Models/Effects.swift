@@ -6,12 +6,15 @@
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Effects {
     let action: EffectType
     let title: String
     let description: String
+    let instructions: [String]
+    let gradientColor1: UIColor
+    let gradientColor2: UIColor
 }
 
 enum EffectType {
