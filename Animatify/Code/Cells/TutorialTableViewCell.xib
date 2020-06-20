@@ -3,34 +3,93 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </array>
+        <array key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="TutorialTableViewCell" customModule="Animatify" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="84"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="TutorialTableViewCell" customModule="Animatify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="380" height="84"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oP-P7-8Zq">
-                        <rect key="frame" x="0.0" y="8" width="380" height="68"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-ud-B6H">
+                        <rect key="frame" x="0.0" y="9" width="380" height="92"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quy-84-DF3">
+                                <rect key="frame" x="18" y="14" width="64" height="64"/>
+                                <color key="backgroundColor" name="whiteAccent"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="ttK-Ol-SPS"/>
+                                    <constraint firstAttribute="height" constant="64" id="u3Y-He-vVP"/>
+                                </constraints>
+                                <color key="tintColor" name="alternateBackground"/>
+                                <state key="normal" image="bolt.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" weight="medium"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animating Tableview cells" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdR-f4-6mx">
+                                <rect key="frame" x="97" y="13" width="229" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                <color key="textColor" name="alternateBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4Q-TE-rdq">
+                                <rect key="frame" x="97" y="41" width="31" height="17"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="14"/>
+                                <color key="textColor" name="alternateBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g4Q-TE-rdq" firstAttribute="leading" secondItem="quy-84-DF3" secondAttribute="trailing" constant="15" id="Gvb-o1-OAa"/>
+                            <constraint firstItem="gdR-f4-6mx" firstAttribute="leading" secondItem="quy-84-DF3" secondAttribute="trailing" constant="15" id="Hky-Uu-yB7"/>
+                            <constraint firstItem="quy-84-DF3" firstAttribute="centerY" secondItem="Qnj-ud-B6H" secondAttribute="centerY" id="bN2-9J-M1N"/>
+                            <constraint firstItem="gdR-f4-6mx" firstAttribute="top" secondItem="Qnj-ud-B6H" secondAttribute="top" constant="13" id="kRT-tB-8vm"/>
+                            <constraint firstItem="quy-84-DF3" firstAttribute="leading" secondItem="Qnj-ud-B6H" secondAttribute="leading" constant="18" id="oQV-2r-lkh"/>
+                            <constraint firstItem="g4Q-TE-rdq" firstAttribute="top" secondItem="gdR-f4-6mx" secondAttribute="bottom" constant="4" id="xUl-SP-AKZ"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="1oP-P7-8Zq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="07A-mH-Uzk"/>
-                    <constraint firstItem="1oP-P7-8Zq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HKw-W5-ziI"/>
-                    <constraint firstAttribute="trailing" secondItem="1oP-P7-8Zq" secondAttribute="trailing" id="WAc-36-fXr"/>
-                    <constraint firstAttribute="bottom" secondItem="1oP-P7-8Zq" secondAttribute="bottom" constant="8" id="mrM-ee-Zrb"/>
+                    <constraint firstAttribute="bottom" secondItem="Qnj-ud-B6H" secondAttribute="bottom" constant="9" id="3LR-Nx-KTC"/>
+                    <constraint firstItem="Qnj-ud-B6H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="9q6-cL-MJR"/>
+                    <constraint firstItem="Qnj-ud-B6H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Wsa-p3-nON"/>
+                    <constraint firstAttribute="trailing" secondItem="Qnj-ud-B6H" secondAttribute="trailing" id="ca3-ll-tPp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="Qnj-ud-B6H" id="uo2-G2-glr"/>
+                <outlet property="tutorialButton" destination="quy-84-DF3" id="mtk-Nk-nun"/>
+                <outlet property="tutorialDifficulyLabel" destination="g4Q-TE-rdq" id="Gy6-Ay-TEP"/>
+                <outlet property="tutorialLabel" destination="gdR-f4-6mx" id="EIy-UQ-nui"/>
+            </connections>
             <point key="canvasLocation" x="139" y="137"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bolt.fill" catalog="system" width="101" height="128"/>
+        <namedColor name="alternateBackground">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteAccent">
+            <color red="0.86274509803921573" green="0.89803921568627454" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
