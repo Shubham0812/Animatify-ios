@@ -16,3 +16,13 @@ extension UIView {
         self.clipsToBounds = true
     }
 }
+
+extension UILabel {
+    //for setting cornerRadius and borderWidth
+    
+    func setBorderAndCorner(borderColor: UIColor, borderWidth: CGFloat, cornerRadius: CGFloat) {
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = borderWidth
+        self.layer.cornerRadius = cornerRadius
+    }
+}

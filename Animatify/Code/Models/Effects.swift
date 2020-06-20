@@ -9,6 +9,13 @@
 import Foundation
 
 struct Effects {
-    let action: String
+    let action: EffectType
     let title: String
+    let description: String
+}
+
+enum EffectType {
+    case pulse
+    case shimmer
+    case none
 }
