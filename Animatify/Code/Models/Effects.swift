@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum EffectType {
+    case pulse
+    case shimmer
+    case none
+}
+
 struct Effects {
     let action: EffectType
     let title: String
@@ -15,10 +21,4 @@ struct Effects {
     let instructions: [String]
     let gradientColor1: UIColor
     let gradientColor2: UIColor
-}
-
-enum EffectType {
-    case pulse
-    case shimmer
-    case none
 }

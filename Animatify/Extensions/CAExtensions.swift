@@ -17,7 +17,6 @@ extension CAShapeLayer {
         self.strokeEnd = strokeEnd
         self.lineCap = .round
         self.strokeColor = strokeColor.cgColor
-        //        self.position = position
     }
 }
 
