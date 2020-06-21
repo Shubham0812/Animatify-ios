@@ -10,6 +10,9 @@ import UIKit
 
 class IntroViewController: UIViewController, CoreAnimationDelgate {
     
+    // MARK:- variables for the viewController
+    var animationDuration: TimeInterval = 1.4
+    
     /// show the animation, then transition into homeViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +22,7 @@ class IntroViewController: UIViewController, CoreAnimationDelgate {
         logoView.backgroundColor = UIColor(named: "background")
         guard let accentColor = UIColor(named: "accentColor") else { return }
     
-        let logoLayer = LogoLayer(for: logoView, scale: 2, duration: 1.5, lineWidth: 6, trackColor: accentColor, glideColor: UIColor(hex: "#18FFFF"), strokeColor: UIColor.white)
+        let logoLayer = LogoLayer(for: logoView, scale: 2, duration: self.animationDuration, lineWidth: 6, trackColor: accentColor, glideColor: UIColor(hex: "#18FFFF"), strokeColor: UIColor.white)
         logoView.layer.insertSublayer(logoLayer, below: logoView.layer)
         logoLayer.coreAnimationDelegate = self
         
@@ -28,7 +31,7 @@ class IntroViewController: UIViewController, CoreAnimationDelgate {
     
     // CoreAnimationDelegate function
     func animationFinished() {
-        guard let homeVC = self.storyboard?.instantiateViewController(identifier: HomeViewController.description()) else { return }
+        guard let homeVC = self.storyboard?.instantiateViewController(identifier: HomeViewController.description()) as? HomeViewController else { return }
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }

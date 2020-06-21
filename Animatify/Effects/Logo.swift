@@ -62,6 +62,7 @@ final class LogoLayer: CAShapeLayer, CAAnimationDelegate {
         }
     }
     
+    /// CAAnimation Delegate method
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if (!sliderFinished) {
             let strokeEndAnimation = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration)

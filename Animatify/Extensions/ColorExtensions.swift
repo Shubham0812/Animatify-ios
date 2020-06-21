@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIColor {
-    
     /// For converting Hex-based colors
     convenience init(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)

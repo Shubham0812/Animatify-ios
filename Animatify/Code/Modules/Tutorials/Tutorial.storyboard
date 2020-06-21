@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Table Animation View Controller-->
+        <scene sceneID="JFC-9j-MBB">
+            <objects>
+                <viewController storyboardIdentifier="TableAnimationViewController" id="XcV-8o-Bdp" customClass="TableAnimationViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LOU-4t-Chu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="thI-Yg-Kgx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="672"/>
+                                <color key="backgroundColor" name="background"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lIw-g4-8il">
+                                <rect key="frame" x="24" y="736" width="366" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svH-Hv-dIQ" userLabel="b1">
+                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="mOs-6z-gEY"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="1.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="icK-vl-cbb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LD0-gv-dM7" userLabel="b2">
+                                        <rect key="frame" x="91.5" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="V2l-a0-JeE"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="2.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="qs3-Fl-x0F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsR-d5-3K2" userLabel="b3">
+                                        <rect key="frame" x="183" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="oq9-kk-NEh"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="3.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="GTU-ye-tzW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-C5-RtW" userLabel="b4">
+                                        <rect key="frame" x="274.5" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Zg2-n8-GJ7"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="4.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="Bgg-3l-HU3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation is applied to the willDisplay cell: method of the table view." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-4s-vug">
+                                <rect key="frame" x="24" y="770" width="366" height="68"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.5"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="lIw-g4-8il" secondAttribute="trailing" constant="24" id="28y-uI-HDc"/>
+                            <constraint firstItem="lIw-g4-8il" firstAttribute="top" secondItem="thI-Yg-Kgx" secondAttribute="bottom" constant="20" id="AXy-w6-0T6"/>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="thI-Yg-Kgx" secondAttribute="trailing" id="AlS-XJ-r1N"/>
+                            <constraint firstItem="lIw-g4-8il" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" constant="24" id="JZa-Lv-GpE"/>
+                            <constraint firstItem="SB5-4s-vug" firstAttribute="top" secondItem="lIw-g4-8il" secondAttribute="bottom" constant="-8" id="ZLT-Lk-xpP"/>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="SB5-4s-vug" secondAttribute="trailing" constant="24" id="a7J-iH-qpG"/>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="bottom" secondItem="SB5-4s-vug" secondAttribute="bottom" constant="24" id="aQ3-o3-GB4"/>
+                            <constraint firstItem="SB5-4s-vug" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" constant="24" id="fFf-Ym-YE3"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="top" secondItem="t4a-m3-5PU" secondAttribute="top" id="qfD-lS-1tY"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="height" secondItem="LOU-4t-Chu" secondAttribute="height" multiplier="0.75" id="rva-8c-F3T"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" id="vzX-2b-Wlz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t4a-m3-5PU"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="svH-Hv-dIQ" id="yvd-hA-qQn"/>
+                        <outlet property="button2" destination="LD0-gv-dM7" id="AzC-7w-Bn1"/>
+                        <outlet property="button3" destination="MsR-d5-3K2" id="eyB-uz-a3X"/>
+                        <outlet property="button4" destination="YNF-C5-RtW" id="58F-bM-7BC"/>
+                        <outlet property="descriptionLabel" destination="SB5-4s-vug" id="CxQ-IG-hHC"/>
+                        <outlet property="tableView" destination="thI-Yg-Kgx" id="yI9-jL-tLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFr-4Z-pXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="91.741071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="2.circle" catalog="system" width="128" height="121"/>
+        <image name="3.circle" catalog="system" width="128" height="121"/>
+        <image name="4.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="background">
+            <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
