@@ -14,6 +14,12 @@ Since it's an open-source project feel free to add animations of your own :D
 - CoreGraphics
 - CoreAnimation
 
+## Tested On
+- Iphone 11 Max Pro
+- Iphone 11
+- Iphone 8 plus
+- Ipad 9 pro
+
 # Contributing
 Covered in the [contributing document](CONTRIBUTING.md).
 
