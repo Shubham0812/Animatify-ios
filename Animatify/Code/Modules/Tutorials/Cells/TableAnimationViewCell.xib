@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +16,30 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLz-9I-xMi">
+                        <rect key="frame" x="12" y="5" width="296" height="54"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="background"/>
+                <constraints>
+                    <constraint firstItem="mLz-9I-xMi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="M9d-Ny-djf"/>
+                    <constraint firstItem="mLz-9I-xMi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="XmA-RX-aD7"/>
+                    <constraint firstAttribute="bottom" secondItem="mLz-9I-xMi" secondAttribute="bottom" constant="5" id="ic2-eQ-6no"/>
+                    <constraint firstAttribute="trailing" secondItem="mLz-9I-xMi" secondAttribute="trailing" constant="12" id="pYh-wD-Zvp"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="mLz-9I-xMi" id="tgk-eA-uUd"/>
+            </connections>
             <point key="canvasLocation" x="139" y="137"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

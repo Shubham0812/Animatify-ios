@@ -15,9 +15,89 @@
                     <view key="view" contentMode="scaleToFill" id="LOU-4t-Chu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="thI-Yg-Kgx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="672"/>
+                                <color key="backgroundColor" name="background"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lIw-g4-8il">
+                                <rect key="frame" x="24" y="736" width="366" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svH-Hv-dIQ" userLabel="b1">
+                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="mOs-6z-gEY"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="1.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="icK-vl-cbb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LD0-gv-dM7" userLabel="b2">
+                                        <rect key="frame" x="91.5" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="V2l-a0-JeE"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="2.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="qs3-Fl-x0F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsR-d5-3K2" userLabel="b3">
+                                        <rect key="frame" x="183" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="oq9-kk-NEh"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="3.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="GTU-ye-tzW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-C5-RtW" userLabel="b4">
+                                        <rect key="frame" x="274.5" y="0.0" width="91.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Zg2-n8-GJ7"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="4.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="animationButtonPressed:" destination="XcV-8o-Bdp" eventType="touchUpInside" id="Bgg-3l-HU3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="lIw-g4-8il" secondAttribute="trailing" constant="24" id="28y-uI-HDc"/>
+                            <constraint firstItem="lIw-g4-8il" firstAttribute="top" secondItem="thI-Yg-Kgx" secondAttribute="bottom" constant="20" id="AXy-w6-0T6"/>
+                            <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="thI-Yg-Kgx" secondAttribute="trailing" id="AlS-XJ-r1N"/>
+                            <constraint firstItem="lIw-g4-8il" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" constant="24" id="JZa-Lv-GpE"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="top" secondItem="t4a-m3-5PU" secondAttribute="top" id="qfD-lS-1tY"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="height" secondItem="LOU-4t-Chu" secondAttribute="height" multiplier="0.75" id="rva-8c-F3T"/>
+                            <constraint firstItem="thI-Yg-Kgx" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" id="vzX-2b-Wlz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t4a-m3-5PU"/>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="svH-Hv-dIQ" id="yvd-hA-qQn"/>
+                        <outlet property="button2" destination="LD0-gv-dM7" id="AzC-7w-Bn1"/>
+                        <outlet property="button3" destination="MsR-d5-3K2" id="eyB-uz-a3X"/>
+                        <outlet property="button4" destination="YNF-C5-RtW" id="58F-bM-7BC"/>
+                        <outlet property="tableView" destination="thI-Yg-Kgx" id="yI9-jL-tLA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFr-4Z-pXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,6 +105,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="2.circle" catalog="system" width="128" height="121"/>
+        <image name="3.circle" catalog="system" width="128" height="121"/>
+        <image name="4.circle" catalog="system" width="128" height="121"/>
         <namedColor name="background">
             <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
