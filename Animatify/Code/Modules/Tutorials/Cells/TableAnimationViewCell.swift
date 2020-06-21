@@ -16,7 +16,7 @@ class TableAnimationViewCell: UITableViewCell {
     // MARK:- outlets for the viewController
     @IBOutlet weak var containerView: UIView!
     
-    var tableViewHeight: CGFloat = 64
+    var tableViewHeight: CGFloat = 62
     var color = UIColor.white {
         didSet {
             self.containerView.backgroundColor = color
@@ -28,9 +28,4 @@ class TableAnimationViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.containerView.roundCorners(cornerRadius: 4)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

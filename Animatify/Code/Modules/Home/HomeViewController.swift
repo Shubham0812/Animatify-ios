@@ -114,8 +114,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func  collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let effectDetailsVC = self.storyboard?.instantiateViewController(identifier: EffectDetailsViewController.description()) as? EffectDetailsViewController else { return }
-        effectDetailsVC.effect = self.effects[indexPath.item]
-        self.navigationController?.pushViewController(effectDetailsVC, animated: true)
+        let selectedEffect = self.effects[indexPath.item]
+        if (selectedEffect.action != .none){
+            effectDetailsVC.effect = selectedEffect
+            self.navigationController?.pushViewController(effectDetailsVC, animated: true)
+        }
     }
 }
 

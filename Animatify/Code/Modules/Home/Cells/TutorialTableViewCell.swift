@@ -27,8 +27,4 @@ class TutorialTableViewCell: UITableViewCell {
         selectionStyle = .none
         tutorialButton.roundCorners(cornerRadius: tutorialButton.layer.frame.width / 2.0 - 3)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }

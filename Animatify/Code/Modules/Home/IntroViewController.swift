@@ -10,9 +10,8 @@ import UIKit
 
 class IntroViewController: UIViewController, CoreAnimationDelgate {
     
-    
     // MARK:- variables for the viewController
-    var animationDuration: TimeInterval = 0.4
+    var animationDuration: TimeInterval = 1.4
     
     /// show the animation, then transition into homeViewController
     override func viewDidLoad() {

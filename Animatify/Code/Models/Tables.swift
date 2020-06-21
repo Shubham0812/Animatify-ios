@@ -24,7 +24,7 @@ enum TableAnimation {
             return TableAnimationFactory.makeMoveUpWithFadeAnimation(rowHeight: rowHeight, duration: duration, delayFactor: delay)
         case .moveUpBounce(let rowHeight, let duration, let delay):
             return TableAnimationFactory.makeMoveUpBounceAnimation(rowHeight: rowHeight, duration: duration, delayFactor: delay)
-
+            
         }
     }
     
@@ -38,6 +38,19 @@ enum TableAnimation {
             return "Move-Up-Fade Animation"
         case .moveUpBounce(_, _, _):
             return "Move-Up-Bounce Animation"
+        }
+    }
+    
+    func getDescription() -> String {
+        switch self {
+        case .fadeIn(_, _):
+            return "Animating the tableView by increasing the opacity of the cells."
+        case .moveUp(_, _, _):
+            return "Animating the tableView by increasing the y-axis of the cells."
+        case .moveUpWithFade(_, _, _):
+            return "Animating the tableView by increasing the opacity and y-axis of the cells."
+        case .moveUpBounce(_, _, _):
+            return "Animating the tableView by increasing the y-axis of the cells with spring damping."
         }
     }
 }

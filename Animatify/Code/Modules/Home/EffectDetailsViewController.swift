@@ -46,6 +46,7 @@ class EffectDetailsViewController: UIViewController {
         
         self.setupViews()
         self.expandButton.sendActions(for: .touchUpInside)
+        self.expandButton.isHidden = true
     }
     
     // MARK:- outlets for the viewController
@@ -78,7 +79,7 @@ class EffectDetailsViewController: UIViewController {
         self.effectContainerView.layer.addSublayer(gradient)
         
         if (effect?.action == EffectType.pulse) {
-            let pulseLayer = PulseLayer(radius: 12, for: self.effectContainerView, scale: 1.5, with: UIColor.systemRed.withAlphaComponent(0.4), animationDuration: 1.25)
+            let pulseLayer = PulseLayer(radius: 12, for: self.effectContainerView, scale: 1.5, with: UIColor.systemIndigo.withAlphaComponent(0.8), animationDuration: 1.25)
             self.view.layer.insertSublayer(pulseLayer, below: self.effectContainerView.layer)
         } else if (effect?.action == EffectType.shimmer) {
             let shimmerLayer = ShimmerLayer(for: effectContainerView, cornerRadius: 12)
@@ -86,7 +87,6 @@ class EffectDetailsViewController: UIViewController {
             shimmerLayer.startAnimation()
         }
         setInstructions()
-        ViewAnimationFactory.makeSlideLeftAnimation(duration: 0.75, delay: 0, targetView: titleLabel, moveBy: 30)
     }
     
     func setInstructions(){

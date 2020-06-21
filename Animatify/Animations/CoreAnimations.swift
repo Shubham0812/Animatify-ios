@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 /// CoreAnimations
 enum LayerAnimationFactory {
     static func getStrokeStartAnimation(duration: TimeInterval, toValue: CGFloat = 1.0) -> CABasicAnimation {

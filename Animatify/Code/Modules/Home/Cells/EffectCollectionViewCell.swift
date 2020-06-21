@@ -14,6 +14,7 @@ class EffectCollectionViewCell: UICollectionViewCell {
         return "EffectCollectionViewCell"
     }
     
+    // MARK:- outlets for the viewController
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
