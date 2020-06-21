@@ -29,8 +29,10 @@ final class PulseLayer: CALayer {
     /// Initializer for the PulseLayer
     /// radius - determines the  radius of the pulse
     /// view - the view where the effect will be added
+    /// scale - determines the size of the pulse
     /// color - the color for the pulse
-    init(radius: CGFloat, for view: UIView, scale: CGFloat, with color: UIColor) {
+    /// animationDuration - determines the duration of the pulses
+    init(radius: CGFloat, for view: UIView, scale: CGFloat, with color: UIColor, animationDuration: TimeInterval) {
         super.init()
         
         self.backgroundColor = color.cgColor
@@ -42,8 +44,8 @@ final class PulseLayer: CALayer {
         
         self.bounds = CGRect(x: 0, y: 0, width: view.frame.width * scale, height: view.frame.height * scale)
         self.cornerRadius = radius
+        self.animationDuration = animationDuration
     
-        
         // set the animationGroup and start the animation
         DispatchQueue.main.async {
             self.setAnimationGroup()
@@ -52,7 +54,6 @@ final class PulseLayer: CALayer {
     }
     
     // MARK:- functions for the CALayer
-    
     /// To create a pulse effect here's what we need to do
     /// 1. Scale the pulse and manipulate the opacity change at the same time
     /// For applying 2 animations at a same time, we use Animation group

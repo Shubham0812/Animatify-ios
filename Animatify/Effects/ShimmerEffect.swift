@@ -19,6 +19,9 @@ final class ShimmerLayer: CAGradientLayer {
         super.init(coder: coder)
     }
     
+    /// Initializer for the PulseLayer
+    /// view - the view where the effect will be added
+    /// cornerRadius - determines the  cornerRadius of the gradientLayer
     init(for view: UIView,cornerRadius: CGFloat) {
         super.init()
         let gradientColorOne = UIColor.systemGray.withAlphaComponent(0.9).cgColor
@@ -33,6 +36,8 @@ final class ShimmerLayer: CAGradientLayer {
         self.cornerRadius = cornerRadius
     }
     
+    
+    // MARK:- function for the CAGradientLayer
     func startAnimation() {
         let animation = CABasicAnimation(keyPath: "locations")
         animation.fromValue = [-1.0, -0.5, 0.0]
