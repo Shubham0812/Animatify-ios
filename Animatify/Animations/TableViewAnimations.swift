@@ -11,6 +11,7 @@ import UIKit
 typealias TableCellAnimation = (UITableViewCell, IndexPath, UITableView) -> Void
 
 final class TableViewAnimator {
+    // TODO- implement hasAnimatedAllCells, so that the animation is applied to cells only once.
     private var hasAnimatedAllCells = false
     private let animation: TableCellAnimation
     
