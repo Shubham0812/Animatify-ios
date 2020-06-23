@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol CoreAnimationDelgate {
+protocol CoreAnimationDelegate {
     func animationFinished()
 }
 
@@ -29,7 +29,7 @@ final class LogoLayer: CAShapeLayer, CAAnimationDelegate {
     var fillLayer = CAShapeLayer()
     
     var sliderFinished = false
-    var coreAnimationDelegate: CoreAnimationDelgate?
+    var coreAnimationDelegate: CoreAnimationDelegate?
     
     // MARK:- initializers for the CALayer
     override init() {

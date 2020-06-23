@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntroViewController: UIViewController, CoreAnimationDelgate {
+class IntroViewController: UIViewController, CoreAnimationDelegate {
     
     // MARK:- variables for the viewController
     var animationDuration: TimeInterval = 1.4
