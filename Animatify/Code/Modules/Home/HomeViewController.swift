@@ -33,7 +33,16 @@ class HomeViewController: UIViewController{
     }
     
     // hardcoding the tableView data for now
-    var effects: [Effects] = [Effects(action: .pulse, title: "Pulse Effect", description: "Pulse effect that can be applied to different views and buttons. Color, size, and duration can be set accordingly.", instructions: ["The effect is created with CALayer, applied to the layer of the view.","For a circular pulse, turn your view into a circle and pass the radius as 2.", "You can also modify animation duration to generate another variety of pulse."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671")), Effects(action: .shimmer, title: "Shimmer Effect", description: "Shimmer Effect is an unobtrusive loading indicator that provides an engaging way to show the loading.", instructions: ["The effect is created with CAGradientLayer, applied to the layer of the view.", "You can modify the animation duration to change the pace of the shimmer."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671"))]
+    var effects: [Effects] = [
+        Effects(action: .pulse, title: "Pulse Effect", description: "Pulse effect that can be applied to different views and buttons. Color, size, and duration can be set accordingly.", instructions: ["The effect is created with CALayer, applied to the layer of the view.","For a circular pulse, turn your view into a circle and pass the radius as 2.", "You can also modify animation duration to generate another variety of pulse."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671")), Effects(action: .shimmer, title: "Shimmer Effect", description: "Shimmer Effect is an unobtrusive loading indicator that provides an engaging way to show the loading.", instructions: ["The effect is created with CAGradientLayer, applied to the layer of the view.", "You can modify the animation duration to change the pace of the shimmer."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671"))]
+    
+    
+    
+    var tutorials: [Tutorials] = [
+        Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
+        Tutorials(action: .loaders, title: "Loaders for projects", difficulty: "Medium", icon: "bolt.fill")
+        
+    ]
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
@@ -125,7 +134,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK:- Extension for TableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return tutorials.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -134,6 +143,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            cell.setupCell(tutorial: tutorials[indexPath.row])
             return cell
         }
         fatalError()
@@ -141,8 +151,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
-            self.present(tutorialVC, animated: true)
+            if (self.tutorials[indexPath.row].action == .tableViews){
+                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
+                self.present(tutorialVC, animated: true)
+            } else {
+                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                self.present(tutorialVC, animated: true)
+            }
         }
     }
 }

@@ -49,6 +49,8 @@
 		5161E201249CA752008D1368 /* TutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1FF249CA752008D1368 /* TutorialTableViewCell.xib */; };
 		5161E203249CAA53008D1368 /* EffectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5161E202249CAA53008D1368 /* EffectDetailsViewController.swift */; };
 		5161E206249CC011008D1368 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5161E205249CC011008D1368 /* Tutorial.storyboard */; };
+		5189CDEA24A4C28F00026FF4 /* LoadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */; };
+		5189CDEC24A4C36F00026FF4 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5189CDEB24A4C36F00026FF4 /* Tutorials.swift */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -98,6 +100,8 @@
 		5161E1FF249CA752008D1368 /* TutorialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialTableViewCell.xib; sourceTree = "<group>"; };
 		5161E202249CAA53008D1368 /* EffectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectDetailsViewController.swift; sourceTree = "<group>"; };
 		5161E205249CC011008D1368 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadersViewController.swift; sourceTree = "<group>"; };
+		5189CDEB24A4C36F00026FF4 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 			children = (
 				5161E1F7249A4770008D1368 /* Effects.swift */,
 				5107018D249E8B27004E6DDE /* Tables.swift */,
+				5189CDEB24A4C36F00026FF4 /* Tutorials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			children = (
 				51070187249E8298004E6DDE /* Cells */,
 				51070184249E7B00004E6DDE /* TableAnimationViewController.swift */,
+				5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */,
 				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 			);
 			path = Tutorials;
@@ -424,7 +430,9 @@
 				5161E203249CAA53008D1368 /* EffectDetailsViewController.swift in Sources */,
 				5161E1D6249640B7008D1368 /* ColorExtensions.swift in Sources */,
 				5161E1DE24965567008D1368 /* UIViewAnimations.swift in Sources */,
+				5189CDEC24A4C36F00026FF4 /* Tutorials.swift in Sources */,
 				5107018E249E8B27004E6DDE /* Tables.swift in Sources */,
+				5189CDEA24A4C28F00026FF4 /* LoadersViewController.swift in Sources */,
 				5161E1E024966D6E008D1368 /* ButtonAnimations.swift in Sources */,
 				5161E1E224977FFF008D1368 /* Logo.swift in Sources */,
 				5161E200249CA752008D1368 /* TutorialTableViewCell.swift in Sources */,

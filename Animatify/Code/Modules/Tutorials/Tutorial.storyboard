@@ -119,6 +119,21 @@
             </objects>
             <point key="canvasLocation" x="115.94202898550725" y="91.741071428571431"/>
         </scene>
+        <!--Loaders View Controller-->
+        <scene sceneID="gbN-vA-rZE">
+            <objects>
+                <viewController storyboardIdentifier="LoadersViewController" id="FXT-KI-RS7" customClass="LoadersViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWk-sI-rCO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="background"/>
+                        <viewLayoutGuide key="safeArea" id="qse-Gw-jcR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDc-DW-wMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="90"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.circle.fill" catalog="system" width="128" height="121"/>
