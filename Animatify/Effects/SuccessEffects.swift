@@ -36,7 +36,13 @@ final class SuccessEffect1: CAShapeLayer, CAAnimationDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+    /// Initializer for the SuccessEffect1
+    /// view - determines the container to which the logo get's added
+    /// circleRadius - the radius of the circle. Default radius size is 74
+    /// scale - the scale factor for the logo.
+    /// duration - the duration of the animation
+    /// lineWidth - determines the width of the stroke
+    /// trackColor - determines the color of the path
     init(for view: UIView, circleRadius: CGFloat, scale: CGFloat = 1, duration: TimeInterval, lineWidth: CGFloat, trackColor: UIColor) {
         super.init()
         
@@ -53,20 +59,23 @@ final class SuccessEffect1: CAShapeLayer, CAAnimationDelegate {
     
     /// CAAnimation Delegate method
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: 0.75 -)
+        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: 0.75 - tickDifference)
+        self.tickLayer.add(strokeEnd, forKey: "strokeEnd")
     }
     
+    // MARK:- functions for the CALayer
+    /// The size of the Circle and the Tick is defined by two properties.
+    /// Radius and scaleFactor determines the size.
+    /// Everything else is configured, you have to provide a view.
     func drawSuccess(view: UIView) {
         let cX: CGFloat = view.center.x
         let cY: CGFloat = view.center.y
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: cX, y: cY), radius: (radius * scaleFactor), startAngle: 0, endAngle: 2 * .pi, clockwise: true)
-        
         let tickPath = UIBezierPath()
         tickPath.move(to: CGPoint(x: cX - (42 * scaleFactor), y: cY - (4 * scaleFactor)))
         tickPath.addLine(to: CGPoint(x: cX - (scaleFactor * 18), y: cY + (scaleFactor * 28)))
         tickPath.addLine(to: CGPoint(x: cX + (scaleFactor * 46), y: cY - (scaleFactor * 36)))
-        
         
         circleLayer.setShapeLayer(path: circlePath, fillColor: UIColor.clear, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
         tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
