@@ -48,7 +48,6 @@ class TableAnimationViewController: UIViewController {
         self.tableViewHeaderText = self.currentTableAnimation.getTitle()
         self.descriptionLabel.text = currentTableAnimation.getDescription()
 
-//        print("Description", self.currentTableAnimation.getDescription())
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.tableView.isHidden = false
             self.tableView.reloadData()
