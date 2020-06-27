@@ -40,7 +40,7 @@ class HomeViewController: UIViewController{
     
     var tutorials: [Tutorials] = [
         Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
-        Tutorials(action: .loaders, title: "Loaders for projects", difficulty: "Medium", icon: "bolt.fill")
+        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill")
         
     ]
     
