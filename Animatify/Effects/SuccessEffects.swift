@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class SuccessEffect1: CAShapeLayer, CAAnimationDelegate {
+final class SubmitEffect1: CAShapeLayer, CAAnimationDelegate {
     
     var lineW: CGFloat = 0
     var logoFrame: CGRect = CGRect()
@@ -59,7 +59,7 @@ final class SuccessEffect1: CAShapeLayer, CAAnimationDelegate {
     
     /// CAAnimation Delegate method
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: 0.75 - tickDifference)
+        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration / 2)
         self.tickLayer.add(strokeEnd, forKey: "strokeEnd")
     }
     
@@ -83,7 +83,7 @@ final class SuccessEffect1: CAShapeLayer, CAAnimationDelegate {
         self.addSublayer(circleLayer)
         self.insertSublayer(tickLayer, above: self)
         
-        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: 0.75)
+        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: animationDuration)
         strokeEnd.delegate = self
         
         circleLayer.add(strokeEnd, forKey: "end")

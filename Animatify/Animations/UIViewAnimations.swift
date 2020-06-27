@@ -24,4 +24,10 @@ enum ViewAnimationFactory {
             action()
         })
     }
+    
+    static func makeSimpleAnimation(duration: TimeInterval, action: @escaping() -> Void){
+        UIView.animate(withDuration: duration) {
+            action()
+        }
+    }
 }

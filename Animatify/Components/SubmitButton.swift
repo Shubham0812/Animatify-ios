@@ -10,10 +10,9 @@ import UIKit
 
 class SubmitButton: UIButton {
     
-    let shape2 = CAShapeLayer()
-
+    let tickLayer = CAShapeLayer()
     
-    
+    // MARK:- initializers for the UIButton
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -21,13 +20,13 @@ class SubmitButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// Initializer for the Suvmi
-    /// view - determines the container to which the logo get's added
-    /// circleRadius - the radius of the circle. Default radius size is 74
-    /// scale - the scale factor for the logo.
-    /// duration - the duration of the animation
-    /// lineWidth - determines the width of the stroke
-    /// trackColor - determines the color of the path
+    /// Initializer for the SubmitButton
+    /// type - determines the type of the button
+    /// frame - the frame of the button
+    /// borderColor - the borderColor of the button
+    /// font - the font of the titleLabel of the button
+    /// cornerRadius - the cornerRadius of the button
+    /// tintColor- the tintColor of the button
     convenience init(type buttonType: UIButton.ButtonType, frame: CGRect, borderColor: UIColor, borderWidth: CGFloat, font: UIFont, cornerRadius: CGFloat, tintColor: UIColor = UIColor.label) {
         self.init(type: buttonType)
         self.frame = frame
@@ -40,8 +39,33 @@ class SubmitButton: UIButton {
     
     // MARK:- functions for the button
     
-    func perfomSubmitAction(action: @escaping() -> Void) {
-     
-        
+    func perfomSubmitAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, tickWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
+        DispatchQueue.main.async {
+            self.setTitle("", for: .normal)
+            ViewAnimationFactory.makeEaseInAnimation(duration: duration / 3, delay: 0) {
+                self.layer.borderWidth = borderWidth
+                self.frame = CGRect(x: self.center.x - (circleButton / 2), y: self.center.y - (circleButton / 2), width: circleButton, height: circleButton)
+                self.roundCorners(cornerRadius: self.frame.width / 2.0)
+                                
+                let cX: CGFloat = self.center.x
+                let cY: CGFloat = self.center.y
+                
+                let tickPath = UIBezierPath()
+                tickPath.move(to: CGPoint(x: cX - (42 * scale), y: cY - (4 * scale)))
+                tickPath.addLine(to: CGPoint(x: cX - (scale * 18), y: cY + (scale * 28)))
+                tickPath.addLine(to: CGPoint(x: cX + (scale * 46), y: cY - (scale * 36)))
+                
+                self.tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: tickWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                parentView.layer.insertSublayer(self.tickLayer, above: self.layer)
+            }
+            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseIn, animations: {
+            }) { finished in
+                let strokeEndAnimation = LayerAnimationFactory.getStrokeEndAnimation(duration: duration)
+                self.tickLayer.add(strokeEndAnimation, forKey: "strokeEnd")
+                ViewAnimationFactory.makeSimpleAnimation(duration: duration) {
+                    self.backgroundColor = backgroundColor
+                }
+            }
+        }
     }
 }
