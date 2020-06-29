@@ -39,7 +39,7 @@ class RejectButton: UIButton {
     
     // MARK:- functions for the button
     
-    func performRejectAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, tickWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
+    func performRejectAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, crossWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
         DispatchQueue.main.async {
             self.setTitle("", for: .normal)
             ViewAnimationFactory.makeEaseInAnimation(duration: duration / 3, delay: 0) {
@@ -57,7 +57,7 @@ class RejectButton: UIButton {
                 crossPath.move(to: CGPoint(x: cX - (42 * scale), y: cY - (42 * scale)))
                 crossPath.addLine(to: CGPoint(x: cX + (scale * 42), y: cY - (scale * 42)))
                 
-                self.crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: tickWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                self.crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
                 parentView.layer.insertSublayer(self.crossLayer, above: self.layer)
             }
             
