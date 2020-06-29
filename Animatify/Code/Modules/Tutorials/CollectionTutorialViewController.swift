@@ -58,7 +58,6 @@ class CollectionTutorialViewController: UIViewController {
         
         ViewAnimationFactory.makeEaseOutAnimation(duration: animationDuration, delay: 0) {
             let cell = self.collectionView.cellForItem(at: IndexPath(row: self.indexOfCellBeforeDragging, section: 0))
-            print("Transforming", self.indexOfCellBeforeDragging)
             cell?.transform = CGAffineTransform(scaleX: SnapCollectionViewCell().collectionViewScale, y: SnapCollectionViewCell().collectionViewScale)
         }
     }
@@ -128,6 +127,5 @@ extension CollectionTutorialViewController: UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
     }
 }

@@ -3,9 +3,18 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </array>
+        <array key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Circle View Controller-->
         <scene sceneID="ONm-4Y-0cT">
@@ -14,13 +23,155 @@
                     <view key="view" contentMode="scaleToFill" id="gbq-F3-wOZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpd-YG-wAZ">
+                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="xrw-0x-Wvv" eventType="touchUpInside" id="RTC-1Q-2Va"/>
+                                    <action selector="backButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="hOb-EE-U6d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-8b-5fE">
+                                <rect key="frame" x="24" y="118" width="378" height="35"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-EY-L7J">
+                                <rect key="frame" x="24" y="233" width="140" height="140"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Rw6-kv-bnc"/>
+                                    <constraint firstAttribute="height" constant="140" id="WVo-5U-d7H"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="circleButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="mEO-dF-a63"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utB-hX-Bfj">
+                                <rect key="frame" x="250" y="233" width="140" height="140"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="T2I-7N-BzL"/>
+                                    <constraint firstAttribute="width" constant="140" id="qYh-QB-5hx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="circleButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="UBX-79-WZI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llJ-qU-TL3">
+                                <rect key="frame" x="24" y="622" width="140" height="140"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="aPM-J7-r26"/>
+                                    <constraint firstAttribute="height" constant="140" id="gpk-CY-7zv"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="circleButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="0WY-Ju-lTQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21o-oa-tnC">
+                                <rect key="frame" x="250" y="622" width="140" height="140"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.28627450980000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="UGL-7K-PA0"/>
+                                    <constraint firstAttribute="width" constant="140" id="ZiR-k7-Zhp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="circleButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="bOM-ba-mZG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="uxY-yc-tWL" firstAttribute="trailing" secondItem="utB-hX-Bfj" secondAttribute="trailing" constant="24" id="2Cp-6t-5vd"/>
+                            <constraint firstItem="Mpd-YG-wAZ" firstAttribute="leading" secondItem="uxY-yc-tWL" secondAttribute="leading" constant="24" id="94A-vS-YOQ"/>
+                            <constraint firstItem="uxY-yc-tWL" firstAttribute="bottom" secondItem="llJ-qU-TL3" secondAttribute="bottom" constant="100" id="FA0-sO-2fH"/>
+                            <constraint firstItem="2oe-EY-L7J" firstAttribute="leading" secondItem="uxY-yc-tWL" secondAttribute="leading" constant="24" id="HWd-9E-7cv"/>
+                            <constraint firstItem="utB-hX-Bfj" firstAttribute="top" secondItem="24i-8b-5fE" secondAttribute="bottom" constant="80" id="JZq-Q7-dae"/>
+                            <constraint firstItem="24i-8b-5fE" firstAttribute="top" secondItem="Mpd-YG-wAZ" secondAttribute="bottom" constant="28" id="QVb-2S-7Pa"/>
+                            <constraint firstItem="2oe-EY-L7J" firstAttribute="top" secondItem="24i-8b-5fE" secondAttribute="bottom" constant="80" id="YYR-UZ-CTG"/>
+                            <constraint firstItem="24i-8b-5fE" firstAttribute="leading" secondItem="uxY-yc-tWL" secondAttribute="leading" constant="24" id="ahR-P4-Vfd"/>
+                            <constraint firstItem="uxY-yc-tWL" firstAttribute="trailing" secondItem="21o-oa-tnC" secondAttribute="trailing" constant="24" id="iGu-5G-UMv"/>
+                            <constraint firstItem="uxY-yc-tWL" firstAttribute="bottom" secondItem="21o-oa-tnC" secondAttribute="bottom" constant="100" id="jJl-Cx-dip"/>
+                            <constraint firstItem="Mpd-YG-wAZ" firstAttribute="top" secondItem="uxY-yc-tWL" secondAttribute="top" constant="20" id="pFF-3Q-MEw"/>
+                            <constraint firstItem="llJ-qU-TL3" firstAttribute="leading" secondItem="uxY-yc-tWL" secondAttribute="leading" constant="24" id="z4F-od-fRr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uxY-yc-tWL"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Mpd-YG-wAZ" id="awL-IL-MXj"/>
+                        <outlet property="button1" destination="2oe-EY-L7J" id="yh0-LR-4Vb"/>
+                        <outlet property="button2" destination="utB-hX-Bfj" id="LCY-pF-Ryz"/>
+                        <outlet property="button3" destination="llJ-qU-TL3" id="beP-uG-ufY"/>
+                        <outlet property="button4" destination="21o-oa-tnC" id="mGf-Pv-WBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVS-Z5-6BC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-291" y="104"/>
         </scene>
+        <!--Button View Controller-->
+        <scene sceneID="dqb-2K-zad">
+            <objects>
+                <viewController storyboardIdentifier="ButtonViewController" id="xrw-0x-Wvv" customClass="ButtonViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hYs-FQ-YlR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUh-BN-6D9">
+                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="xrw-0x-Wvv" eventType="touchUpInside" id="ji3-e7-Th8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitioned VC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-bD-Ihu">
+                                <rect key="frame" x="24" y="110" width="366" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJ2-dW-2RL">
+                                <rect key="frame" x="24" y="161.5" width="131.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="jUh-BN-6D9" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="30c-3D-RSo"/>
+                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="top" secondItem="aG4-bD-Ihu" secondAttribute="bottom" constant="16" id="7wr-ig-eFY"/>
+                            <constraint firstItem="aG4-bD-Ihu" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="GK8-GG-Z8I"/>
+                            <constraint firstItem="aG4-bD-Ihu" firstAttribute="top" secondItem="jUh-BN-6D9" secondAttribute="bottom" constant="20" id="OWR-Hl-PeI"/>
+                            <constraint firstAttribute="trailing" secondItem="aG4-bD-Ihu" secondAttribute="trailing" constant="24" id="QgY-rQ-UE3"/>
+                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="U2O-eZ-aud"/>
+                            <constraint firstItem="jUh-BN-6D9" firstAttribute="top" secondItem="anU-gX-b8G" secondAttribute="top" constant="20" id="Wcv-Jl-MYj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="anU-gX-b8G"/>
+                    </view>
+                    <connections>
+                        <outlet property="instructionLabel" destination="JJ2-dW-2RL" id="T1n-dh-nb0"/>
+                        <outlet property="titleLabel" destination="aG4-bD-Ihu" id="EYn-ft-KcZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5L-ui-4h6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="104"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="background">
+            <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
