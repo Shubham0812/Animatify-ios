@@ -54,6 +54,9 @@
 		518AC2FE24A65A2F00EAC380 /* SuccessEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC2FD24A65A2F00EAC380 /* SuccessEffects.swift */; };
 		518AC30124A75D2F00EAC380 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC30024A75D2F00EAC380 /* SubmitButton.swift */; };
 		518AC30324A7A62A00EAC380 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC30224A7A62A00EAC380 /* FoundationExtensions.swift */; };
+		518AC30524A8E49200EAC380 /* CollectionTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */; };
+		518AC30824A8E52600EAC380 /* SnapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC30624A8E52600EAC380 /* SnapCollectionViewCell.swift */; };
+		518AC30924A8E52600EAC380 /* SnapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518AC30724A8E52600EAC380 /* SnapCollectionViewCell.xib */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -108,6 +111,9 @@
 		518AC2FD24A65A2F00EAC380 /* SuccessEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessEffects.swift; sourceTree = "<group>"; };
 		518AC30024A75D2F00EAC380 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		518AC30224A7A62A00EAC380 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTutorialViewController.swift; sourceTree = "<group>"; };
+		518AC30624A8E52600EAC380 /* SnapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCell.swift; sourceTree = "<group>"; };
+		518AC30724A8E52600EAC380 /* SnapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnapCollectionViewCell.xib; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 			children = (
 				51070188249E82BC004E6DDE /* TableAnimationViewCell.swift */,
 				51070189249E82BC004E6DDE /* TableAnimationViewCell.xib */,
+				518AC30624A8E52600EAC380 /* SnapCollectionViewCell.swift */,
+				518AC30724A8E52600EAC380 /* SnapCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				51070187249E8298004E6DDE /* Cells */,
 				51070184249E7B00004E6DDE /* TableAnimationViewController.swift */,
 				5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */,
+				518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */,
 				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 			);
 			path = Tutorials;
@@ -414,6 +423,7 @@
 				5161E1D124963840008D1368 /* Montserrat-Thin.ttf in Resources */,
 				5161E1BE249637AE008D1368 /* Raleway-Regular.ttf in Resources */,
 				5161E1CC24963831008D1368 /* Montserrat-ExtraLight.ttf in Resources */,
+				518AC30924A8E52600EAC380 /* SnapCollectionViewCell.xib in Resources */,
 				5161E1BD249637AB008D1368 /* Raleway-Light.ttf in Resources */,
 				5161E1D02496383D008D1368 /* Montserrat-SemiBold.ttf in Resources */,
 				5161E1EE249A22E5008D1368 /* EffectCollectionViewCell.xib in Resources */,
@@ -444,8 +454,10 @@
 				5161E1ED249A22E5008D1368 /* EffectCollectionViewCell.swift in Sources */,
 				5107018A249E82BC004E6DDE /* TableAnimationViewCell.swift in Sources */,
 				518AC30124A75D2F00EAC380 /* SubmitButton.swift in Sources */,
+				518AC30524A8E49200EAC380 /* CollectionTutorialViewController.swift in Sources */,
 				5161E1DB24964B7B008D1368 /* ViewExtensions.swift in Sources */,
 				5161E1E8249A1361008D1368 /* IntroViewController.swift in Sources */,
+				518AC30824A8E52600EAC380 /* SnapCollectionViewCell.swift in Sources */,
 				5161E203249CAA53008D1368 /* EffectDetailsViewController.swift in Sources */,
 				5161E1D6249640B7008D1368 /* ColorExtensions.swift in Sources */,
 				5161E1DE24965567008D1368 /* UIViewAnimations.swift in Sources */,

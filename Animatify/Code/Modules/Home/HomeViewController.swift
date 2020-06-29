@@ -40,8 +40,8 @@ class HomeViewController: UIViewController{
     
     var tutorials: [Tutorials] = [
         Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
-        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill")
-        
+        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorials(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill")
     ]
     
     // MARK:- lifecycle methods for the viewController
@@ -154,8 +154,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if (self.tutorials[indexPath.row].action == .tableViews){
                 guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
                 self.present(tutorialVC, animated: true)
-            } else {
+            } else if (self.tutorials[indexPath.row].action == .loaders){
                 guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                self.present(tutorialVC, animated: true)
+            } else if (self.tutorials[indexPath.row].action == .snapCollections) {
+                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
                 self.present(tutorialVC, animated: true)
             }
         }

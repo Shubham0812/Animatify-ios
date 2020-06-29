@@ -11,6 +11,7 @@ import Foundation
 enum TutorialType {
     case tableViews
     case loaders
+    case snapCollections
 }
 
 struct Tutorials {
@@ -18,4 +19,11 @@ struct Tutorials {
     let title: String
     let difficulty: String
     let icon: String
+}
+
+
+struct Movie {
+    let movieImage: String
+    let movieName: String
+    let movieDirector: String
 }

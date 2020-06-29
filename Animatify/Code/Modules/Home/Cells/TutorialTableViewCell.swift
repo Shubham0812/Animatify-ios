@@ -21,6 +21,7 @@ class TutorialTableViewCell: UITableViewCell {
     @IBOutlet weak var tutorialDifficulyLabel: UILabel!
     
     var tableViewHeight: CGFloat = 87
+    var imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium, scale: .default)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,6 @@ class TutorialTableViewCell: UITableViewCell {
         tutorialButton.roundCorners(cornerRadius: tutorialButton.layer.frame.width / 2.0 - 3)
     }
     
-    fileprivate var imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium, scale: .default)
     
     // MARK:- functions for the cell
     func setupCell(tutorial: Tutorials){

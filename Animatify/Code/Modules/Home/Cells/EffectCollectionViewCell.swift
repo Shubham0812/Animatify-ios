@@ -25,6 +25,7 @@ class EffectCollectionViewCell: UICollectionViewCell {
         self.containerView.roundCorners(cornerRadius: 12)
     }
     
+    // MARK:- functions for the cell
     func setupCell(effect: Effects){
         self.titleLabel.text = effect.title
         ///add the gradient to the view
