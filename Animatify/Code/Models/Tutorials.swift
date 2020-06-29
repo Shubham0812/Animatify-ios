@@ -8,9 +8,18 @@
 
 import Foundation
 
-enum TutorialType {
+enum TutorialType: Equatable {
     case tableViews
-    case loaders
+    case loaders(type : LoaderType)
+    
+    func getLoaderType() -> LoaderType? {
+        switch self {
+        case .tableViews:
+            return nil
+        case .loaders(type: let type):
+            return type
+        }
+    }
 }
 
 enum LoaderType {

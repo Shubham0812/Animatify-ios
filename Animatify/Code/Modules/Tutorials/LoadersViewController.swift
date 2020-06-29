@@ -18,12 +18,20 @@ class LoadersViewController: UIViewController {
     var buttonTransform = false
     var submitButton = SubmitButton()
     var rejectButton = RejectButton()
-        
+    
+    var loaderType : LoaderType?
+    
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-       // drawSubmit()
-       drawReject()
+        switch loaderType {
+        case .success:
+            drawSubmit()
+        case .failure:
+            drawReject()
+        case .none:
+            print("none")
+        }
     }
     
     // MARK:- functions for the viewController
@@ -35,7 +43,7 @@ class LoadersViewController: UIViewController {
         /// successEffect1
         let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.systemGreen)
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
-    
+        
         /// submit Button
         let buttonWidth: CGFloat = 160
         let buttonHeight: CGFloat = 62
@@ -70,7 +78,7 @@ extension LoadersViewController {
         /// FailureEffect
         let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.red)
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
-    
+        
         /// Reject Button
         let buttonWidth: CGFloat = 160
         let buttonHeight: CGFloat = 62
