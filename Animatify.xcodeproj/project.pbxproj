@@ -62,6 +62,7 @@
 		518AC30F24AA59FE00EAC380 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC30E24AA59FE00EAC380 /* Transitions.swift */; };
 		518AC31224AA63A800EAC380 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518AC31124AA63A800EAC380 /* Transition.storyboard */; };
 		518AC31424AA63C200EAC380 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC31324AA63C200EAC380 /* CircleViewController.swift */; };
+		518AC31624AA7B7E00EAC380 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 518AC31524AA7B7E00EAC380 /* 2.png */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		518AC30E24AA59FE00EAC380 /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 		518AC31124AA63A800EAC380 /* Transition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		518AC31324AA63C200EAC380 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		518AC31524AA7B7E00EAC380 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		5161E1F9249A4E92008D1368 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				518AC31524AA7B7E00EAC380 /* 2.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			files = (
 				5161E1CF2496383A008D1368 /* Montserrat-Regular.ttf in Resources */,
 				5161E206249CC011008D1368 /* Tutorial.storyboard in Resources */,
+				518AC31624AA7B7E00EAC380 /* 2.png in Resources */,
 				5161E201249CA752008D1368 /* TutorialTableViewCell.xib in Resources */,
 				518AC31224AA63A800EAC380 /* Transition.storyboard in Resources */,
 				5161E1CD24963834008D1368 /* Montserrat-Light.ttf in Resources */,
