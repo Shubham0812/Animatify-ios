@@ -1,21 +1,21 @@
 //
-//  Tutorial.swift
+//  Transitions.swift
 //  Animatify
 //
-//  Created by Shubham Singh on 25/06/20.
+//  Created by Shubham Singh on 29/06/20.
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
 import Foundation
 
-enum TutorialType {
-    case tableViews
-    case loaders
+
+enum TransitionType {
+    case circular
 }
 
-struct Tutorials {
-    let action: TutorialType
+struct Transition {
     let title: String
+    let action: TransitionType
     let difficulty: String
     let icon: String
 }

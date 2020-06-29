@@ -26,7 +26,7 @@ class EffectDetailsViewController: UIViewController {
     
     // MARK:- variables for the viewController
     var backgroundOpacity: CGFloat = 1
-    var effect: Effects?
+    var effect: Effect?
     var scrollViewToggled: Bool = false {
         didSet {
             if (scrollViewToggled) {

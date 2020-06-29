@@ -14,7 +14,7 @@ enum EffectType {
     case none
 }
 
-struct Effects {
+struct Effect {
     let action: EffectType
     let title: String
     let description: String

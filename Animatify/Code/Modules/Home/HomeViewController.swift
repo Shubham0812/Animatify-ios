@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController {
     
     override class func description() -> String {
         return "HomeViewController"
@@ -19,7 +19,8 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var effectsCollectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tutorialsTableView: UITableView!
+    @IBOutlet weak var transitionsTableView: UITableView!
     
     // MARK:- variables for the viewController
     var containerToggled: Bool = false {
@@ -33,21 +34,24 @@ class HomeViewController: UIViewController{
     }
     
     // hardcoding the tableView data for now
-    var effects: [Effects] = [
-        Effects(action: .pulse, title: "Pulse Effect", description: "Pulse effect that can be applied to different views and buttons. Color, size, and duration can be set accordingly.", instructions: ["The effect is created with CALayer, applied to the layer of the view.","For a circular pulse, turn your view into a circle and pass the radius as 2.", "You can also modify animation duration to generate another variety of pulse."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671")), Effects(action: .shimmer, title: "Shimmer Effect", description: "Shimmer Effect is an unobtrusive loading indicator that provides an engaging way to show the loading.", instructions: ["The effect is created with CAGradientLayer, applied to the layer of the view.", "You can modify the animation duration to change the pace of the shimmer."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671"))]
+    var effects: [Effect] = [
+        Effect(action: .pulse, title: "Pulse Effect", description: "Pulse effect that can be applied to different views and buttons. Color, size, and duration can be set accordingly.", instructions: ["The effect is created with CALayer, applied to the layer of the view.","For a circular pulse, turn your view into a circle and pass the radius as 2.", "You can also modify animation duration to generate another variety of pulse."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671")), Effect(action: .shimmer, title: "Shimmer Effect", description: "Shimmer Effect is an unobtrusive loading indicator that provides an engaging way to show the loading.", instructions: ["The effect is created with CAGradientLayer, applied to the layer of the view.", "You can modify the animation duration to change the pace of the shimmer."], gradientColor1: UIColor(hex: "c33764"), gradientColor2: UIColor(hex: "1d2671"))]
     
     
+    var tutorials: [Tutorial] = [
+        Tutorial(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
+        Tutorial(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill")
+    ]
     
-    var tutorials: [Tutorials] = [
-        Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
-        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill")
-        
+    var transitions: [Transition] = [
+        Transition(title: "Circular View Transitioning", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill")
     ]
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.effects.append(contentsOf: [Effects](repeatElement(Effects(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: UIColor(named: "background")!, gradientColor2: UIColor(named: "alternateBackground")!), count: 4)))
+        self.effects.append(contentsOf: [Effect](repeatElement(Effect(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: UIColor(named: "background")!, gradientColor2: UIColor(named: "alternateBackground")!), count: 4)))
         
         // registering the collectionView
         self.effectsCollectionView.delegate = self
@@ -55,16 +59,23 @@ class HomeViewController: UIViewController{
         self.effectsCollectionView.register(UINib(nibName: EffectCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: EffectCollectionViewCell.description())
         self.view.bringSubviewToFront(containerView)
         
-        // registering the tableView
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        // registering the tutorial tableView
+        self.tutorialsTableView.delegate = self
+        self.tutorialsTableView.dataSource = self
+        self.tutorialsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
         
+        // registering the transition tableView
+        self.transitionsTableView.delegate = self
+        self.transitionsTableView.dataSource = self
+        self.transitionsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        
+        //        self.roundButton.roundCorners(cornerRadius: self.roundButton.frame.width / 2.0)
         self.setupViews()
         self.drawLogo()
     }
     
-    // MARK:- outlets for the viewController
+    
+    // MARK:- action outlets for the viewController
     @IBAction func expandButtonPressed(_ sender: Any) {
         ViewAnimationFactory.makeEaseInOutAnimation(duration: 0.75, delay: 0) {
             self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
@@ -86,8 +97,6 @@ class HomeViewController: UIViewController{
         containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
         self.containerView.transform = containerViewTransform
         self.containerToggled = !self.containerToggled
-        
-        
     }
     
     func drawLogo(){
@@ -124,7 +133,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func  collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let effectDetailsVC = self.storyboard?.instantiateViewController(identifier: EffectDetailsViewController.description()) as? EffectDetailsViewController else { return }
         let selectedEffect = self.effects[indexPath.item]
-        if (selectedEffect.action != .none){
+        if (selectedEffect.action != .none) {
             effectDetailsVC.effect = selectedEffect
             self.navigationController?.pushViewController(effectDetailsVC, animated: true)
         }
@@ -134,7 +143,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK:- Extension for TableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tutorials.count
+        if (tableView == tutorialsTableView) {
+            return tutorials.count
+        } else {
+            return transitions.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,21 +155,42 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
-            cell.setupCell(tutorial: tutorials[indexPath.row])
-            return cell
+        if (tableView == tutorialsTableView) {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+                cell.setupTutorial(tutorial: tutorials[indexPath.row])
+                return cell
+            }
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+                cell.setupTransition(transition: transitions[indexPath.row])
+                cell.setDarkMode()
+                return cell
+            }
         }
         fatalError()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            if (self.tutorials[indexPath.row].action == .tableViews){
-                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
-                self.present(tutorialVC, animated: true)
-            } else {
-                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
-                self.present(tutorialVC, animated: true)
+        if (tableView == tutorialsTableView) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                if (self.tutorials[indexPath.row].action == .tableViews) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                } else if (self.tutorials[indexPath.row].action == .loaders) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                } else if (self.tutorials[indexPath.row].action == .snapCollections) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                }
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                if (self.transitions[indexPath.row].action == .circular) {
+                    guard let transitionVC = UIStoryboard(name: "Transition", bundle: nil).instantiateViewController(withIdentifier: CircleViewController.description()) as? CircleViewController else { return }
+                    transitionVC.modalPresentationStyle = .fullScreen
+                    self.present(transitionVC, animated: true)
+                }
             }
         }
     }
