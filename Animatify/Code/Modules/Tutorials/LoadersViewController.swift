@@ -42,6 +42,7 @@ class LoadersViewController: UIViewController {
         
         /// successEffect1
         let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.systemGreen)
+        
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
         /// submit Button
@@ -69,6 +70,7 @@ class LoadersViewController: UIViewController {
 
 //MARK:- extension for Reject animations
 extension LoadersViewController {
+    
     // MARK:- functions for the viewController
     func drawReject(){
         let view = UIView()
@@ -77,6 +79,7 @@ extension LoadersViewController {
         
         /// FailureEffect
         let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.red)
+        
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
         /// Reject Button

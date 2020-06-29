@@ -72,11 +72,6 @@ final class RejectEffect1: CAShapeLayer, CAAnimationDelegate {
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: cX, y: cY), radius: (radius * scaleFactor), startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         
-//        let tickPath = UIBezierPath()
-//        tickPath.move(to: CGPoint(x: cX - (42 * scaleFactor), y: cY - (4 * scaleFactor)))
-//        tickPath.addLine(to: CGPoint(x: cX - (scaleFactor * 18), y: cY + (scaleFactor * 28)))
-//        tickPath.addLine(to: CGPoint(x: cX + (scaleFactor * 46), y: cY - (scaleFactor * 36)))
-        
         let crossPath = UIBezierPath()
         crossPath.move(to: CGPoint(x: cX - (32 * scaleFactor), y: cY - (32 * scaleFactor)))
         crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 32), y: cY + (scaleFactor * 32)))
