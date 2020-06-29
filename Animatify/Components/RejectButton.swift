@@ -50,10 +50,10 @@ class RejectButton: UIButton {
                 let cX: CGFloat = self.center.x
                 let cY: CGFloat = self.center.y
                 
-                let crossPath = UIBezierPath()
                 //crossPath.move(to: CGPoint(x: cX - (42 * scale), y: cY - (4 * scale)))
                 //crossPath.addLine(to: CGPoint(x: cX - (scale * 18), y: cY + (scale * 28)))
                 //crossPath.addLine(to: CGPoint(x: cX + (scale * 46), y: cY - (scale * 36)))
+                let crossPath = UIBezierPath()
                 crossPath.move(to: CGPoint(x: cX - (42 * scale), y: cY - (42 * scale)))
                 crossPath.addLine(to: CGPoint(x: cX + (scale * 42), y: cY - (scale * 42)))
                 

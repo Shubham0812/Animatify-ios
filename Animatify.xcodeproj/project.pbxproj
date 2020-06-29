@@ -59,6 +59,7 @@
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
 		51DCDF432495006C00911EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF412495006C00911EAB /* LaunchScreen.storyboard */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
+		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		51DCDF422495006C00911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51DCDF442495006C00911EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
+		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				5161E1D724964114008D1368 /* PulseEffect.swift */,
 				51070182249E1A4A004E6DDE /* ShimmerEffect.swift */,
 				518AC2FD24A65A2F00EAC380 /* SuccessEffects.swift */,
+				5B5310D724A9A66600FA9A69 /* FailureEffects.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			files = (
 				5161E1EA249A1B12008D1368 /* CAExtensions.swift in Sources */,
 				51DCDF372495006800911EAB /* AppDelegate.swift in Sources */,
+				5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */,
 				51070190249E8B36004E6DDE /* TableViewAnimations.swift in Sources */,
 				5161E1E42497845E008D1368 /* CoreAnimations.swift in Sources */,
 				51070183249E1A4A004E6DDE /* ShimmerEffect.swift in Sources */,

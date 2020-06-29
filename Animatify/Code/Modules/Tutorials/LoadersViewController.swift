@@ -22,8 +22,8 @@ class LoadersViewController: UIViewController {
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-       // drawSubmit()
-        drawReject()
+        drawSubmit()
+       //drawReject()
     }
     
     // MARK:- functions for the viewController
