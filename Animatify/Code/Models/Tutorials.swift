@@ -13,6 +13,11 @@ enum TutorialType {
     case loaders
 }
 
+enum LoaderType {
+    case success
+    case failure
+}
+
 struct Tutorials {
     let action: TutorialType
     let title: String
