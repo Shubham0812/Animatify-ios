@@ -40,8 +40,8 @@ class HomeViewController: UIViewController{
     
     var tutorials: [Tutorials] = [
         Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
-        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill")
-        
+        Tutorials(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorials(action: .loaders, title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill")
     ]
     
     // MARK:- lifecycle methods for the viewController
