@@ -14,7 +14,7 @@ enum TutorialType {
     case snapCollections
 }
 
-struct Tutorials {
+struct Tutorial {
     let action: TutorialType
     let title: String
     let difficulty: String
