@@ -22,8 +22,8 @@ class LoadersViewController: UIViewController {
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawSubmit()
-       //drawReject()
+       // drawSubmit()
+       drawReject()
     }
     
     // MARK:- functions for the viewController
@@ -68,7 +68,7 @@ extension LoadersViewController {
         self.view.addSubview(view)
         
         /// FailureEffect
-        let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.systemGreen)
+        let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.red)
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
     
         /// Reject Button
@@ -85,7 +85,7 @@ extension LoadersViewController {
         rejectButton.setTitle("Decline", for: .normal)
         self.view.addSubview(rejectButton)
         
-        submitButton.addTarget(self, action: #selector(performReject), for: .touchUpInside)
+        rejectButton.addTarget(self, action: #selector(performReject), for: .touchUpInside)
     }
     
     @objc func performReject(){
