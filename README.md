@@ -7,11 +7,11 @@ An iOS application, that will contain tutorials and guides for achieving the eff
 Since it's an open-source project feel free to add animations of your own :D
 
 ## What's New ?
-- A Success effect layer.
-- A Submit Button class.
+- Animated Transitioning between viewControllers.
+- A snapping collectionView.
 
 ![alt text](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/1.png)
-
+![animated transitioning](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/2.png)
 ## Languages / Frameworks Used
 - Swift 5
 - UIKit
