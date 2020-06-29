@@ -96,23 +96,39 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-XQ-PDr">
+                                <rect key="frame" x="24" y="391" width="125" height="31"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cC9-r2-4Z4">
+                                <rect key="frame" x="0.0" y="446" width="414" height="416"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
+                            <constraint firstItem="cC9-r2-4Z4" firstAttribute="top" secondItem="rdI-XQ-PDr" secondAttribute="bottom" constant="24" id="1BN-1Y-Cdn"/>
                             <constraint firstItem="30Q-jq-9XG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="3QH-AE-bom"/>
                             <constraint firstItem="r7Q-pM-Gcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="420-D7-zF6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VCv-xN-TgW" secondAttribute="trailing" symbolic="YES" id="85C-JG-V5K"/>
                             <constraint firstItem="VCv-xN-TgW" firstAttribute="top" secondItem="lz0-SH-1tv" secondAttribute="bottom" constant="36" id="Cy9-ik-Kvt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cC9-r2-4Z4" secondAttribute="trailing" id="Eul-g9-nad"/>
                             <constraint firstItem="JvB-17-mX3" firstAttribute="centerY" secondItem="30Q-jq-9XG" secondAttribute="centerY" id="F3j-tb-Bh5"/>
+                            <constraint firstItem="rdI-XQ-PDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Fhh-R2-5Jd"/>
                             <constraint firstItem="lz0-SH-1tv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="MyW-Wf-6ti"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7Q-pM-Gcm" secondAttribute="trailing" constant="24" id="PrZ-UL-naj"/>
                             <constraint firstItem="Zxn-jI-eeW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.635" id="Z0O-j5-VCy"/>
+                            <constraint firstItem="rdI-XQ-PDr" firstAttribute="top" secondItem="r7Q-pM-Gcm" secondAttribute="bottom" constant="34" id="Z3X-gw-h9A"/>
                             <constraint firstAttribute="bottom" secondItem="Zxn-jI-eeW" secondAttribute="bottom" id="bZF-cm-zGX"/>
                             <constraint firstItem="Zxn-jI-eeW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gm6-KA-29S"/>
                             <constraint firstItem="VCv-xN-TgW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="j1W-Ln-YE4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zxn-jI-eeW" secondAttribute="trailing" id="jzI-z1-wJj"/>
+                            <constraint firstItem="cC9-r2-4Z4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWR-Lh-qeb"/>
                             <constraint firstItem="r7Q-pM-Gcm" firstAttribute="top" secondItem="VCv-xN-TgW" secondAttribute="bottom" constant="18" id="lhd-tV-hT3"/>
                             <constraint firstItem="lz0-SH-1tv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oxQ-us-c3J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cC9-r2-4Z4" secondAttribute="bottom" id="uob-j4-vhY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -122,7 +138,8 @@
                         <outlet property="effectsCollectionView" destination="r7Q-pM-Gcm" id="Ud9-qN-cbA"/>
                         <outlet property="expandButton" destination="JvB-17-mX3" id="dPL-ej-sQS"/>
                         <outlet property="logoView" destination="lz0-SH-1tv" id="yA6-W1-up6"/>
-                        <outlet property="tableView" destination="aYq-Mq-cCM" id="tUj-B6-9ci"/>
+                        <outlet property="transitionsTableView" destination="cC9-r2-4Z4" id="soX-d5-nGw"/>
+                        <outlet property="tutorialsTableView" destination="aYq-Mq-cCM" id="tUj-B6-9ci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

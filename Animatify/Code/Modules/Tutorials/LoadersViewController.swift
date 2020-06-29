@@ -41,8 +41,12 @@ class LoadersViewController: UIViewController {
         self.view.addSubview(view)
         
         /// successEffect1
+<<<<<<< HEAD
         let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.systemGreen)
         
+=======
+        let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 8, trackColor: UIColor.systemGreen)
+>>>>>>> upstream/dev
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
         /// submit Button
@@ -63,7 +67,7 @@ class LoadersViewController: UIViewController {
     }
     
     @objc func performSubmit(){
-        submitButton.perfomSubmitAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, tickWidth: 6,
+        submitButton.perfomSubmitAction(parentView: self.view, circleButton: 84, duration: 0.75, borderWidth: 4, scale: 0.6, tickWidth: 6,
                                         tickColor:  UIColor.white, backgroundColor: UIColor.systemGreen)
     }
 }

@@ -11,6 +11,9 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Table Animation View Controller-->
@@ -133,6 +136,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDc-DW-wMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834" y="90"/>
+        </scene>
+        <!--Collection Tutorial View Controller-->
+        <scene sceneID="qLg-Pq-zrY">
+            <objects>
+                <viewController storyboardIdentifier="CollectionTutorialViewController" id="QXE-oh-BQd" customClass="CollectionTutorialViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sIa-H9-xBT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pyP-9s-SYy">
+                                <rect key="frame" x="24" y="208" width="366" height="320"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="SdF-uD-ch1"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yRu-i4-TmQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap Collection View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-A8-Kde">
+                                <rect key="frame" x="24" y="64" width="247" height="31"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="A Collection view that highlights the current cell and reduces the size of the other cell for emphasis. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWh-81-S0x">
+                                <rect key="frame" x="24" y="552" width="366" height="128"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Nco-kj-IJA"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="uD9-A8-Kde" firstAttribute="top" secondItem="FNp-Xt-UO4" secondAttribute="top" constant="20" id="1rx-iy-Srx"/>
+                            <constraint firstItem="uD9-A8-Kde" firstAttribute="leading" secondItem="FNp-Xt-UO4" secondAttribute="leading" constant="24" id="52Q-pu-FL0"/>
+                            <constraint firstItem="pyP-9s-SYy" firstAttribute="centerY" secondItem="sIa-H9-xBT" secondAttribute="centerY" constant="-80" id="Gal-fh-9GF"/>
+                            <constraint firstItem="uWh-81-S0x" firstAttribute="top" secondItem="pyP-9s-SYy" secondAttribute="bottom" constant="24" id="Nos-EQ-NrG"/>
+                            <constraint firstItem="pyP-9s-SYy" firstAttribute="centerX" secondItem="sIa-H9-xBT" secondAttribute="centerX" id="O7D-VY-NOI"/>
+                            <constraint firstItem="uWh-81-S0x" firstAttribute="leading" secondItem="FNp-Xt-UO4" secondAttribute="leading" constant="24" id="d0a-RK-vvM"/>
+                            <constraint firstItem="FNp-Xt-UO4" firstAttribute="trailing" secondItem="pyP-9s-SYy" secondAttribute="trailing" constant="24" id="gHa-gt-GOk"/>
+                            <constraint firstItem="pyP-9s-SYy" firstAttribute="leading" secondItem="FNp-Xt-UO4" secondAttribute="leading" constant="24" id="rVF-MK-qfR"/>
+                            <constraint firstItem="FNp-Xt-UO4" firstAttribute="trailing" secondItem="uWh-81-S0x" secondAttribute="trailing" constant="24" id="umC-81-0lD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FNp-Xt-UO4"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pyP-9s-SYy" id="P3Q-GF-21l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVW-Pg-Qra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="90"/>
         </scene>
     </scenes>
     <resources>

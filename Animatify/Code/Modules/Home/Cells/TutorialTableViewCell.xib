@@ -64,7 +64,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Qnj-ud-B6H" secondAttribute="bottom" constant="9" id="3LR-Nx-KTC"/>
@@ -76,7 +76,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="Qnj-ud-B6H" id="uo2-G2-glr"/>
-                <outlet property="tutorialButton" destination="quy-84-DF3" id="mtk-Nk-nun"/>
+                <outlet property="iconButton" destination="quy-84-DF3" id="mtk-Nk-nun"/>
                 <outlet property="tutorialDifficulyLabel" destination="g4Q-TE-rdq" id="Gy6-Ay-TEP"/>
                 <outlet property="tutorialLabel" destination="gdR-f4-6mx" id="EIy-UQ-nui"/>
             </connections>

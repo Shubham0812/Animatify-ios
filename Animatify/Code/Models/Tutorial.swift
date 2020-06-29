@@ -10,6 +10,7 @@ import Foundation
 
 enum TutorialType: Equatable {
     case tableViews
+<<<<<<< HEAD:Animatify/Code/Models/Tutorials.swift
     case loaders(type : LoaderType)
     
     func getLoaderType() -> LoaderType? {
@@ -25,11 +26,22 @@ enum TutorialType: Equatable {
 enum LoaderType {
     case success
     case failure
+=======
+    case loaders
+    case snapCollections
+>>>>>>> upstream/dev:Animatify/Code/Models/Tutorial.swift
 }
 
-struct Tutorials {
+struct Tutorial {
     let action: TutorialType
     let title: String
     let difficulty: String
     let icon: String
+}
+
+
+struct Movie {
+    let movieImage: String
+    let movieName: String
+    let movieDirector: String
 }
