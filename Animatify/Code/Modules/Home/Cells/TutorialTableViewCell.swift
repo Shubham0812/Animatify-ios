@@ -16,7 +16,7 @@ class TutorialTableViewCell: UITableViewCell {
     
     // MARK:- outlets for the cell
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var tutorialButton: UIButton!
+    @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var tutorialDifficulyLabel: UILabel!
     
@@ -26,14 +26,33 @@ class TutorialTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        tutorialButton.roundCorners(cornerRadius: tutorialButton.layer.frame.width / 2.0 - 3)
+        self.backgroundColor = UIColor.white
+        iconButton.roundCorners(cornerRadius: iconButton.layer.frame.width / 2.0 - 3)
     }
     
     
     // MARK:- functions for the cell
-    func setupCell(tutorial: Tutorials){
-        self.tutorialButton.setImage(UIImage(systemName: tutorial.icon, withConfiguration: imageConfiguration), for: .normal)
+    func setupTutorial(tutorial: Tutorial) {
+        self.iconButton.setImage(UIImage(systemName: tutorial.icon, withConfiguration: imageConfiguration), for: .normal)
         self.tutorialLabel.text = tutorial.title
         self.tutorialDifficulyLabel.text = tutorial.difficulty
+    }
+    
+    func setupTransition(transition: Transition) {
+        self.iconButton.setImage(UIImage(systemName: transition.icon, withConfiguration: imageConfiguration), for: .normal)
+        self.tutorialLabel.text = transition.title
+        self.tutorialDifficulyLabel.text = transition.difficulty
+    }
+    
+    
+    
+    func setDarkMode() {
+        self.tutorialLabel.textColor = UIColor.white
+        self.tutorialDifficulyLabel.textColor = UIColor.white
+        self.iconButton.backgroundColor = UIColor(named: "accentColor")?.withAlphaComponent(0.25)
+        self.iconButton.tintColor = UIColor.white
+        
+        self.containerView.backgroundColor = UIColor(named: "background")
+        self.backgroundColor = UIColor(named: "background")
     }
 }

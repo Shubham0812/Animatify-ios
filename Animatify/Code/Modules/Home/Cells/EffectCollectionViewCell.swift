@@ -26,7 +26,7 @@ class EffectCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK:- functions for the cell
-    func setupCell(effect: Effects){
+    func setupCell(effect: Effect){
         self.titleLabel.text = effect.title
         ///add the gradient to the view
         DispatchQueue.main.asyncAfter(deadline: .now()) {
