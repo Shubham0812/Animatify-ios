@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+
+enum TransitionType {
+    case circular
+}
+
+struct Transition {
+    let title: String
+    let action: TransitionType
+    let difficulty: String
+    let icon: String
+}
