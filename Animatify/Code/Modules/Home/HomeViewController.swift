@@ -44,8 +44,15 @@ class HomeViewController: UIViewController {
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill")
     ]
     
+<<<<<<< HEAD
+    var tutorials: [Tutorials] = [
+        Tutorials(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
+        Tutorials(action: .loaders(type: .success), title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorials(action: .loaders(type: .failure), title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill")
+=======
     var transitions: [Transition] = [
         Transition(title: "Circular View Transitioning", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill")
+>>>>>>> upstream/dev
     ]
     
     // MARK:- lifecycle methods for the viewController
@@ -171,6 +178,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+<<<<<<< HEAD
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let action = self.tutorials[indexPath.row].action
+            if action == .tableViews{
+                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
+                self.present(tutorialVC, animated: true)
+            } else {
+                guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                tutorialVC.loaderType = action.getLoaderType()
+                self.present(tutorialVC, animated: true)
+=======
         if (tableView == tutorialsTableView) {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 if (self.tutorials[indexPath.row].action == .tableViews) {
@@ -191,6 +209,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     transitionVC.modalPresentationStyle = .fullScreen
                     self.present(transitionVC, animated: true)
                 }
+>>>>>>> upstream/dev
             }
         }
     }
