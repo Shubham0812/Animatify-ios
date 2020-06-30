@@ -8,14 +8,28 @@
 
 import Foundation
 
-enum TutorialType {
+enum LoaderType {
+    case success
+    case failure
+}
+
+enum TutorialAction: Equatable {
     case tableViews
-    case loaders
+    case loaders(type : LoaderType)
     case snapCollections
+
+    
+    func getLoaderType() -> LoaderType? {
+        switch self {
+        case .loaders(type: let type):
+            return type
+        default: return nil
+        }
+    }
 }
 
 struct Tutorial {
-    let action: TutorialType
+    let action: TutorialAction
     let title: String
     let difficulty: String
     let icon: String

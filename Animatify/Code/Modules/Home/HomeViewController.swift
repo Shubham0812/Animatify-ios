@@ -40,7 +40,8 @@ class HomeViewController: UIViewController {
     
     var tutorials: [Tutorial] = [
         Tutorial(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
-        Tutorial(action: .loaders, title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .loaders(type: .success), title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .loaders(type: .failure), title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill")
     ]
     
@@ -171,15 +172,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if (tableView == tutorialsTableView) {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
-                if (self.tutorials[indexPath.row].action == .tableViews) {
+                let action = self.tutorials[indexPath.row].action
+                
+                if (action == .tableViews) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: TableAnimationViewController.description()) as? TableAnimationViewController else { return }
                     self.present(tutorialVC, animated: true)
-                } else if (self.tutorials[indexPath.row].action == .loaders) {
+                } else if (action == .loaders(type: .success)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                    tutorialVC.loaderType = action.getLoaderType()
                     self.present(tutorialVC, animated: true)
-                } else if (self.tutorials[indexPath.row].action == .snapCollections) {
+                } else if (action == .loaders(type: .failure)) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                    tutorialVC.loaderType = action.getLoaderType()
+                    self.present(tutorialVC, animated: true)
+                }
+                    
+                else if (action == .snapCollections) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
                     self.present(tutorialVC, animated: true)
                 }
