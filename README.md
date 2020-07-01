@@ -1,7 +1,7 @@
 # Animatify iOS
 Animation, Effects & Transitions for iOS projects.
 
-An iOS application, that will contain tutorials and guides for achieving the effects.
+An iOS application, that contain various tutorials and guides for achieving the effects, transitions and animations.
 - License: Apache 2.0
 
 Since it's an open-source project feel free to add animations of your own :D
