@@ -186,7 +186,7 @@ extension LoadersViewController {
         
         
         wifiButton.setTitle("Wifi", for: .normal)
-        self.view.addSubview(bluetoothButton)
+        self.view.addSubview(wifiButton)
         wifiButton.addTarget(self, action: #selector(performWifiConnect), for: .touchUpInside)
     }
     
