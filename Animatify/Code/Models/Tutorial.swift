@@ -11,6 +11,7 @@ import Foundation
 enum LoaderType {
     case success
     case failure
+    case bluetooth
 }
 
 enum TutorialAction: Equatable {

@@ -42,7 +42,8 @@ class HomeViewController: UIViewController {
         Tutorial(action: .tableViews, title: "Animating Tableview cells", difficulty: "Easy", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .success), title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .failure), title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill"),
-        Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill")
+        Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .loaders(type: .bluetooth), title: "Animations for Bluetooth Connection", difficulty: "Medium", icon: "bolt.fill")
     ]
     
     var transitions: [Transition] = [
@@ -185,6 +186,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     tutorialVC.loaderType = action.getLoaderType()
                     self.present(tutorialVC, animated: true)
                 } else if (action == .loaders(type: .failure)) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
+                    tutorialVC.loaderType = action.getLoaderType()
+                    self.present(tutorialVC, animated: true)
+                } else if( action == .loaders(type: .bluetooth)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
                     self.present(tutorialVC, animated: true)
