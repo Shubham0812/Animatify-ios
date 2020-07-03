@@ -63,6 +63,8 @@
 		518AC31224AA63A800EAC380 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518AC31124AA63A800EAC380 /* Transition.storyboard */; };
 		518AC31424AA63C200EAC380 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC31324AA63C200EAC380 /* CircleViewController.swift */; };
 		518AC31624AA7B7E00EAC380 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 518AC31524AA7B7E00EAC380 /* 2.png */; };
+		518AC31824AF398900EAC380 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC31724AF398900EAC380 /* ButtonsViewController.swift */; };
+		518AC31C24AF424200EAC380 /* ExpandingButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -130,6 +132,8 @@
 		518AC31124AA63A800EAC380 /* Transition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		518AC31324AA63C200EAC380 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		518AC31524AA7B7E00EAC380 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		518AC31724AF398900EAC380 /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingButtonsView.swift; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 				51070184249E7B00004E6DDE /* TableAnimationViewController.swift */,
 				5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */,
 				518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */,
+				518AC31724AF398900EAC380 /* ButtonsViewController.swift */,
 				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 			);
 			path = Tutorials;
@@ -316,7 +321,11 @@
 			children = (
 				518AC30024A75D2F00EAC380 /* SubmitButton.swift */,
 				5B5310D524A99EFB00FA9A69 /* RejectButton.swift */,
+<<<<<<< HEAD
 				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
+=======
+				518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */,
+>>>>>>> 49e2f11d0dfbb210413fdc9f39164892a83d29ba
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -483,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5161E1EA249A1B12008D1368 /* CAExtensions.swift in Sources */,
+				518AC31C24AF424200EAC380 /* ExpandingButtonsView.swift in Sources */,
 				518AC30D24AA499E00EAC380 /* ButtonViewController.swift in Sources */,
 				51DCDF372495006800911EAB /* AppDelegate.swift in Sources */,
 				5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */,
@@ -490,6 +500,7 @@
 				5161E1E42497845E008D1368 /* CoreAnimations.swift in Sources */,
 				51070183249E1A4A004E6DDE /* ShimmerEffect.swift in Sources */,
 				518AC30F24AA59FE00EAC380 /* Transitions.swift in Sources */,
+				518AC31824AF398900EAC380 /* ButtonsViewController.swift in Sources */,
 				5161E1D324964024008D1368 /* HomeViewController.swift in Sources */,
 				5161E1D824964114008D1368 /* PulseEffect.swift in Sources */,
 				5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */,

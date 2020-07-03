@@ -43,7 +43,11 @@ class HomeViewController: UIViewController {
         Tutorial(action: .loaders(type: .success), title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .failure), title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill"),
+<<<<<<< HEAD
         Tutorial(action: .loaders(type: .bluetooth), title: "Bluetooth Animations", difficulty: "Medium", icon: "bolt.fill")
+=======
+        Tutorial(action: .buttons, title: "Floating Button Animations", difficulty: "Medium", icon: "bolt.fill")
+>>>>>>> 49e2f11d0dfbb210413fdc9f39164892a83d29ba
     ]
     
     var transitions: [Transition] = [
@@ -189,6 +193,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
                     self.present(tutorialVC, animated: true)
+<<<<<<< HEAD
                 } else if( action == .loaders(type: .bluetooth)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
@@ -196,7 +201,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                     
                 else if (action == .snapCollections) {
+=======
+                } else if (action == .snapCollections) {
+>>>>>>> 49e2f11d0dfbb210413fdc9f39164892a83d29ba
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                } else if (action == .buttons) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
                     self.present(tutorialVC, animated: true)
                 }
             }
