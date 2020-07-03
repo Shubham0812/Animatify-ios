@@ -222,16 +222,6 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="The frame for the parentView has to be set." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptJ-ve-Ejs">
-                                <rect key="frame" x="96" y="670" width="298" height="128"/>
-                                <color key="backgroundColor" name="background"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="0PK-YE-Odd"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
@@ -239,10 +229,7 @@
                             <constraint firstItem="sUD-Xh-SjC" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="24" id="KEq-dY-MQW"/>
                             <constraint firstItem="Mhr-Ug-iba" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="28" id="TNM-1T-1IE"/>
                             <constraint firstItem="sUD-Xh-SjC" firstAttribute="top" secondItem="3Rb-DY-2dz" secondAttribute="top" constant="20" id="VEq-cB-DNS"/>
-                            <constraint firstItem="ptJ-ve-Ejs" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="96" id="dfg-19-HLi"/>
-                            <constraint firstItem="3Rb-DY-2dz" firstAttribute="bottom" secondItem="ptJ-ve-Ejs" secondAttribute="bottom" constant="64" id="dlv-GU-Sbf"/>
                             <constraint firstItem="Mhr-Ug-iba" firstAttribute="top" secondItem="sUD-Xh-SjC" secondAttribute="bottom" constant="180" id="mg1-dB-2Z3"/>
-                            <constraint firstItem="3Rb-DY-2dz" firstAttribute="trailing" secondItem="ptJ-ve-Ejs" secondAttribute="trailing" constant="20" id="vcZ-5z-NBf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Rb-DY-2dz"/>
                     </view>
