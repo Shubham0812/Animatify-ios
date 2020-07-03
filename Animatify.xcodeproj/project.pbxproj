@@ -72,6 +72,7 @@
 		5B4ED98F24AF2D4D007D541C /* BluetoothEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */; };
 		5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */; };
 		5B4ED99324AFB1C3007D541C /* WifiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99224AFB1C2007D541C /* WifiButton.swift */; };
+		5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99424AFB2D5007D541C /* WifiEffects.swift */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
 		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,7 @@
 		5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothEffects.swift; sourceTree = "<group>"; };
 		5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothButton.swift; sourceTree = "<group>"; };
 		5B4ED99224AFB1C2007D541C /* WifiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiButton.swift; sourceTree = "<group>"; };
+		5B4ED99424AFB2D5007D541C /* WifiEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiEffects.swift; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
 		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +253,7 @@
 				518AC2FD24A65A2F00EAC380 /* SuccessEffects.swift */,
 				5B5310D724A9A66600FA9A69 /* FailureEffects.swift */,
 				5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */,
+				5B4ED99424AFB2D5007D541C /* WifiEffects.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */,
 				518AC2FE24A65A2F00EAC380 /* SuccessEffects.swift in Sources */,
 				5161E1F8249A4770008D1368 /* Effect.swift in Sources */,
+				5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */,
 				5161E1ED249A22E5008D1368 /* EffectCollectionViewCell.swift in Sources */,
 				5107018A249E82BC004E6DDE /* TableAnimationViewCell.swift in Sources */,
 				518AC30124A75D2F00EAC380 /* SubmitButton.swift in Sources */,
