@@ -17,6 +17,7 @@ enum TutorialAction: Equatable {
     case tableViews
     case loaders(type : LoaderType)
     case snapCollections
+    case buttons
 
     
     func getLoaderType() -> LoaderType? {
@@ -26,6 +27,13 @@ enum TutorialAction: Equatable {
         default: return nil
         }
     }
+}
+
+enum ExpandDirection {
+    case up
+    case down
+    case left
+    case right
 }
 
 struct Tutorial {
