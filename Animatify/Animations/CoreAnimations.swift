@@ -18,11 +18,11 @@ enum LayerAnimationFactory {
         return strokeStart
     }
     
-    static func getStrokeEndAnimation(duration: TimeInterval, toValue: CGFloat = 1.0) -> CABasicAnimation {
+    static func getStrokeEndAnimation(duration: TimeInterval, toValue: CGFloat = 1.0, isRemovedOnCompletion : Bool = false) -> CABasicAnimation {
         let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
         strokeEnd.duration = duration
         strokeEnd.toValue = toValue
-        strokeEnd.isRemovedOnCompletion = false
+        strokeEnd.isRemovedOnCompletion = isRemovedOnCompletion
         strokeEnd.fillMode = .forwards
         return strokeEnd
     }

@@ -23,7 +23,7 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
     var fillingColor = UIColor()
     
     var circleLayer = CAShapeLayer()
-    var crossLayer = CAShapeLayer()
+    var bluetoothLayer = CAShapeLayer()
     
     var circleFinished = false
     var coreAnimationDelegate: CoreAnimationDelegate?
@@ -52,54 +52,47 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
         self.radius = circleRadius
         
         DispatchQueue.main.async {
-            self.drawfailure(view: view)
+            self.drawBluetooth(view: view)
         }
     }
     
     /// CAAnimation Delegate method
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration / 2)
-        self.crossLayer.add(strokeEnd, forKey: "strokeEnd")
+//        let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: self.animationDuration)
+//        self.bluetoothLayer.strokeColor = UIColor.white.cgColor
+//        self.bluetoothLayer.add(strokeEnd, forKey: "strokeEnd")
     }
     
     // MARK:- functions for the CALayer
     /// The size of the Circle and the Cross is defined by two properties.
     /// Radius and scaleFactor determines the size.
     /// Everything else is configured, you have to provide a view.
-    func drawfailure(view: UIView) {
+    func drawBluetooth(view: UIView) {
         let cX: CGFloat = view.center.x
         let cY: CGFloat = view.center.y
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: cX, y: cY), radius: (radius * scaleFactor), startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         
-        let crossPath = UIBezierPath()
-        crossPath.move(to: CGPoint(x: cX - (25 * scaleFactor), y: cY - (28 * scaleFactor)))
-        crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY + (scaleFactor * 28)))
-        crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY + (scaleFactor * 45)))
-        crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY - (scaleFactor * 45)))
-        crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY - (scaleFactor * 28)))
-        crossPath.addLine(to: CGPoint(x: cX - (scaleFactor * 25), y: cY + (scaleFactor * 28)))
+        let bluetoothPath = UIBezierPath()
+        bluetoothPath.move(to: CGPoint(x: cX - (25 * scaleFactor), y: cY - (28 * scaleFactor)))
+        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY + (scaleFactor * 28)))
+        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY + (scaleFactor * 45)))
+        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY - (scaleFactor * 45)))
+        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY - (scaleFactor * 28)))
+        bluetoothPath.addLine(to: CGPoint(x: cX - (scaleFactor * 25), y: cY + (scaleFactor * 28)))
         
-        let prePath = crossPath
-
-      //  crossPath.move(to: CGPoint(x: cX - (32 * scaleFactor), y: cY + (32 * scaleFactor)))
-       // crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 32), y: cY - (scaleFactor * 32)))
-
-        
-        circleLayer.setShapeLayer(path: circlePath, fillColor: UIColor.clear, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
-        crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
-        
-        let layer = CAShapeLayer()
-        layer.setShapeLayer(path: prePath, fillColor: .clear, lineWidth: lineW, strokeStart: 1, strokeEnd: 1ç, strokeColor: .gray, position: view.center)
-        
-        self.addSublayer(layer)
+        circleLayer.setShapeLayer(path: circlePath, fillColor: .blue, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
+        bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
         
         self.addSublayer(circleLayer)
-        self.insertSublayer(crossLayer, above: self)
+        self.insertSublayer(bluetoothLayer, above: self)
+        
+        
         
         let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: animationDuration)
         strokeEnd.delegate = self
+                
+        bluetoothLayer.add(strokeEnd, forKey: "strokeEnd")
         
-        circleLayer.add(strokeEnd, forKey: "end")
     }
 }

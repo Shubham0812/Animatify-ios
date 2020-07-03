@@ -36,6 +36,7 @@ class LoadersViewController: UIViewController {
         }
     }
     
+    
     // MARK:- functions for the viewController
     func drawSubmit(){
         let view = UIView()
@@ -115,7 +116,7 @@ extension LoadersViewController {
         self.view.addSubview(view)
         
         /// FailureEffect
-        let effect1 = BluetoothEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 12, trackColor: UIColor.blue)
+        let effect1 = BluetoothEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 12, trackColor: UIColor.white)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
