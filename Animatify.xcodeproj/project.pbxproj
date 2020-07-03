@@ -321,11 +321,8 @@
 			children = (
 				518AC30024A75D2F00EAC380 /* SubmitButton.swift */,
 				5B5310D524A99EFB00FA9A69 /* RejectButton.swift */,
-<<<<<<< HEAD
 				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
-=======
 				518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */,
->>>>>>> 49e2f11d0dfbb210413fdc9f39164892a83d29ba
 			);
 			path = Components;
 			sourceTree = "<group>";
