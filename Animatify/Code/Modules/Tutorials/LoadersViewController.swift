@@ -41,12 +41,7 @@ class LoadersViewController: UIViewController {
         self.view.addSubview(view)
         
         /// successEffect1
-<<<<<<< HEAD
-        let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.systemGreen)
-        
-=======
         let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 8, trackColor: UIColor.systemGreen)
->>>>>>> upstream/dev
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
         /// submit Button
