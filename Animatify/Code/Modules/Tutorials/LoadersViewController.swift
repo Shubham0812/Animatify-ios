@@ -19,6 +19,8 @@ class LoadersViewController: UIViewController {
     var submitButton = SubmitButton()
     var rejectButton = RejectButton()
     var bluetoothButton = BluetoothButton()
+    var wifiButton = WifiButton()
+
     
     var loaderType : LoaderType?
     
@@ -32,6 +34,8 @@ class LoadersViewController: UIViewController {
             drawReject()
         case .bluetooth:
             drawBluetooth()
+        case .wifi:
+            drawWifi()
         case .none:
             print("none")
         }
@@ -146,5 +150,47 @@ extension LoadersViewController {
     
     @objc func reformBluetoothConnect(){
         bluetoothButton.performBluetoothAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .blue)
+    }
+}
+
+//MARK:- extension for Wifi animations
+extension LoadersViewController {
+    
+    // MARK:- functions for the viewController
+    func drawWifi(){
+        let view = UIView()
+        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        self.view.addSubview(view)
+        
+        /// Wifi effect
+        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 12, trackColor: UIColor.white, fillingColor: .blue)
+        
+        self.view.layer.insertSublayer(effect1, above: self.view.layer)
+        
+        /// Wifi Button
+        let buttonWidth: CGFloat = 160
+        let buttonHeight: CGFloat = 62
+        
+        let cX: CGFloat = self.view.center.x
+        let cY: CGFloat = self.view.center.y + 260
+        
+        let wifiButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
+        
+        wifiButton = WifiButton(type: .system,
+                                          frame: wifiButtonFrame,
+                                          borderColor: .blue,
+                                          borderWidth: 4,
+                                          font: UIFont(name: "Raleway-SemiBold", size: 24)!,
+                                          cornerRadius: 12,
+                                          tintColor: UIColor.white)
+        
+        
+        wifiButton.setTitle("Wifi", for: .normal)
+        self.view.addSubview(bluetoothButton)
+        wifiButton.addTarget(self, action: #selector(performWifiConnect), for: .touchUpInside)
+    }
+    
+    @objc func performWifiConnect(){
+        wifiButton.performWifiAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .blue)
     }
 }
