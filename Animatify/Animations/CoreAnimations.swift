@@ -36,4 +36,23 @@ enum LayerAnimationFactory {
         pulse.repeatCount = .infinity
         return pulse
     }
+    
+    static func getTranslateXAnimation(duration: TimeInterval, toValue: CGFloat = 1.5) -> CABasicAnimation {
+        let translate = CABasicAnimation(keyPath: "transform.translation.x")
+        translate.duration = duration
+        translate.byValue = toValue
+        translate.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        translate.autoreverses=true
+        translate.repeatCount = .infinity
+        return translate
+    }
+    
+   static func getTranslateYAnimation(for duration : TimeInterval? = nil,withTanslation translation : Float? = nil) -> CABasicAnimation{
+       let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.y")
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+       animation.duration = (duration ?? 0.5)/TimeInterval(animation.repeatCount)
+       animation.autoreverses = false
+       animation.byValue = translation ?? -5
+    return animation
+       }
 }

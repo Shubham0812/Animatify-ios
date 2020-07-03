@@ -26,6 +26,8 @@ final class WifiEffect1: CAShapeLayer, CAAnimationDelegate {
     var circleLayer = CAShapeLayer()
     var circleLayer2 = CAShapeLayer()
     var circleLayer3 = CAShapeLayer()
+    let smallCircleLayer = CAShapeLayer()
+
     
     
     var circleFinished = false
@@ -82,10 +84,17 @@ final class WifiEffect1: CAShapeLayer, CAAnimationDelegate {
         circleLayer2.setShapeLayer(path: circlePath2, fillColor: .clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
         circleLayer3.setShapeLayer(path: circlePath3, fillColor: .clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
         
+        let smallCirclePath = UIBezierPath(arcCenter: CGPoint(x: cX, y: cY-20), radius: (radius * scaleFactor * 0.1), startAngle:  0, endAngle: 2 * .pi, clockwise: true)
+        
+        
+        smallCircleLayer.setShapeLayer(path: smallCirclePath, fillColor: fillingColor, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
+        
         
         self.addSublayer(circleLayer)
         self.addSublayer(circleLayer2)
         self.addSublayer(circleLayer3)
+        
+        self.addSublayer(smallCircleLayer)
 
         
         let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: animationDuration)
@@ -100,6 +109,21 @@ final class WifiEffect1: CAShapeLayer, CAAnimationDelegate {
         
         strokeEnd.beginTime = CACurrentMediaTime() + strokeEnd.duration * 2
         circleLayer3.add(strokeEnd, forKey: "strokeEnd")
+        
+        let spring = CASpringAnimation(keyPath: "position.y")
+        spring.damping = 5
+        spring.fromValue = circleLayer.position.y
+        spring.toValue = circleLayer.position.y - 10
+        spring.duration = spring.settlingDuration
+        spring.beginTime = CACurrentMediaTime() + strokeEnd.duration * 3
+        circleLayer.add(spring, forKey: nil)
+        circleLayer2.add(spring, forKey: nil)
+        circleLayer3.add(spring, forKey: nil)
+        
+        
+        let translate = LayerAnimationFactory.getTranslateYAnimation(count: 1, for: 2, withTanslation: 20)
+        translate.beginTime = CACurrentMediaTime() + strokeEnd.duration * 4
+        smallCircleLayer.add(translate, forKey: "")
 
     }
     
