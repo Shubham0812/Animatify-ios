@@ -11,11 +11,14 @@ import UIKit
 
 class CollectionTutorialViewController: UIViewController {
     
-    // MARK:- variables for the viewController
     override class func description() -> String {
         return "CollectionTutorialViewController"
     }
     
+    // MARK:- outlets for the viewController
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK:- variables for the viewController
     private var collectionViewWidth: CGFloat = 0
     private var indexOfCellBeforeDragging = 0
     private var animationDuration = 0.25
@@ -29,10 +32,7 @@ class CollectionTutorialViewController: UIViewController {
         Movie(movieImage: "6", movieName: "Shazam!", movieDirector: "David F. Sandberg"),
         Movie(movieImage: "7", movieName: "The Dark Knight Rises", movieDirector: "Christopher Nolan"),
     ]
-    
-    // MARK:- outlets for the viewController
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()

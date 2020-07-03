@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -160,7 +160,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap Collection View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-A8-Kde">
-                                <rect key="frame" x="24" y="64" width="247" height="31"/>
+                                <rect key="frame" x="24" y="64" width="261.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -197,6 +197,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVW-Pg-Qra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584" y="90"/>
+        </scene>
+        <!--Button Effects View Controller-->
+        <scene sceneID="ftZ-YD-6OH">
+            <objects>
+                <viewController storyboardIdentifier="ButtonEffectsViewController" id="IbR-fB-qki" customClass="ButtonEffectsViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0KK-uY-1zN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floating Button Animations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUD-Xh-SjC">
+                                <rect key="frame" x="24" y="64" width="334.5" height="31"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Customizable Floating Buttons, expanding in any direction, size, and tint color of the symbols can also be customized. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-Ug-iba">
+                                <rect key="frame" x="28" y="275" width="302" height="128"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="o7r-59-Nob"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="The frame for the parentView has to be set." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptJ-ve-Ejs">
+                                <rect key="frame" x="96" y="670" width="298" height="128"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0PK-YE-Odd"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="3Rb-DY-2dz" firstAttribute="trailing" secondItem="Mhr-Ug-iba" secondAttribute="trailing" constant="84" id="5dm-1R-Kir"/>
+                            <constraint firstItem="sUD-Xh-SjC" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="24" id="KEq-dY-MQW"/>
+                            <constraint firstItem="Mhr-Ug-iba" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="28" id="TNM-1T-1IE"/>
+                            <constraint firstItem="sUD-Xh-SjC" firstAttribute="top" secondItem="3Rb-DY-2dz" secondAttribute="top" constant="20" id="VEq-cB-DNS"/>
+                            <constraint firstItem="ptJ-ve-Ejs" firstAttribute="leading" secondItem="3Rb-DY-2dz" secondAttribute="leading" constant="96" id="dfg-19-HLi"/>
+                            <constraint firstItem="3Rb-DY-2dz" firstAttribute="bottom" secondItem="ptJ-ve-Ejs" secondAttribute="bottom" constant="64" id="dlv-GU-Sbf"/>
+                            <constraint firstItem="Mhr-Ug-iba" firstAttribute="top" secondItem="sUD-Xh-SjC" secondAttribute="bottom" constant="180" id="mg1-dB-2Z3"/>
+                            <constraint firstItem="3Rb-DY-2dz" firstAttribute="trailing" secondItem="ptJ-ve-Ejs" secondAttribute="trailing" constant="20" id="vcZ-5z-NBf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Rb-DY-2dz"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="sUD-Xh-SjC" id="vmc-by-eaq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBm-sp-tvA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2395" y="87"/>
         </scene>
     </scenes>
     <resources>
