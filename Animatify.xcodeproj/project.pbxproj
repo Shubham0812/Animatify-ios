@@ -68,6 +68,7 @@
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
 		51DCDF432495006C00911EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF412495006C00911EAB /* LaunchScreen.storyboard */; };
 		5B4ED98F24AF2D4D007D541C /* BluetoothEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */; };
+		5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
 		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		51DCDF422495006C00911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51DCDF442495006C00911EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothEffects.swift; sourceTree = "<group>"; };
+		5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothButton.swift; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
 		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,6 +316,7 @@
 			children = (
 				518AC30024A75D2F00EAC380 /* SubmitButton.swift */,
 				5B5310D524A99EFB00FA9A69 /* RejectButton.swift */,
+				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				518AC30F24AA59FE00EAC380 /* Transitions.swift in Sources */,
 				5161E1D324964024008D1368 /* HomeViewController.swift in Sources */,
 				5161E1D824964114008D1368 /* PulseEffect.swift in Sources */,
+				5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */,
 				518AC2FE24A65A2F00EAC380 /* SuccessEffects.swift in Sources */,
 				5161E1F8249A4770008D1368 /* Effect.swift in Sources */,
 				5161E1ED249A22E5008D1368 /* EffectCollectionViewCell.swift in Sources */,

@@ -18,6 +18,7 @@ class LoadersViewController: UIViewController {
     var buttonTransform = false
     var submitButton = SubmitButton()
     var rejectButton = RejectButton()
+    var bluetoothButton = BluetoothButton()
     
     var loaderType : LoaderType?
     
@@ -127,17 +128,17 @@ extension LoadersViewController {
         let cX: CGFloat = self.view.center.x
         let cY: CGFloat = self.view.center.y + 260
         
-        let rejectButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
+        let bluetoothButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
         
-        rejectButton = RejectButton(type: .system, frame: rejectButtonFrame, borderColor: .red, borderWidth: 4,
+        bluetoothButton = BluetoothButton(type: .system, frame: bluetoothButtonFrame, borderColor: .blue, borderWidth: 4,
                                     font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.white)
-        rejectButton.setTitle("Decline", for: .normal)
-        self.view.addSubview(rejectButton)
+        bluetoothButton.setTitle("Bluetooth", for: .normal)
+        self.view.addSubview(bluetoothButton)
         
-        rejectButton.addTarget(self, action: #selector(reformBluetoothConnect), for: .touchUpInside)
+        bluetoothButton.addTarget(self, action: #selector(reformBluetoothConnect), for: .touchUpInside)
     }
     
     @objc func reformBluetoothConnect(){
-        rejectButton.performRejectAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .systemRed)
+        bluetoothButton.performBluetoothAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .blue)
     }
 }
