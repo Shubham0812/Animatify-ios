@@ -116,12 +116,12 @@ extension LoadersViewController {
         view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
-        /// FailureEffect
+        /// Bluetooth effect
         let effect1 = BluetoothEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 12, trackColor: UIColor.white, fillingColor: .blue)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
-        /// Reject Button
+        /// Bluetooth Button
         let buttonWidth: CGFloat = 160
         let buttonHeight: CGFloat = 62
         
@@ -130,11 +130,17 @@ extension LoadersViewController {
         
         let bluetoothButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
         
-        bluetoothButton = BluetoothButton(type: .system, frame: bluetoothButtonFrame, borderColor: .blue, borderWidth: 4,
-                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.white)
+        bluetoothButton = BluetoothButton(type: .system,
+                                          frame: bluetoothButtonFrame,
+                                          borderColor: .blue,
+                                          borderWidth: 4,
+                                          font: UIFont(name: "Raleway-SemiBold", size: 24)!,
+                                          cornerRadius: 12,
+                                          tintColor: UIColor.white)
+        
+        
         bluetoothButton.setTitle("Bluetooth", for: .normal)
         self.view.addSubview(bluetoothButton)
-        
         bluetoothButton.addTarget(self, action: #selector(reformBluetoothConnect), for: .touchUpInside)
     }
     
