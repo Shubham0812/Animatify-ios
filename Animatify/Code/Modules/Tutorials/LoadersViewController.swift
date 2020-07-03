@@ -77,7 +77,7 @@ extension LoadersViewController {
         self.view.addSubview(view)
         
         /// FailureEffect
-        let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 8, trackColor: UIColor.red)
+        let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 8, trackColor: UIColor.red)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
@@ -99,6 +99,6 @@ extension LoadersViewController {
     }
     
     @objc func performReject(){
-        rejectButton.performRejectAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .systemRed)
+        rejectButton.performRejectAction(parentView: self.view, circleButton: 84, duration: 0.75, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .systemRed)
     }
 }

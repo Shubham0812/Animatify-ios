@@ -13,7 +13,7 @@ class IntroViewController: UIViewController, CoreAnimationDelegate {
     // MARK:- variables for the viewController
     var animationDuration: TimeInterval = 1.4
     
-    /// show the animation, then transition into homeViewController
+    /// show the animation, then transition into homeViewControllerFi
     override func viewDidLoad() {
         super.viewDidLoad()
         
