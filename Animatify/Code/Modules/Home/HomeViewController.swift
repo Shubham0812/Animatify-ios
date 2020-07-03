@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         Tutorial(action: .loaders(type: .success), title: "Animations for Submit Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .failure), title: "Animations for Reject Button", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill"),
-        Tutorial(action: .loaders(type: .bluetooth), title: "Animations for Bluetooth Connection", difficulty: "Medium", icon: "bolt.fill")
+        Tutorial(action: .loaders(type: .bluetooth), title: "Bluetooth Animations", difficulty: "Medium", icon: "bolt.fill")
     ]
     
     var transitions: [Transition] = [
