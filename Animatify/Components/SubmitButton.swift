@@ -38,7 +38,6 @@ class SubmitButton: UIButton {
     }
     
     // MARK:- functions for the button
-    
     func perfomSubmitAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, tickWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
         DispatchQueue.main.async {
             self.setTitle("", for: .normal)

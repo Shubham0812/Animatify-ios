@@ -24,3 +24,10 @@ extension UILabel {
         self.layer.cornerRadius = cornerRadius
     }
 }
+
+extension UIButton {
+    func setBorder(with color: UIColor, width: CGFloat) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+}
