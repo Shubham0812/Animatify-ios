@@ -24,6 +24,7 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
     
     var circleLayer = CAShapeLayer()
     var bluetoothLayer = CAShapeLayer()
+    var pulsatingLayer = CAShapeLayer()
     
     var circleFinished = false
     var coreAnimationDelegate: CoreAnimationDelegate?
@@ -84,15 +85,34 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
         circleLayer.setShapeLayer(path: circlePath, fillColor: .blue, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
         bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
         
+        setPulsatingLayer(view: view)
         self.addSublayer(circleLayer)
         self.insertSublayer(bluetoothLayer, above: self)
-        
-        
         
         let strokeEnd = LayerAnimationFactory.getStrokeEndAnimation(duration: animationDuration)
         strokeEnd.delegate = self
                 
         bluetoothLayer.add(strokeEnd, forKey: "strokeEnd")
-        
+    }
+    
+    func setPulsatingLayer(view: UIView){
+        let pulsatingPath = UIBezierPath(arcCenter: view.center, radius: (radius * scaleFactor), startAngle: 0, endAngle: 2 * .pi , clockwise: true)
+//        pulsatingLayer.path = pulsatingPath.cgPath
+//        pulsatingLayer.strokeColor=UIColor.clear.cgColor
+//        pulsatingLayer.lineWidth=15
+//        pulsatingLayer.lineCap=CAShapeLayerLineCap.round
+//        pulsatingLayer.fillColor=UIColor(displayP3Red: 193/255.0, green: 255/255.0, blue: 244/255.0, alpha: 0.5).cgColor
+//        pulsatingLayer.position=CGPoint(x:160,y:260)
+        pulsatingLayer.setShapeLayer(path: pulsatingPath, fillColor: .blue, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
+        self.addSublayer(pulsatingLayer)
+
+
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.toValue = 1.5
+        animation.duration=1
+        animation.timingFunction=CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeOut)
+        animation.autoreverses=true
+        animation.repeatCount = Float.infinity
+        pulsatingLayer.add(animation, forKey:"abcd")
     }
 }

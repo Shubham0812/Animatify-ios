@@ -26,4 +26,16 @@ enum LayerAnimationFactory {
         strokeEnd.fillMode = .forwards
         return strokeEnd
     }
+    
+    static func getPulsatingAnimation(duration: TimeInterval, toValue: CGFloat = 1.0, isRemovedOnCompletion : Bool = false) -> CABasicAnimation {
+        let pulse = CABasicAnimation(keyPath: "transform.scale")
+        pulse.duration = duration
+        pulse.toValue = toValue
+        pulse.isRemovedOnCompletion = isRemovedOnCompletion
+        pulse.timingFunction=CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeOut)
+        pulse.autoreverses=true
+        pulse.repeatCount = .infinity
+        return pulse
+    }
+    
 }
