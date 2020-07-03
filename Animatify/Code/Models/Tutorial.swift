@@ -12,6 +12,7 @@ enum LoaderType {
     case success
     case failure
     case bluetooth
+    case wifi
 }
 
 enum TutorialAction: Equatable {
