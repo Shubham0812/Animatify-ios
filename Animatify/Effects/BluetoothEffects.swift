@@ -61,7 +61,7 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
     
     /// CAAnimation Delegate method
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        let pulse = LayerAnimationFactory.getPulsatingAnimation(duration: 1)
+        let pulse = LayerAnimationFactory.getPulsatingAnimation(duration: 0.75)
         self.pulsatingLayer.add(pulse, forKey:"abcd")
     }
     
@@ -78,13 +78,13 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
         let bluetoothPath = UIBezierPath()
         bluetoothPath.move(to: CGPoint(x: cX - (25 * scaleFactor), y: cY - (28 * scaleFactor)))
         bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY + (scaleFactor * 28)))
-        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY + (scaleFactor * 45)))
-        bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 0), y: cY - (scaleFactor * 45)))
+        bluetoothPath.addLine(to: CGPoint(x: cX , y: cY + (scaleFactor * 45)))
+        bluetoothPath.addLine(to: CGPoint(x: cX , y: cY - (scaleFactor * 45)))
         bluetoothPath.addLine(to: CGPoint(x: cX + (scaleFactor * 25), y: cY - (scaleFactor * 28)))
         bluetoothPath.addLine(to: CGPoint(x: cX - (scaleFactor * 25), y: cY + (scaleFactor * 28)))
         
-        circleLayer.setShapeLayer(path: circlePath, fillColor: fillingColor, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white, position: view.center)
-        bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
+        circleLayer.setShapeLayer(path: circlePath, fillColor: fillingColor, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: .white)
+        bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor)
         
         addPulsatingLayer()
         self.addSublayer(circleLayer)
@@ -96,20 +96,14 @@ final class BluetoothEffect1: CAShapeLayer, CAAnimationDelegate {
         bluetoothLayer.add(strokeEnd, forKey: "strokeEnd")
     }
     
-    func addPulsatingLayer(){
+    func addPulsatingLayer() {
         let pulsatingPath = UIBezierPath(arcCenter: .zero,
                                          radius: (radius * scaleFactor),
                                          startAngle: -.pi/2,
                                          endAngle: 2 * .pi ,
                                          clockwise: true)
-        
-        pulsatingLayer.path = pulsatingPath.cgPath
-        pulsatingLayer.strokeColor=UIColor.clear.cgColor
-        pulsatingLayer.lineWidth=15
-        pulsatingLayer.lineCap=CAShapeLayerLineCap.round
-        pulsatingLayer.fillColor = fillingColor.withAlphaComponent(0.3).cgColor
+        pulsatingLayer.setShapeLayer(path: pulsatingPath, fillColor: fillingColor.withAlphaComponent(0.2), lineWidth: 15, strokeStart: 0, strokeEnd: 1, strokeColor: UIColor.clear)
         pulsatingLayer.position = view.center
-        
         self.addSublayer(pulsatingLayer)
     }
 }

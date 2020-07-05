@@ -92,9 +92,9 @@ final class LogoLayer: CAShapeLayer, CAAnimationDelegate {
         /// for static logo pass the animationDuration as 0
         let strokeEnd: CGFloat = self.animationDuration > 0 ? 0 : 1
         
-        logoLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW, strokeStart: 0, strokeEnd: 1, strokeColor: self.trackColor, position: center)
-        glideLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: 0.0008, strokeColor: glideColor, position: center)
-        fillLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: strokeEnd, strokeColor: self.fillingColor, position: center)
+        logoLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW, strokeStart: 0, strokeEnd: 1, strokeColor: self.trackColor)
+        glideLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: 0.0008, strokeColor: glideColor)
+        fillLayer.setShapeLayer(path: path, frame: self.logoFrame, fillColor: UIColor.clear, lineWidth: self.lineW + 1, strokeStart: 0, strokeEnd: strokeEnd, strokeColor: self.fillingColor)
         
         // add the layers into the parent layer
         self.addSublayer(logoLayer)
