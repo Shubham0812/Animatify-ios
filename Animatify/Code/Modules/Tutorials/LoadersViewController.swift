@@ -163,7 +163,7 @@ extension LoadersViewController {
         self.view.addSubview(view)
         
         /// Wifi effect
-        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 2.5, lineWidth: 12, trackColor: UIColor.white, fillingColor: .blue)
+        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 12, trackColor: UIColor.white, fillingColor: .white)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
@@ -186,11 +186,11 @@ extension LoadersViewController {
         
         
         wifiButton.setTitle("Wifi", for: .normal)
-        self.view.addSubview(wifiButton)
-        wifiButton.addTarget(self, action: #selector(performWifiConnect), for: .touchUpInside)
+//        self.view.addSubview(wifiButton)
+//        wifiButton.addTarget(self, action: #selector(performWifiConnect), for: .touchUpInside)
     }
     
     @objc func performWifiConnect(){
-        wifiButton.performWifiAction(parentView: self.view, circleButton: 84, duration: 2, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .blue)
+        wifiButton.performWifiAction(parentView: self.view, circleButton: 84, duration: 0.75, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .blue)
     }
 }

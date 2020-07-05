@@ -73,7 +73,6 @@ class HomeViewController: UIViewController {
         self.transitionsTableView.dataSource = self
         self.transitionsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
         
-        //        self.roundButton.roundCorners(cornerRadius: self.roundButton.frame.width / 2.0)
         self.setupViews()
         self.drawLogo()
     }
