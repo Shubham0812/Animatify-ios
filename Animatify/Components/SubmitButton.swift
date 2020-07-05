@@ -54,7 +54,7 @@ class SubmitButton: UIButton {
                 tickPath.addLine(to: CGPoint(x: cX - (scale * 18), y: cY + (scale * 28)))
                 tickPath.addLine(to: CGPoint(x: cX + (scale * 42), y: cY - (scale * 30)))
                 
-                self.tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: tickWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                self.tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: tickWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
                 parentView.layer.insertSublayer(self.tickLayer, above: self.layer)
             }
             UIView.animate(withDuration: duration, delay: 0, options: .curveEaseIn, animations: {

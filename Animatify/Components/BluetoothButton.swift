@@ -46,21 +46,20 @@ class BluetoothButton: UIButton {
                 self.layer.borderWidth = borderWidth
                 self.frame = CGRect(x: self.center.x - (circleButton / 2), y: self.center.y - (circleButton / 2), width: circleButton, height: circleButton)
                 self.roundCorners(cornerRadius: self.frame.width / 2.0)
-                                
+                
                 let cX: CGFloat = self.center.x
                 let cY: CGFloat = self.center.y
                 
-
                 let bluetoothPath = UIBezierPath()
                 bluetoothPath.move(to: CGPoint(x: cX - (25 * scale), y: cY - (28 * scale)))
                 bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY + (scale * 28)))
-                bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 0), y: cY + (scale * 45)))
-                bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 0), y: cY - (scale * 45)))
+                bluetoothPath.addLine(to: CGPoint(x: cX , y: cY + (scale * 45)))
+                bluetoothPath.addLine(to: CGPoint(x: cX , y: cY - (scale * 45)))
                 bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY - (scale * 28)))
                 bluetoothPath.addLine(to: CGPoint(x: cX - (scale * 25), y: cY + (scale * 28)))
                 
                 
-                self.bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                self.bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
                 parentView.layer.insertSublayer(self.bluetoothLayer, above: self.layer)
             }
             

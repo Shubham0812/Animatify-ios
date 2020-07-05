@@ -55,13 +55,13 @@ class WifiButton: UIButton {
                 let wifiPath = UIBezierPath()
                 wifiPath.move(to: CGPoint(x: cX - (25 * scale), y: cY - (28 * scale)))
                 wifiPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY + (scale * 28)))
-                wifiPath.addLine(to: CGPoint(x: cX + (scale * 0), y: cY + (scale * 45)))
-                wifiPath.addLine(to: CGPoint(x: cX + (scale * 0), y: cY - (scale * 45)))
+                wifiPath.addLine(to: CGPoint(x: cX , y: cY + (scale * 45)))
+                wifiPath.addLine(to: CGPoint(x: cX , y: cY - (scale * 45)))
                 wifiPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY - (scale * 28)))
                 wifiPath.addLine(to: CGPoint(x: cX - (scale * 25), y: cY + (scale * 28)))
                 
                 
-                self.wifiLayer.setShapeLayer(path: wifiPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                self.wifiLayer.setShapeLayer(path: wifiPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
                 parentView.layer.insertSublayer(self.wifiLayer, above: self.layer)
             }
             

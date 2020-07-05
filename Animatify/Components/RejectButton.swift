@@ -58,7 +58,7 @@ class RejectButton: UIButton {
                 crossPath.addLine(to: CGPoint(x: cX + (scale * 32), y: cY - (scale * 32)))
                 
                 
-                self.crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor, position: self.center)
+                self.crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
                 parentView.layer.insertSublayer(self.crossLayer, above: self.layer)
             }
             
