@@ -1,16 +1,16 @@
 //
-//  RejectButton.swift
+//  BluetoothButton.swift
 //  Animatify
 //
-//  Created by Aaryan Kothari on 29/06/20.
+//  Created by Aaryan Kothari on 03/07/20.
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
 import UIKit
 
-class RejectButton: UIButton {
+class BluetoothButton: UIButton {
     
-    let crossLayer = CAShapeLayer()
+    let bluetoothLayer = CAShapeLayer()
     
     // MARK:- initializers for the UIButton
     override init(frame: CGRect) {
@@ -20,7 +20,7 @@ class RejectButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// Initializer for the RejectButton
+    /// Initializer for the BluetoothButton
     /// type - determines the type of the button
     /// frame - the frame of the button
     /// borderColor - the borderColor of the button
@@ -39,33 +39,34 @@ class RejectButton: UIButton {
     
     // MARK:- functions for the button
     
-    func performRejectAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, crossWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
+    func performBluetoothAction(parentView: UIView, circleButton: CGFloat, duration: TimeInterval, borderWidth: CGFloat, scale: CGFloat, crossWidth: CGFloat, tickColor: UIColor, backgroundColor: UIColor) {
         DispatchQueue.main.async {
             self.setTitle("", for: .normal)
             ViewAnimationFactory.makeEaseInAnimation(duration: duration / 3, delay: 0) {
                 self.layer.borderWidth = borderWidth
                 self.frame = CGRect(x: self.center.x - (circleButton / 2), y: self.center.y - (circleButton / 2), width: circleButton, height: circleButton)
                 self.roundCorners(cornerRadius: self.frame.width / 2.0)
-                                
+                
                 let cX: CGFloat = self.center.x
                 let cY: CGFloat = self.center.y
                 
-
-                let crossPath = UIBezierPath()
-                crossPath.move(to: CGPoint(x: cX - (32 * scale), y: cY - (32 * scale)))
-                crossPath.addLine(to: CGPoint(x: cX + (scale * 32), y: cY + (scale * 32)))
-                crossPath.move(to: CGPoint(x: cX - (32 * scale), y: cY + (32 * scale)))
-                crossPath.addLine(to: CGPoint(x: cX + (scale * 32), y: cY - (scale * 32)))
+                let bluetoothPath = UIBezierPath()
+                bluetoothPath.move(to: CGPoint(x: cX - (25 * scale), y: cY - (28 * scale)))
+                bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY + (scale * 28)))
+                bluetoothPath.addLine(to: CGPoint(x: cX , y: cY + (scale * 45)))
+                bluetoothPath.addLine(to: CGPoint(x: cX , y: cY - (scale * 45)))
+                bluetoothPath.addLine(to: CGPoint(x: cX + (scale * 25), y: cY - (scale * 28)))
+                bluetoothPath.addLine(to: CGPoint(x: cX - (scale * 25), y: cY + (scale * 28)))
                 
                 
-                self.crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
-                parentView.layer.insertSublayer(self.crossLayer, above: self.layer)
+                self.bluetoothLayer.setShapeLayer(path: bluetoothPath, fillColor: UIColor.clear, lineWidth: crossWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
+                parentView.layer.insertSublayer(self.bluetoothLayer, above: self.layer)
             }
             
             UIView.animate(withDuration: duration, delay: 0, options: .curveEaseIn, animations: {
             }) { finished in
                 let strokeEndAnimation = LayerAnimationFactory.getStrokeEndAnimation(duration: duration)
-                self.crossLayer.add(strokeEndAnimation, forKey: "strokeEnd")
+                self.bluetoothLayer.add(strokeEndAnimation, forKey: "strokeEnd")
                 ViewAnimationFactory.makeSimpleAnimation(duration: duration) {
                     self.backgroundColor = backgroundColor
                 }

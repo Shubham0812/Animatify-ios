@@ -18,12 +18,41 @@ enum LayerAnimationFactory {
         return strokeStart
     }
     
-    static func getStrokeEndAnimation(duration: TimeInterval, toValue: CGFloat = 1.0) -> CABasicAnimation {
+    static func getStrokeEndAnimation(duration: TimeInterval, toValue: CGFloat = 1.0, isRemovedOnCompletion : Bool = false) -> CABasicAnimation {
         let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
         strokeEnd.duration = duration
         strokeEnd.toValue = toValue
-        strokeEnd.isRemovedOnCompletion = false
+        strokeEnd.isRemovedOnCompletion = isRemovedOnCompletion
         strokeEnd.fillMode = .forwards
         return strokeEnd
+    }
+    
+    static func getPulsatingAnimation(duration: TimeInterval, toValue: CGFloat = 1.5) -> CABasicAnimation {
+        let pulse = CABasicAnimation(keyPath: "transform.scale")
+        pulse.duration = duration
+        pulse.toValue = toValue
+        pulse.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeOut)
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        return pulse
+    }
+    
+    static func getTranslateXAnimation(duration: TimeInterval, toValue: CGFloat = 1.5) -> CABasicAnimation {
+        let translate = CABasicAnimation(keyPath: "transform.translation.x")
+        translate.duration = duration
+        translate.byValue = toValue
+        translate.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        translate.autoreverses=true
+        translate.repeatCount = .infinity
+        return translate
+    }
+    
+    static func getTranslateYAnimation(duration : TimeInterval, withTanslation translation : Float? = nil) -> CABasicAnimation{
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.y")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = duration
+        animation.autoreverses = false
+        animation.fromValue = translation
+        return animation
     }
 }

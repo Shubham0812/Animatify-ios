@@ -79,8 +79,8 @@ final class RejectEffect1: CAShapeLayer, CAAnimationDelegate {
         crossPath.addLine(to: CGPoint(x: cX + (scaleFactor * 32), y: cY - (scaleFactor * 32)))
 
         
-        circleLayer.setShapeLayer(path: circlePath, fillColor: UIColor.clear, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
-        crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor, position: view.center)
+        circleLayer.setShapeLayer(path: circlePath, fillColor: UIColor.clear, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor)
+        crossLayer.setShapeLayer(path: crossPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor)
         
         self.addSublayer(circleLayer)
         self.insertSublayer(crossLayer, above: self)

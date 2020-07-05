@@ -69,6 +69,10 @@
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
 		51DCDF432495006C00911EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF412495006C00911EAB /* LaunchScreen.storyboard */; };
+		5B4ED98F24AF2D4D007D541C /* BluetoothEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */; };
+		5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */; };
+		5B4ED99324AFB1C3007D541C /* WifiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99224AFB1C2007D541C /* WifiButton.swift */; };
+		5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99424AFB2D5007D541C /* WifiEffects.swift */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
 		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
 /* End PBXBuildFile section */
@@ -138,6 +142,10 @@
 		51DCDF3F2495006C00911EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51DCDF422495006C00911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51DCDF442495006C00911EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothEffects.swift; sourceTree = "<group>"; };
+		5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothButton.swift; sourceTree = "<group>"; };
+		5B4ED99224AFB1C2007D541C /* WifiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiButton.swift; sourceTree = "<group>"; };
+		5B4ED99424AFB2D5007D541C /* WifiEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiEffects.swift; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
 		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,6 +252,8 @@
 				51070182249E1A4A004E6DDE /* ShimmerEffect.swift */,
 				518AC2FD24A65A2F00EAC380 /* SuccessEffects.swift */,
 				5B5310D724A9A66600FA9A69 /* FailureEffects.swift */,
+				5B4ED98E24AF2D4D007D541C /* BluetoothEffects.swift */,
+				5B4ED99424AFB2D5007D541C /* WifiEffects.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -317,6 +327,8 @@
 				518AC30024A75D2F00EAC380 /* SubmitButton.swift */,
 				5B5310D524A99EFB00FA9A69 /* RejectButton.swift */,
 				518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */,
+				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
+				5B4ED99224AFB1C2007D541C /* WifiButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -494,11 +506,14 @@
 				518AC31824AF398900EAC380 /* ButtonsViewController.swift in Sources */,
 				5161E1D324964024008D1368 /* HomeViewController.swift in Sources */,
 				5161E1D824964114008D1368 /* PulseEffect.swift in Sources */,
+				5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */,
 				518AC2FE24A65A2F00EAC380 /* SuccessEffects.swift in Sources */,
 				5161E1F8249A4770008D1368 /* Effect.swift in Sources */,
+				5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */,
 				5161E1ED249A22E5008D1368 /* EffectCollectionViewCell.swift in Sources */,
 				5107018A249E82BC004E6DDE /* TableAnimationViewCell.swift in Sources */,
 				518AC30124A75D2F00EAC380 /* SubmitButton.swift in Sources */,
+				5B4ED98F24AF2D4D007D541C /* BluetoothEffects.swift in Sources */,
 				518AC30524A8E49200EAC380 /* CollectionTutorialViewController.swift in Sources */,
 				5161E1DB24964B7B008D1368 /* ViewExtensions.swift in Sources */,
 				5161E1E8249A1361008D1368 /* IntroViewController.swift in Sources */,
@@ -512,6 +527,7 @@
 				5107018E249E8B27004E6DDE /* Tables.swift in Sources */,
 				5189CDEA24A4C28F00026FF4 /* LoadersViewController.swift in Sources */,
 				5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */,
+				5B4ED99324AFB1C3007D541C /* WifiButton.swift in Sources */,
 				5161E1E024966D6E008D1368 /* ButtonAnimations.swift in Sources */,
 				518AC30324A7A62A00EAC380 /* FoundationExtensions.swift in Sources */,
 				5161E1E224977FFF008D1368 /* Logo.swift in Sources */,
