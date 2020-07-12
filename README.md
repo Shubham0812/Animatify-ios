@@ -42,7 +42,8 @@ The guideline for contributon is covered in the [contributing document](CONTRIBU
 * Alternatively, you can drop me a mail @ singh.shubham0812@gmail.com.
 
 ## Donation 
-If you like this project and want to support me you can do it by helping me to a cup of coffee :)
+If you like this project and want to support me, you can do it by helping me to get a cup of coffee :)
+
 [![Paypal](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/dev/Animatify/Screenshots/Others/paypal_paym.png)](https://www.paypal.me/theiosdev)
 
 
