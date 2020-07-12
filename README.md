@@ -11,7 +11,8 @@ Since it's an open-source project feel free to add animations of your own :D
 - Bluetooth and Wifi effects.
 
 ![alt text](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/1.png)
-![animated transitioning](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/2.png)
+![animated transitioning](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/master/Animatify/Screenshots/2.png)
+![floating buttons](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/master/Animatify/Screenshots/3.png)
 ## Languages / Frameworks Used
 - Swift 5
 - UIKit
