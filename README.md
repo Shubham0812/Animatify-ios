@@ -19,19 +19,10 @@ Since it's an open-source project feel free to add animations of your own :D
 - CoreGraphics
 - CoreAnimation
 
-#### Tested On
-- Iphone 11 Max Pro
-- Iphone 11
-- Iphone 8 plus
-- Ipad 9 pro
-
 **The project is built supporting iOS 13.5, you can change the deployment target to run it on previous iOS versions**
 
 ## Contributing
 The guideline for contributon is covered in the [contributing document](CONTRIBUTING.md).
-
-#### Contributors 
-* Aaryan Kothari (https://github.com/aaryankotharii)
 
 ## How to run the project ?
 * Download the zip file or clone the project.
