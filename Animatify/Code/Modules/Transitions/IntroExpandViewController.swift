@@ -23,6 +23,7 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
     // MARK:- outlets for the viewController
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     
     // MARK:- variables for the viewController
@@ -30,19 +31,28 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
     var animationDuration: TimeInterval = 1
     var aspectRatio: Double = 0
     var ratioType: AspectRatioMode = .equal
+
+    var instructions: [String] = [
+         "Convert the Image supplied into a Core Graphics Image.",
+         "Create a mask with the contents of the Image and apply to the view.",
+         "Add an overlay to the view and animate them."
+     ]
     
+    var character: Characters?
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logoImageView.isHidden.toggle()
         
-        guard let image = logoImageView.image else { return }
-        self.aspectRatio = self.calculateImageRatio(for: image)
-        setMaskingLayer()
-        
-        self.view.layer.mask = maskingLayer
-        self.view.bringSubviewToFront(overlayView)
+        if let character = self.character {
+            self.overlayView.backgroundColor = character.color.withAlphaComponent(0.85)
+            self.logoImageView.image = UIImage(named: character.imageName)
+            self.logoImageView.isHidden.toggle()
+            
+            setMaskingLayer()
+            setInstructions()
+            self.view.bringSubviewToFront(overlayView)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +74,7 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
         let increaseAnimation = LayerAnimationFactory.getBoundsAnimation(duration: animationDuration, fromValue: maskingLayer.bounds, toValue: toFrame)
         self.maskingLayer.add(increaseAnimation, forKey: "animIncrease")
         
-        ViewAnimationFactory.makeEaseInAnimation(duration: animationDuration, delay: 0) {
+        ViewAnimationFactory.makeEaseInAnimation(duration: animationDuration / 1.25, delay: 0) {
             self.overlayView.layer.opacity = 0
         }
     }
@@ -76,13 +86,17 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
     }
     
     // MARK:- functions for the viewController
-    func setMaskingLayer(){
+    func setMaskingLayer() {
+        
+        guard let image = logoImageView.image else { return }
+        self.aspectRatio = self.calculateImageRatio(for: image)
         var imageWidth: Double = 180
         var imageHeight: Double = 180
         (imageWidth, imageHeight) = self.getFrameForImage(width: imageWidth, height: imageWidth)
         maskingLayer.bounds = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
         maskingLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         maskingLayer.position = view.center
+        self.view.layer.mask = maskingLayer
     }
     
     func animateMask() {
@@ -94,6 +108,36 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
         let decreaseAnimation = LayerAnimationFactory.getBoundsAnimation(duration: animationDuration / 2.5, fromValue: maskingLayer.bounds, toValue: toFrame)
         decreaseAnimation.delegate = self
         self.maskingLayer.add(decreaseAnimation, forKey: "animDecrease")
+    }
+    
+    func setInstructions(){
+        /// getting the initial value for the y axis
+        var dy: CGFloat = self.instructionLabel.frame.origin.y + self.instructionLabel.frame.height + 24
+        let stepLabelSize: CGFloat = 42
+        
+        for (ix,instruction) in instructions.enumerated() {
+            let stepLabel = UILabel()
+            stepLabel.font = UIFont(name: "MuseoModerno-Medium", size: 21)
+            stepLabel.text = "\(ix + 1)"
+            stepLabel.textAlignment = .center
+            stepLabel.textColor = UIColor.white
+            stepLabel.setBorderAndCorner(borderColor: UIColor.white, borderWidth: 2, cornerRadius: 21)
+            stepLabel.frame = CGRect(x: 24, y: dy + stepLabel.intrinsicContentSize.height / 2, width: stepLabelSize, height: stepLabelSize)
+            
+            let descriptionLabel = UILabel()
+            descriptionLabel.font = UIFont(name: "Montserrat-Regular", size: 18)
+            descriptionLabel.textColor = UIColor.white
+            descriptionLabel.text = instruction
+            descriptionLabel.numberOfLines = 5
+            
+            descriptionLabel.frame = CGRect(x: stepLabelSize * 2, y: dy + (descriptionLabel.intrinsicContentSize.height / 1.75), width: (self.view.frame.width - (24 * 3) - stepLabelSize), height: descriptionLabel.intrinsicContentSize.height)
+            descriptionLabel.sizeToFit()
+            
+            dy += descriptionLabel.frame.size.height + 24
+            // adding the labels to the scrollview
+            self.view.addSubview(stepLabel)
+            self.view.addSubview(descriptionLabel)
+        }
     }
     
     

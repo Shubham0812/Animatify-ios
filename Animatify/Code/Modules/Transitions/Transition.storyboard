@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-8b-5fE">
-                                <rect key="frame" x="24" y="118" width="378" height="35"/>
+                                <rect key="frame" x="24" y="118" width="355" height="35"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -115,6 +115,146 @@
             </objects>
             <point key="canvasLocation" x="-291" y="104"/>
         </scene>
+        <!--Characters View Controller-->
+        <scene sceneID="dbX-FI-nIz">
+            <objects>
+                <viewController storyboardIdentifier="CharactersViewController" id="8n3-Lh-Iyt" customClass="CharactersViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GVu-cG-c59">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vF-a9-5YI">
+                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="xrw-0x-Wvv" eventType="touchUpInside" id="K5d-i5-dOB"/>
+                                    <action selector="backButtonPressed:" destination="oOW-SC-ymV" eventType="touchUpInside" id="jUb-cJ-hRU"/>
+                                    <action selector="backButtonPressed:" destination="8n3-Lh-Iyt" eventType="touchUpInside" id="tiA-Pt-col"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Launch Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-fM-9hB">
+                                <rect key="frame" x="24" y="110" width="327.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the characters to know more about them." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJ2-dW-2RL">
+                                <rect key="frame" x="24" y="193" width="366" height="56"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="weg-Bn-Jpv">
+                                <rect key="frame" x="24" y="321" width="366" height="541"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="32" id="AkF-1Y-dGD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="Oq9-fM-9hB" firstAttribute="top" secondItem="5vF-a9-5YI" secondAttribute="bottom" constant="20" id="8Ko-n4-hy3"/>
+                            <constraint firstItem="O68-AV-F3a" firstAttribute="trailing" secondItem="weg-Bn-Jpv" secondAttribute="trailing" constant="24" id="GND-RC-C4P"/>
+                            <constraint firstItem="weg-Bn-Jpv" firstAttribute="leading" secondItem="O68-AV-F3a" secondAttribute="leading" constant="24" id="Hdh-Rv-Ira"/>
+                            <constraint firstItem="O68-AV-F3a" firstAttribute="bottom" secondItem="weg-Bn-Jpv" secondAttribute="bottom" id="OKx-fe-dGG"/>
+                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="leading" secondItem="O68-AV-F3a" secondAttribute="leading" constant="24" id="Sc1-yf-KWy"/>
+                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="top" secondItem="Oq9-fM-9hB" secondAttribute="bottom" constant="48" id="WCn-8Y-0aM"/>
+                            <constraint firstItem="O68-AV-F3a" firstAttribute="trailing" secondItem="JJ2-dW-2RL" secondAttribute="trailing" constant="24" id="ZBh-Xi-Zq5"/>
+                            <constraint firstItem="weg-Bn-Jpv" firstAttribute="top" secondItem="JJ2-dW-2RL" secondAttribute="bottom" constant="72" id="he2-9X-EPm"/>
+                            <constraint firstItem="5vF-a9-5YI" firstAttribute="leading" secondItem="O68-AV-F3a" secondAttribute="leading" constant="24" id="it3-1J-5dW"/>
+                            <constraint firstItem="5vF-a9-5YI" firstAttribute="top" secondItem="O68-AV-F3a" secondAttribute="top" constant="20" id="uMx-nt-Vmc"/>
+                            <constraint firstItem="Oq9-fM-9hB" firstAttribute="leading" secondItem="GVu-cG-c59" secondAttribute="leading" constant="24" id="zw1-3e-VW8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O68-AV-F3a"/>
+                    </view>
+                    <connections>
+                        <outlet property="characterCollectionView" destination="weg-Bn-Jpv" id="US8-EN-wqf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2y-61-nW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291" y="819"/>
+        </scene>
+        <!--Intro Expand View Controller-->
+        <scene sceneID="cKE-9r-40d">
+            <objects>
+                <viewController storyboardIdentifier="IntroExpandViewController" id="4pz-PW-Qwf" customClass="IntroExpandViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JFh-Zr-he5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itachi" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-bW-b77">
+                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0an-J8-luP"/>
+                                    <constraint firstAttribute="width" constant="120" id="THe-sY-SNn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded VC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-9R-DV3">
+                                <rect key="frame" x="24" y="110" width="184.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-cf-zid">
+                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="xrw-0x-Wvv" eventType="touchUpInside" id="I5q-SS-QLj"/>
+                                    <action selector="backButtonPressed:" destination="4pz-PW-Qwf" eventType="touchUpInside" id="zb4-4k-2L4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How it works ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-A4-SsR">
+                                <rect key="frame" x="24" y="163" width="160" height="28"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tS6-V3-LlH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="alternateBackground"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="tS6-V3-LlH" firstAttribute="top" secondItem="JFh-Zr-he5" secondAttribute="top" id="183-BP-l7a"/>
+                            <constraint firstItem="7Nl-A4-SsR" firstAttribute="top" secondItem="S8J-9R-DV3" secondAttribute="bottom" constant="18" id="1ZI-7w-A7K"/>
+                            <constraint firstItem="Qxa-bW-b77" firstAttribute="centerY" secondItem="JFh-Zr-he5" secondAttribute="centerY" id="DqT-k8-G1J"/>
+                            <constraint firstItem="Qxa-bW-b77" firstAttribute="centerX" secondItem="JFh-Zr-he5" secondAttribute="centerX" id="Ge6-rZ-U7s"/>
+                            <constraint firstItem="nrQ-Qk-Ul0" firstAttribute="trailing" secondItem="tS6-V3-LlH" secondAttribute="trailing" id="HSl-vv-PFb"/>
+                            <constraint firstItem="S8J-9R-DV3" firstAttribute="leading" secondItem="nrQ-Qk-Ul0" secondAttribute="leading" constant="24" id="UcD-Dy-HdA"/>
+                            <constraint firstItem="VXS-cf-zid" firstAttribute="top" secondItem="nrQ-Qk-Ul0" secondAttribute="top" constant="20" id="eO9-7N-ROJ"/>
+                            <constraint firstAttribute="bottom" secondItem="tS6-V3-LlH" secondAttribute="bottom" id="eqY-15-V0A"/>
+                            <constraint firstItem="7Nl-A4-SsR" firstAttribute="leading" secondItem="nrQ-Qk-Ul0" secondAttribute="leading" constant="24" id="iB8-zs-Qqs"/>
+                            <constraint firstItem="VXS-cf-zid" firstAttribute="leading" secondItem="nrQ-Qk-Ul0" secondAttribute="leading" constant="24" id="kBr-37-K1I"/>
+                            <constraint firstItem="tS6-V3-LlH" firstAttribute="leading" secondItem="nrQ-Qk-Ul0" secondAttribute="leading" id="qhw-pv-M0g"/>
+                            <constraint firstItem="S8J-9R-DV3" firstAttribute="top" secondItem="VXS-cf-zid" secondAttribute="bottom" constant="20" id="wwY-nN-6l7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nrQ-Qk-Ul0"/>
+                    </view>
+                    <connections>
+                        <outlet property="instructionLabel" destination="7Nl-A4-SsR" id="ODs-mz-zob"/>
+                        <outlet property="logoImageView" destination="Qxa-bW-b77" id="2Si-qM-m9A"/>
+                        <outlet property="overlayView" destination="tS6-V3-LlH" id="qIU-lo-sPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wp-q9-oa6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="776"/>
+        </scene>
         <!--Button View Controller-->
         <scene sceneID="dqb-2K-zad">
             <objects>
@@ -134,13 +274,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitioned VC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-bD-Ihu">
-                                <rect key="frame" x="24" y="110" width="366" height="35.5"/>
+                                <rect key="frame" x="24" y="110" width="366" height="35"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJ2-dW-2RL">
-                                <rect key="frame" x="24" y="161.5" width="131.5" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-XE-4nd">
+                                <rect key="frame" x="24" y="165" width="125.5" height="28"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -149,17 +289,17 @@
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="jUh-BN-6D9" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="30c-3D-RSo"/>
-                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="top" secondItem="aG4-bD-Ihu" secondAttribute="bottom" constant="16" id="7wr-ig-eFY"/>
                             <constraint firstItem="aG4-bD-Ihu" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="GK8-GG-Z8I"/>
                             <constraint firstItem="aG4-bD-Ihu" firstAttribute="top" secondItem="jUh-BN-6D9" secondAttribute="bottom" constant="20" id="OWR-Hl-PeI"/>
+                            <constraint firstItem="fZV-XE-4nd" firstAttribute="top" secondItem="aG4-bD-Ihu" secondAttribute="bottom" constant="20" id="QdC-bg-kZm"/>
                             <constraint firstAttribute="trailing" secondItem="aG4-bD-Ihu" secondAttribute="trailing" constant="24" id="QgY-rQ-UE3"/>
-                            <constraint firstItem="JJ2-dW-2RL" firstAttribute="leading" secondItem="anU-gX-b8G" secondAttribute="leading" constant="24" id="U2O-eZ-aud"/>
                             <constraint firstItem="jUh-BN-6D9" firstAttribute="top" secondItem="anU-gX-b8G" secondAttribute="top" constant="20" id="Wcv-Jl-MYj"/>
+                            <constraint firstItem="fZV-XE-4nd" firstAttribute="leading" secondItem="hYs-FQ-YlR" secondAttribute="leading" constant="24" id="qay-xj-ucU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="anU-gX-b8G"/>
                     </view>
                     <connections>
-                        <outlet property="instructionLabel" destination="JJ2-dW-2RL" id="T1n-dh-nb0"/>
+                        <outlet property="instructionLabel" destination="fZV-XE-4nd" id="mly-vv-muw"/>
                         <outlet property="titleLabel" destination="aG4-bD-Ihu" id="EYn-ft-KcZ"/>
                     </connections>
                 </viewController>
@@ -170,6 +310,10 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="itachi" width="640" height="832"/>
+        <namedColor name="alternateBackground">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.9100000262260437" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="background">
             <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
