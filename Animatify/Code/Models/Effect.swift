@@ -11,6 +11,7 @@ import UIKit
 enum EffectType {
     case pulse
     case shimmer
+    case textTyping
     case none
 }
 

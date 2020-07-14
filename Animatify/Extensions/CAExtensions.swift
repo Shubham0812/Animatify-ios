@@ -21,12 +21,25 @@ extension CAShapeLayer {
 }
 
 extension CAGradientLayer {
-    func setGradientLayer(color1: UIColor, color2: UIColor, for containerView: UIView, cornerRadius: CGFloat) {
+    func setGradientLayer(color1: UIColor, color2: UIColor, for containerView: UIView, cornerRadius: CGFloat, startPoint: CGPoint = CGPoint(x: 0.0, y: 0.0), endPoint: CGPoint = CGPoint(x: 1.0, y: 0.5)) {
         self.colors = [color1.cgColor, color2.cgColor]
-        self.startPoint = CGPoint(x: 0.0, y: 0.0)
-        self.endPoint = CGPoint(x: 1.0, y: 0.5)
+        self.startPoint = startPoint
+        self.endPoint = endPoint
         self.frame = containerView.bounds
         self.cornerRadius = cornerRadius
+    }
+    
+    func setGradientLayerWithLocation(color1: UIColor, color2: UIColor, with frame: CGRect, cornerRadius: CGFloat) {
+        self.frame = frame
+        self.colors = [color1.cgColor, color2.cgColor]
+        self.cornerRadius = cornerRadius
+        self.locations = [0.5, 1.0]
+    }
+}
+
+extension CGFloat {
+    func toDouble() -> Double {
+        return Double(self)
     }
 }
 
