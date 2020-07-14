@@ -7,12 +7,12 @@ An iOS application, that contain various tutorials and guides for achieving the 
 Since it's an open-source project feel free to add animations of your own :D
 
 ## What's New ?
-- Floating button, expandable in four directions.
-- Bluetooth and Wifi effects.
+- Text-Type & Text-Gradient Effects.
+- Image Transition.
 
 ![alt text](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/1.png)
-![animated transitioning](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/master/Animatify/Screenshots/2.png)
-![floating buttons](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/master/Animatify/Screenshots/3.png)
+![text-effects](https://raw.githubusercontent.com/Shubham0812/Test-Angular/master/docs/1.png)
+![image-transitions](https://raw.githubusercontent.com/Shubham0812/Test-Angular/master/docs/2.png)
 ## Languages / Frameworks Used
 - Swift 5
 - UIKit
