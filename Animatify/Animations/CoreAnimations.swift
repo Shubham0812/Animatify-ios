@@ -48,11 +48,22 @@ enum LayerAnimationFactory {
     }
     
     static func getTranslateYAnimation(duration : TimeInterval, withTanslation translation : Float? = nil) -> CABasicAnimation{
-        let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.y")
+        let animation = CABasicAnimation(keyPath: "transform.translation.y")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         animation.duration = duration
         animation.autoreverses = false
         animation.fromValue = translation
+        return animation
+    }
+    
+    static func getBoundsAnimation(duration: TimeInterval, fromValue: CGRect, toValue: CGRect) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "bounds")
+//        animation.timingFunction = CAMediaTimingFunction(name: .)
+        animation.duration = duration
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = .forwards
         return animation
     }
 }

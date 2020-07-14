@@ -25,7 +25,7 @@ extension CAGradientLayer {
         self.colors = [color1.cgColor, color2.cgColor]
         self.startPoint = startPoint
         self.endPoint = endPoint
-        self.frame = containerView.frame
+        self.frame = containerView.bounds
         self.cornerRadius = cornerRadius
     }
     

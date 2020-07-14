@@ -33,6 +33,8 @@ extension UIButton {
 }
 
 
+
+/// Typing Extension for the TextField
 extension UITextField{
     func typeOn(string: String, typeInterval: TimeInterval) {
         let characterArray = string.characterArray
@@ -59,8 +61,21 @@ extension UITextField{
             }
         }
     }
+    
+    /// For setting gradient of the TextField
+    func setGradientText(parent: UIView, color1: UIColor = UIColor.systemPink, color2: UIColor = UIColor.systemPurple) {
+        let view = UIView(frame: self.frame)
+        parent.addSubview(view)
+        let gradient = CAGradientLayer()
+        gradient.setGradientLayer(color1: color1, color2: color2, for: self, cornerRadius: 0)
+        
+        view.layer.addSublayer(gradient)
+        view.addSubview(self)
+        view.layer.mask = self.layer
+    }
 }
 
+/// Typing Extension for the TextView
 extension UITextView {
     func typeOn(string: String, typeInterval: TimeInterval) {
         let characterArray = string.characterArray
@@ -83,6 +98,7 @@ extension UITextView {
             characterIndex += 1
             if characterIndex == characterArray.count {
                 timer.invalidate()
+                self.delegate?.textViewDidEndEditing?(self)
             }
         }
     }
