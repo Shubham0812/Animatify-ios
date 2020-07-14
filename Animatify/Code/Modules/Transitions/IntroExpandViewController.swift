@@ -33,9 +33,9 @@ class IntroExpandViewController: UIViewController, CAAnimationDelegate {
     var ratioType: AspectRatioMode = .equal
 
     var instructions: [String] = [
-         "Convert the Image supplied into a Core Graphics Image.",
-         "Create a mask with the contents of the Image and apply to the view.",
-         "Add an overlay to the view and animate them."
+         "Converts the supplied Image into a Core Graphics Image.",
+         "Creates a mask with the contents of the Image and applies it to the view.",
+         "Adds an overlay to the View and then animate them."
      ]
     
     var character: Characters?

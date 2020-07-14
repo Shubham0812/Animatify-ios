@@ -218,7 +218,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How it works ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-A4-SsR">
-                                <rect key="frame" x="24" y="163" width="160" height="28"/>
+                                <rect key="frame" x="24" y="173" width="160" height="28"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="tS6-V3-LlH" firstAttribute="top" secondItem="JFh-Zr-he5" secondAttribute="top" id="183-BP-l7a"/>
-                            <constraint firstItem="7Nl-A4-SsR" firstAttribute="top" secondItem="S8J-9R-DV3" secondAttribute="bottom" constant="18" id="1ZI-7w-A7K"/>
+                            <constraint firstItem="7Nl-A4-SsR" firstAttribute="top" secondItem="S8J-9R-DV3" secondAttribute="bottom" constant="28" id="1ZI-7w-A7K"/>
                             <constraint firstItem="Qxa-bW-b77" firstAttribute="centerY" secondItem="JFh-Zr-he5" secondAttribute="centerY" id="DqT-k8-G1J"/>
                             <constraint firstItem="Qxa-bW-b77" firstAttribute="centerX" secondItem="JFh-Zr-he5" secondAttribute="centerX" id="Ge6-rZ-U7s"/>
                             <constraint firstItem="nrQ-Qk-Ul0" firstAttribute="trailing" secondItem="tS6-V3-LlH" secondAttribute="trailing" id="HSl-vv-PFb"/>

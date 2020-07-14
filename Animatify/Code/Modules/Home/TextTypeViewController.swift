@@ -38,7 +38,7 @@ class TextTypeViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     
     var effect: Effect?
-    var typeDuration: TimeInterval = 0.03
+    var typeDuration: TimeInterval = 0.0325
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
