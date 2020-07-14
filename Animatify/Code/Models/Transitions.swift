@@ -6,11 +6,11 @@
 //  Copyright © 2020 Shubham Singh. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 enum TransitionType {
     case circular
+    case expand
 }
 
 struct Transition {
@@ -18,4 +18,11 @@ struct Transition {
     let action: TransitionType
     let difficulty: String
     let icon: String
+}
+
+
+struct Characters {
+    let name: String
+    let imageName: String
+    let color: UIColor
 }
