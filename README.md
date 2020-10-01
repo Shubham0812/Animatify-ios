@@ -1,6 +1,14 @@
 # Animatify iOS
 Animation, Effects & Transitions for iOS projects.
 
+
+[![platform](https://img.shields.io/badge/platform-iOS-orange)](https://www.android.com)
+[![GitHub license](https://img.shields.io/badge/License-Apache2.0-blue.svg)](LICENSE)
+![Repository size](https://img.shields.io/github/repo-size/shubham0812/Animatify-ios)
+![GitHub stars](https://img.shields.io/github/stars/shubham0812/Animatify-ios?style=social)
+![GitHub forks](https://img.shields.io/github/forks/shubham0812/Animatify-ios?style=social)
+![GitHub follow](https://img.shields.io/github/followers/shubham0812?style=social)
+
 An iOS application, that contain various tutorials and guides for achieving the effects, transitions and animations.
 - License: Apache 2.0
 
