@@ -83,7 +83,6 @@ class HomeViewController: UIViewController {
         self.drawLogo()
     }
     
-    /// animations must be called inside `viewDidAppear` or later (not in `viewDidLoad`)
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupContainer()
@@ -95,7 +94,7 @@ class HomeViewController: UIViewController {
         if self.containerToggled {
             self.containerViewBottomConstraint.constant = 0 /// reset to normal
         } else {
-            let bottomConstant = 100 - containerView.frame.size.height /// show a bit of the top
+            let bottomConstant = 80 - containerView.frame.size.height /// show a bit of the top
             self.containerViewBottomConstraint.constant = bottomConstant
         }
         
@@ -109,6 +108,7 @@ class HomeViewController: UIViewController {
     // MARK:- utility functions for the viewController
     func setupViews() {
         self.containerView.roundCorners(cornerRadius: 42)
+        self.containerView.alpha = 0 /// hide it at first
         self.logoView.backgroundColor = UIColor.clear
         
         // set the section to collapsed
@@ -117,11 +117,13 @@ class HomeViewController: UIViewController {
     }
     
     /// animate the "Tutorial" tableview hidden
+    /// if the tableView is collapsed inside `viewDidLoad`, it won't populate.
+    /// that's why it's **not collapsed + alpha 0** inside `viewDidLoad`, and **collapsed + alpha 1** in `viewDidAppear`.
     func setupContainer() {
-        let bottomConstant = 100 - containerView.frame.size.height /// show a bit of the top
+        let bottomConstant = 80 - self.containerView.frame.size.height /// show a bit of the top
         self.containerViewBottomConstraint.constant = bottomConstant
-        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.25, delay: 0, action: {
-            self.view.layoutIfNeeded()
+        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.4, delay: 0, action: {
+            self.containerView.alpha = 1
         })
     }
     
