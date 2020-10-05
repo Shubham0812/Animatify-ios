@@ -9,10 +9,8 @@ Animation, Effects & Transitions for iOS projects.
 ![GitHub forks](https://img.shields.io/github/forks/shubham0812/Animatify-ios?style=social)
 ![GitHub follow](https://img.shields.io/github/followers/shubham0812?style=social)
 
-An iOS application, that contain various tutorials and guides for achieving the effects, transitions and animations.
-- License: Apache 2.0
+An iOS application/project, that contains various classes/tutorials for effects, transitions and animations created with UIKit, that you can learn from and use in our own iOS projects.
 
-Since it's an open-source project feel free to add animations of your own :D
 
 ## What's New ?
 - Text-Type & Text-Gradient Effects.
@@ -30,7 +28,7 @@ Since it's an open-source project feel free to add animations of your own :D
 **The project is built supporting iOS 13.5, you can change the deployment target to run it on previous iOS versions**
 
 ## Contributing
-The guideline for contributon is covered in the [contributing document](CONTRIBUTING.md).
+The guidelines for contributon is covered in the [contributing document](CONTRIBUTING.md). (Do read it first, it'll help you maintain the hierarchy of the project and it also will help the users to find things easily)
 
 ## How to run the project ?
 * Download the zip file or clone the project.
