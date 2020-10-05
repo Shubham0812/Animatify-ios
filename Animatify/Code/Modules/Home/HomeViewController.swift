@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     
     // MARK:- outlets for the viewController
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint! /// for animating the collapse/expand of the "Tutorials" view
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var effectsCollectionView: UICollectionView!
@@ -82,14 +83,25 @@ class HomeViewController: UIViewController {
         self.drawLogo()
     }
     
+    /// animations must be called inside `viewDidAppear` or later (not in `viewDidLoad`)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupContainer()
+    }
+    
     
     // MARK:- action outlets for the viewController
     @IBAction func expandButtonPressed(_ sender: Any) {
+        if self.containerToggled {
+            self.containerViewBottomConstraint.constant = 0 /// reset to normal
+        } else {
+            let bottomConstant = 100 - containerView.frame.size.height /// show a bit of the top
+            self.containerViewBottomConstraint.constant = bottomConstant
+        }
+        
         ViewAnimationFactory.makeEaseInOutAnimation(duration: 0.75, delay: 0) {
             self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
-            var containerViewTransform = CGAffineTransform.identity
-            containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
-            self.containerView.transform = containerViewTransform
+            self.view.layoutIfNeeded()
             self.containerToggled = !self.containerToggled
         }
     }
@@ -101,10 +113,16 @@ class HomeViewController: UIViewController {
         
         // set the section to collapsed
         self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
-        var containerViewTransform = CGAffineTransform.identity
-        containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
-        self.containerView.transform = containerViewTransform
         self.containerToggled = !self.containerToggled
+    }
+    
+    /// animate the "Tutorial" tableview hidden
+    func setupContainer() {
+        let bottomConstant = 100 - containerView.frame.size.height /// show a bit of the top
+        self.containerViewBottomConstraint.constant = bottomConstant
+        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.25, delay: 0, action: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     func drawLogo(){
