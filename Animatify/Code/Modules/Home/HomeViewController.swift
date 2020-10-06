@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tutorialsTableView: UITableView!
     @IBOutlet weak var transitionsTableView: UITableView!
     
+    @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint! /// for animating the collapse/expand of the "Tutorials" view
+    
     // MARK:- variables for the viewController
     var containerToggled: Bool = false {
         didSet {
@@ -82,14 +84,23 @@ class HomeViewController: UIViewController {
         self.drawLogo()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupContainer()
+    }
     
     // MARK:- action outlets for the viewController
     @IBAction func expandButtonPressed(_ sender: Any) {
+        if self.containerToggled {
+            self.containerViewBottomConstraint.constant = 0 /// reset to normal
+        } else {
+            let bottomConstant = 80 - containerView.frame.size.height /// show a bit of the top
+            self.containerViewBottomConstraint.constant = bottomConstant
+        }
+        
         ViewAnimationFactory.makeEaseInOutAnimation(duration: 0.75, delay: 0) {
             self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
-            var containerViewTransform = CGAffineTransform.identity
-            containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
-            self.containerView.transform = containerViewTransform
+            self.view.layoutIfNeeded()
             self.containerToggled = !self.containerToggled
         }
     }
@@ -97,14 +108,23 @@ class HomeViewController: UIViewController {
     // MARK:- utility functions for the viewController
     func setupViews() {
         self.containerView.roundCorners(cornerRadius: 42)
+        self.containerView.alpha = 0 /// hide it at first
         self.logoView.backgroundColor = UIColor.clear
         
         // set the section to collapsed
         self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
-        var containerViewTransform = CGAffineTransform.identity
-        containerViewTransform = containerViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.containerView.frame.origin.y - 100)
-        self.containerView.transform = containerViewTransform
         self.containerToggled = !self.containerToggled
+    }
+    
+    /// animate the "Tutorial" tableview hidden
+    /// if the tableView is collapsed inside `viewDidLoad`, it won't populate.
+    /// that's why it's **not collapsed + alpha 0** inside `viewDidLoad`, and **collapsed + alpha 1** in `viewDidAppear`.
+    func setupContainer() {
+        let bottomConstant = 80 - self.containerView.frame.size.height /// show a bit of the top
+        self.containerViewBottomConstraint.constant = bottomConstant
+        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.4, delay: 0, action: {
+            self.containerView.alpha = 1
+        })
     }
     
     func drawLogo(){
