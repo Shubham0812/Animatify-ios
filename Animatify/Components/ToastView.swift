@@ -32,7 +32,7 @@ struct ToastViewConfiguration {
         var mainBackgroundColor: UIColor {
             switch self {
             case .success:
-                return UIColor(red: 0.63, green: 0.93, blue: 0.69, alpha: 1)
+                return UIColor(red: 0.52, green: 0.93, blue: 0.68, alpha: 1)
             case .info:
                 return .yellow
             case .warning:
@@ -43,7 +43,7 @@ struct ToastViewConfiguration {
         var secondaryBackgroundColor: UIColor {
             switch self {
             case .success:
-                return .purple
+                return UIColor(red: 0.25, green: 0.89, blue: 0.50, alpha: 1)
             case .info:
                 return .purple
             case .warning:
@@ -102,6 +102,7 @@ fileprivate extension ToastView {
         configureMainBackground(with: configuration)
         configureSecondaryBackground(with: configuration)
         configureTitleLabel(with: configuration)
+        configureCaptionLabel(with: configuration)
     }
 
     func configureMainBackground(with configuration: ToastViewConfiguration) {
@@ -134,7 +135,7 @@ fileprivate extension ToastView {
     func configureTitleLabel(with configuration: ToastViewConfiguration) {
         titleLabel.text = configuration.title
         titleLabel.textColor = configuration.theme.textColor
-        titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
+        titleLabel.font = .systemFont(ofSize: 25, weight: .semibold)
         titleLabel.numberOfLines = 0
         
         let leadingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: secondaryBackgroundView, attribute: .trailing, multiplier: 1, constant: 10)
@@ -142,13 +143,26 @@ fileprivate extension ToastView {
         let topConstraint = NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 30)
         addConstraints([leadingConstraint, trailingConstraint, topConstraint])
     }
+
+    func configureCaptionLabel(with configuration: ToastViewConfiguration) {
+        captionLabel.text = configuration.caption
+        captionLabel.textColor = configuration.theme.textColor
+        captionLabel.font = .systemFont(ofSize: 14)
+        captionLabel.numberOfLines = 0
+        
+        let leadingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: captionLabel, attribute: .leading, multiplier: 1, constant: 0)
+        let trailingConstraint = NSLayoutConstraint(item: captionLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -10)
+        let topConstraint = NSLayoutConstraint(item: captionLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 10)
+        let bottomConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: captionLabel, attribute: .bottom, multiplier: 1, constant: 20)
+        addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
+    }
     
     func buildViewStructure() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         captionLabel.translatesAutoresizingMaskIntoConstraints = false
         secondaryBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleLabel)
-//        addSubview(captionLabel)
+        addSubview(captionLabel)
         addSubview(secondaryBackgroundView)
     }
 }
