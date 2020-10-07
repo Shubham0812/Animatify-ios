@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This structure is used to configure the toast view
 struct ToastViewConfiguration {
     
     enum Theme {
@@ -77,7 +78,11 @@ class ToastView: UIView {
     fileprivate var captionLabel = UILabel(frame: .zero)
     fileprivate var secondaryBackgroundView = UIView(frame: .zero)
     fileprivate var iconImageView = UIImageView(frame: .zero)
-    
+
+    /// This function shows the toast view on any UIViewController, it will disappear after
+    /// the set duration.
+    /// on - The UIViewController the toast will be shown on.
+    /// configuration - The configuration that determines what the toast should look like and what content it will show
     func show(on viewController: UIViewController, configuration: ToastViewConfiguration) {
         if superview != nil {
             removeFromSuperview()
