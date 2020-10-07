@@ -86,17 +86,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupContainer()
-        
-        let configuration = ToastViewConfiguration(title: "Title",
-                                                   caption: "caption",
-                                                   theme: .light,
-                                                   contentType: .success,
-                                                   duration: 2,
-                                                   cornerRadius: 10)
-        
-        let toastView = ToastView(frame: .zero)
-        toastView.show(on: self, configuration: configuration)
+        setupContainer()        
     }
     
     // MARK:- action outlets for the viewController

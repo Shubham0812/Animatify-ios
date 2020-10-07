@@ -34,9 +34,9 @@ struct ToastViewConfiguration {
             case .success:
                 return UIColor(red: 0.52, green: 0.93, blue: 0.68, alpha: 1)
             case .info:
-                return .yellow
+                return UIColor(red: 0.99, green: 0.79, blue: 0.56, alpha: 1)
             case .warning:
-                return .red
+                return UIColor(red: 0.96, green: 0.52, blue: 0.51, alpha: 1)
             }
         }
 
@@ -45,9 +45,9 @@ struct ToastViewConfiguration {
             case .success:
                 return UIColor(red: 0.25, green: 0.89, blue: 0.50, alpha: 1)
             case .info:
-                return .purple
+                return UIColor(red: 0.98, green: 0.67, blue: 0.31, alpha: 1)
             case .warning:
-                return .purple
+                return UIColor(red: 0.93, green: 0.26, blue: 0.24, alpha: 1)
             }
         }
         
@@ -89,6 +89,7 @@ class ToastView: UIView {
         viewController.view.addSubview(self)
         configure(with: configuration)
         fadeIn()
+        startTimer(duration: configuration.duration)
     }
     
     fileprivate func fadeIn() {
@@ -100,6 +101,12 @@ class ToastView: UIView {
     fileprivate func fadeOut() {
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.alpha = 0
+        }
+    }
+    
+    fileprivate func startTimer(duration: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) { [weak self] in
+            self?.fadeOut()
         }
     }
 }
