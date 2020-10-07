@@ -16,9 +16,9 @@ An iOS application/project, that contains various classes/tutorials for effects,
 - Text-Type & Text-Gradient Effects.
 - Image Transition.
 
-![alt text](https://github.com/Shubham0812/Animatify-ios/blob/master/Animatify/Screenshots/1.png)
-![text-effects](https://raw.githubusercontent.com/Shubham0812/Test-Angular/master/docs/1.png)
-![image-transitions](https://raw.githubusercontent.com/Shubham0812/Test-Angular/master/docs/2.png)
+<img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/0905733C-6EA7-4C4B-8C43-1A22000D6B8B.gif" width="300"> | <img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/texttypeeffects.png" width="300"> | <img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/B68CAFA5-97AD-4194-9B52-22A4A133EBF9.gif" width="300">
+ --- | --- | ---
+ 
 ## Languages / Frameworks Used
 - Swift 5
 - UIKit
