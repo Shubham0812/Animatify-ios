@@ -50,6 +50,17 @@ struct ToastViewConfiguration {
                 return .purple
             }
         }
+        
+        var icon: UIImage? {
+            switch self {
+            case .success:
+                return UIImage(systemName: "checkmark.circle.fill")
+            case .info:
+                return UIImage(systemName: "info.circle.fill")
+            case .warning:
+                return UIImage(systemName: "xmark.circle.fill")
+            }
+        }
     }
     
     var title: String
@@ -65,6 +76,7 @@ class ToastView: UIView {
     fileprivate var titleLabel = UILabel(frame: .zero)
     fileprivate var captionLabel = UILabel(frame: .zero)
     fileprivate var secondaryBackgroundView = UIView(frame: .zero)
+    fileprivate var iconImageView = UIImageView(frame: .zero)
     
     func show(on viewController: UIViewController, configuration: ToastViewConfiguration) {
         if superview != nil {
@@ -101,6 +113,7 @@ fileprivate extension ToastView {
         alpha = 0
         configureMainBackground(with: configuration)
         configureSecondaryBackground(with: configuration)
+        configureIconImageView(with: configuration)
         configureTitleLabel(with: configuration)
         configureCaptionLabel(with: configuration)
     }
@@ -121,7 +134,6 @@ fileprivate extension ToastView {
     }
     
     func configureSecondaryBackground(with configuration: ToastViewConfiguration) {
-        
         secondaryBackgroundView.layer.cornerRadius = configuration.cornerRadius
         secondaryBackgroundView.backgroundColor = configuration.contentType.secondaryBackgroundColor
         
@@ -132,6 +144,17 @@ fileprivate extension ToastView {
         addConstraints([widthConstraint, leadingConstraint, topConstraint, bottomConstraint])
     }
     
+    func configureIconImageView(with configuration: ToastViewConfiguration) {
+        iconImageView.image = configuration.contentType.icon
+        iconImageView.tintColor = configuration.theme.textColor
+        
+        let trailingConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: iconImageView, attribute: .trailing, multiplier: 1, constant: 20)
+        let widthConstraint = NSLayoutConstraint(item: iconImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
+        let heightConstraint = NSLayoutConstraint(item: iconImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
+        let centerConstraint = NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: titleLabel, attribute: .centerY, multiplier: 1, constant: 0)
+        addConstraints([trailingConstraint, widthConstraint, heightConstraint, centerConstraint])
+    }
+    
     func configureTitleLabel(with configuration: ToastViewConfiguration) {
         titleLabel.text = configuration.title
         titleLabel.textColor = configuration.theme.textColor
@@ -139,7 +162,7 @@ fileprivate extension ToastView {
         titleLabel.numberOfLines = 0
         
         let leadingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: secondaryBackgroundView, attribute: .trailing, multiplier: 1, constant: 10)
-        let trailingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 10)
+        let trailingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: iconImageView, attribute: .trailing, multiplier: 1, constant: 10)
         let topConstraint = NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 30)
         addConstraints([leadingConstraint, trailingConstraint, topConstraint])
     }
@@ -151,7 +174,7 @@ fileprivate extension ToastView {
         captionLabel.numberOfLines = 0
         
         let leadingConstraint = NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: captionLabel, attribute: .leading, multiplier: 1, constant: 0)
-        let trailingConstraint = NSLayoutConstraint(item: captionLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -10)
+        let trailingConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: captionLabel, attribute: .trailing, multiplier: 1, constant: 10)
         let topConstraint = NSLayoutConstraint(item: captionLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 10)
         let bottomConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: captionLabel, attribute: .bottom, multiplier: 1, constant: 20)
         addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
@@ -161,6 +184,8 @@ fileprivate extension ToastView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         captionLabel.translatesAutoresizingMaskIntoConstraints = false
         secondaryBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(iconImageView)
         addSubview(titleLabel)
         addSubview(captionLabel)
         addSubview(secondaryBackgroundView)
