@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcr-oN-7n4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcr-oN-7n4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,6 +108,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="cC9-r2-4Z4" firstAttribute="top" secondItem="rdI-XQ-PDr" secondAttribute="bottom" constant="24" id="1BN-1Y-Cdn"/>
@@ -130,11 +132,11 @@
                             <constraint firstItem="lz0-SH-1tv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oxQ-us-c3J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cC9-r2-4Z4" secondAttribute="bottom" id="uob-j4-vhY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="5ZC-k0-eNY"/>
                     <connections>
                         <outlet property="containerView" destination="Zxn-jI-eeW" id="kGb-4U-PCQ"/>
+                        <outlet property="containerViewBottomConstraint" destination="bZF-cm-zGX" id="JtG-1P-Gis"/>
                         <outlet property="effectsCollectionView" destination="r7Q-pM-Gcm" id="Ud9-qN-cbA"/>
                         <outlet property="expandButton" destination="JvB-17-mX3" id="dPL-ej-sQS"/>
                         <outlet property="logoView" destination="lz0-SH-1tv" id="yA6-W1-up6"/>
@@ -235,6 +237,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nr2-8t-xaV"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="pcU-t0-J7R" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" id="01L-pd-KHg"/>
@@ -252,7 +255,6 @@
                             <constraint firstItem="Raz-cw-0ZC" firstAttribute="leading" secondItem="nr2-8t-xaV" secondAttribute="leading" constant="24" id="lUN-24-dC0"/>
                             <constraint firstItem="nr2-8t-xaV" firstAttribute="trailing" secondItem="pcU-t0-J7R" secondAttribute="trailing" id="zHE-Mi-LOv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nr2-8t-xaV"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="XY6-Eq-UhV" id="5sZ-HT-Mka"/>
@@ -371,6 +373,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1S6-jq-MSa"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Foq-Ly-u4I" secondAttribute="trailing" id="3f6-zq-bF5"/>
@@ -390,7 +393,6 @@
                             <constraint firstItem="1S6-jq-MSa" firstAttribute="trailing" secondItem="ILC-iU-Cue" secondAttribute="trailing" constant="24" id="knW-iR-MBZ"/>
                             <constraint firstAttribute="bottom" secondItem="Foq-Ly-u4I" secondAttribute="bottom" id="nER-yR-6ve"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1S6-jq-MSa"/>
                     </view>
                     <connections>
                         <outlet property="descriptionTextView" destination="bM7-wE-70p" id="X7K-Qv-MzU"/>
@@ -414,8 +416,8 @@
                     <view key="view" contentMode="scaleToFill" id="utp-af-Bf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="alternateBackground"/>
                         <viewLayoutGuide key="safeArea" id="tEx-cj-y5N"/>
+                        <color key="backgroundColor" name="alternateBackground"/>
                     </view>
                     <navigationItem key="navigationItem" id="1EX-gr-kjC"/>
                 </viewController>
