@@ -122,7 +122,7 @@ class HomeViewController: UIViewController {
     func setupContainer() {
         let bottomConstant = 80 - self.containerView.frame.size.height /// show a bit of the top
         self.containerViewBottomConstraint.constant = bottomConstant
-        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.4, delay: 0, action: {
+        ViewAnimationFactory.makeEaseOutAnimation(duration: 0.3, delay: 0, action: {
             self.containerView.alpha = 1
         })
     }
