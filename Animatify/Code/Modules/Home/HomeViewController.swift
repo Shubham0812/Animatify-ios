@@ -86,7 +86,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupContainer()
+        setupContainer()        
     }
     
     // MARK:- action outlets for the viewController

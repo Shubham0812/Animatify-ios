@@ -17,6 +17,7 @@
 		5107018B249E82BC004E6DDE /* TableAnimationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51070189249E82BC004E6DDE /* TableAnimationViewCell.xib */; };
 		5107018E249E8B27004E6DDE /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5107018D249E8B27004E6DDE /* Tables.swift */; };
 		51070190249E8B36004E6DDE /* TableViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5107018F249E8B36004E6DDE /* TableViewAnimations.swift */; };
+		5136CE04252E3A4A00E80031 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136CE03252E3A4A00E80031 /* ToastView.swift */; };
 		5161E1BB249637A6008D1368 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1B52496379F008D1368 /* Raleway-Black.ttf */; };
 		5161E1BC249637A8008D1368 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1BA249637A0008D1368 /* Raleway-Bold.ttf */; };
 		5161E1BD249637AB008D1368 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5161E1B92496379F008D1368 /* Raleway-Light.ttf */; };
@@ -92,6 +93,7 @@
 		51070189249E82BC004E6DDE /* TableAnimationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableAnimationViewCell.xib; sourceTree = "<group>"; };
 		5107018D249E8B27004E6DDE /* Tables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
 		5107018F249E8B36004E6DDE /* TableViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimations.swift; sourceTree = "<group>"; };
+		5136CE03252E3A4A00E80031 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		5161E1B42496379F008D1368 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		5161E1B52496379F008D1368 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
 		5161E1B62496379F008D1368 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				518AC31B24AF424200EAC380 /* ExpandingButtonsView.swift */,
 				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
 				5B4ED99224AFB1C2007D541C /* WifiButton.swift */,
+				5136CE03252E3A4A00E80031 /* ToastView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				51935D4924BDB00B000A9F64 /* CharactersViewController.swift in Sources */,
 				5161E203249CAA53008D1368 /* EffectDetailsViewController.swift in Sources */,
 				5161E1D6249640B7008D1368 /* ColorExtensions.swift in Sources */,
+				5136CE04252E3A4A00E80031 /* ToastView.swift in Sources */,
 				51935D4C24BDB12B000A9F64 /* CharactersCollectionViewCell.swift in Sources */,
 				5161E1DE24965567008D1368 /* UIViewAnimations.swift in Sources */,
 				518AC31424AA63C200EAC380 /* CircleViewController.swift in Sources */,
