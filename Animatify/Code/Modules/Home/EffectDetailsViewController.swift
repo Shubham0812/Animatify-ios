@@ -67,26 +67,28 @@ class EffectDetailsViewController: UIViewController {
     
     // MARK:- utility functions for the viewController
     func setupViews(){
-        self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
-        var scrollViewTransform = CGAffineTransform.identity
-        scrollViewTransform = scrollViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.scrollView.frame.origin.y - 80)
-        self.scrollView.transform = scrollViewTransform
-        
-        ///setting the effectscontainerView
-        self.effectContainerView.roundCorners(cornerRadius: 12)
-        let gradient = CAGradientLayer()
-        gradient.setGradientLayer(color1: effect!.gradientColor1, color2: effect!.gradientColor2, for: self.effectContainerView, cornerRadius: self.effectContainerView.layer.cornerRadius)
-        self.effectContainerView.layer.addSublayer(gradient)
-        
-        if (effect?.action == EffectType.pulse) {
-            let pulseLayer = PulseLayer(radius: 12, for: self.effectContainerView, scale: 1.5, with: UIColor.systemIndigo.withAlphaComponent(0.8), animationDuration: 1.25)
-            self.view.layer.insertSublayer(pulseLayer, below: self.effectContainerView.layer)
-        } else if (effect?.action == EffectType.shimmer) {
-            let shimmerLayer = ShimmerLayer(for: effectContainerView, cornerRadius: 12)
-            self.view.layer.insertSublayer(shimmerLayer, above: effectContainerView.layer)
-            shimmerLayer.startAnimation()
+        DispatchQueue.main.async { [self] in 
+            self.expandButton.transform = self.expandButton.transform.rotated(by: +CGFloat.pi + 0.00000001)
+            var scrollViewTransform = CGAffineTransform.identity
+            scrollViewTransform = scrollViewTransform.translatedBy(x: 0, y: self.view.frame.height - self.scrollView.frame.origin.y - 80)
+            self.scrollView.transform = scrollViewTransform
+            
+            ///setting the effectscontainerView
+            self.effectContainerView.roundCorners(cornerRadius: 12)
+            let gradient = CAGradientLayer()
+            gradient.setGradientLayer(color1: effect!.gradientColor1, color2: effect!.gradientColor2, for: self.effectContainerView, cornerRadius: self.effectContainerView.layer.cornerRadius)
+            self.effectContainerView.layer.addSublayer(gradient)
+            
+            if (effect?.action == EffectType.pulse) {
+                let pulseLayer = PulseLayer(radius: 12, for: self.effectContainerView, scale: 1.5, with: UIColor.systemIndigo.withAlphaComponent(0.8), animationDuration: 1.25)
+                self.view.layer.insertSublayer(pulseLayer, below: self.effectContainerView.layer)
+            } else if (effect?.action == EffectType.shimmer) {
+                let shimmerLayer = ShimmerLayer(for: effectContainerView, cornerRadius: 12)
+                self.view.layer.insertSublayer(shimmerLayer, above: effectContainerView.layer)
+                shimmerLayer.startAnimation()
+            }
+            setInstructions()
         }
-        setInstructions()
     }
     
     func setInstructions(){
