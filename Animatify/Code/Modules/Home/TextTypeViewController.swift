@@ -45,7 +45,7 @@ class TextTypeViewController: UIViewController, UITextViewDelegate, UITextFieldD
         super.viewDidLoad()
         /// make sure there is no text in the textField / TextView
         self.headerTextField.text = ""
-        self.headerTextField.setGradientText(parent: self.view, color1: UIColor.systemPurple, color2: UIColor.systemPink)
+//        self.headerTextField.setGradientText(parent: self.view, color1: UIColor.systemPurple, color2: UIColor.systemPink)
         self.headerTextField.delegate = self
         
         self.descriptionTextView.text = ""
