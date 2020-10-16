@@ -81,6 +81,7 @@ class ExpandingButtonsView: UIView {
         super.init(frame: frame)
     }
     
+    /// returns the size the view will have when expanded
     public func expandedSize() -> CGSize {
         var majorDimension: CGFloat = primaryButtonWidth
         majorDimension += CGFloat(numberOfButtons) * secondaryButtonWidth
