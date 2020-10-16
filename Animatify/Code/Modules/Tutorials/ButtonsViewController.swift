@@ -36,16 +36,16 @@ class ButtonEffectsViewController: UIViewController {
     private var expandWidth: CGFloat = 300
     private var expandHeight: CGFloat = 300
     
+    private var didLayoutButtons: Bool = false
+    
     var upExpand = ExpandingButtonsView()
     var downExpand = ExpandingButtonsView()
     var rightExpand = ExpandingButtonsView()
     var leftExpand = ExpandingButtonsView()
     
-    // MARK:- lifecycle methods for the viewController
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.dY = titleLabel.frame.origin.x + titleLabel.frame.height + spacing
+    // MARK:- lifecycle methods for the viewController    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         drawButtons()
     }
     
@@ -57,6 +57,10 @@ class ButtonEffectsViewController: UIViewController {
     
     // MARK:- utility functions for the viewController
     func drawButtons() {
+        guard !didLayoutButtons else { return }
+        didLayoutButtons = true
+        
+        self.dY = titleLabel.frame.origin.x + titleLabel.frame.height + spacing
         /// rightExpand view
         self.rightExpand = ExpandingButtonsView(frame: CGRect(x: dX, y: dY, width: expandWidth, height: expandHeight), numberOfButtons: 3, symbolNames: symbolNames, symbolTint: symbolTint.shuffled(), expandDirection: .right, largeButtonSize: 46, smallButtonSize: 32)
         self.view.addSubview(rightExpand)
