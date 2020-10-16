@@ -28,15 +28,10 @@ class ButtonEffectsViewController: UIViewController {
     
     private var circleSymbolNames = ["calendar.circle", "flag.circle", "link.circle", "tag.circle", "bell.circle", "envelope.circle"]
     
-    private var dX: CGFloat = 20
-    private var dY: CGFloat = 0
-    
-    private var spacing: CGFloat = 56
+    private var spacing: CGFloat = 20
     
     private var expandWidth: CGFloat = 300
     private var expandHeight: CGFloat = 300
-    
-    private var didLayoutButtons: Bool = false
     
     var upExpand = ExpandingButtonsView()
     var downExpand = ExpandingButtonsView()
@@ -44,8 +39,8 @@ class ButtonEffectsViewController: UIViewController {
     var leftExpand = ExpandingButtonsView()
     
     // MARK:- lifecycle methods for the viewController    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         drawButtons()
     }
     
@@ -57,26 +52,61 @@ class ButtonEffectsViewController: UIViewController {
     
     // MARK:- utility functions for the viewController
     func drawButtons() {
-        guard !didLayoutButtons else { return }
-        didLayoutButtons = true
         
-        self.dY = titleLabel.frame.origin.x + titleLabel.frame.height + spacing
         /// rightExpand view
-        self.rightExpand = ExpandingButtonsView(frame: CGRect(x: dX, y: dY, width: expandWidth, height: expandHeight), numberOfButtons: 3, symbolNames: symbolNames, symbolTint: symbolTint.shuffled(), expandDirection: .right, largeButtonSize: 46, smallButtonSize: 32)
+        self.rightExpand = ExpandingButtonsView(numberOfButtons: 3,
+                                                symbolNames: symbolNames,
+                                                symbolTint: symbolTint.shuffled(),
+                                                expandDirection: .right,
+                                                largeButtonSize: 46,
+                                                smallButtonSize: 32)
         self.view.addSubview(rightExpand)
-        
+        self.rightExpand.translatesAutoresizingMaskIntoConstraints = false
+        self.rightExpand.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: spacing).isActive = true
+        self.rightExpand.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: spacing).isActive = true
+        self.rightExpand.widthAnchor.constraint(equalToConstant: self.rightExpand.expandedSize().width).isActive = true
+        self.rightExpand.heightAnchor.constraint(equalToConstant: self.rightExpand.expandedSize().height).isActive = true
         
         /// leftExpand view
-        self.leftExpand = ExpandingButtonsView(frame: CGRect(x: self.view.frame.width  - (expandWidth + spacing / 2), y: self.view.frame.height - (expandHeight / 2) - (spacing / 1.45), width: expandWidth, height: expandHeight), numberOfButtons: 2, symbolNames: symbolNames, symbolTint: symbolTint.shuffled(), expandDirection: .left,  largeButtonSize: 46, smallButtonSize: 32)
+        self.leftExpand = ExpandingButtonsView(numberOfButtons: 2,
+                                               symbolNames: symbolNames,
+                                               symbolTint: symbolTint.shuffled(),
+                                               expandDirection: .left,
+                                               largeButtonSize: 46,
+                                               smallButtonSize: 32)
         self.view.addSubview(leftExpand)
+        self.leftExpand.translatesAutoresizingMaskIntoConstraints = false
+        self.leftExpand.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -spacing).isActive = true
+        self.leftExpand.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -spacing).isActive = true
+        self.leftExpand.widthAnchor.constraint(equalToConstant: self.leftExpand.expandedSize().width).isActive = true
+        self.leftExpand.heightAnchor.constraint(equalToConstant: self.leftExpand.expandedSize().height).isActive = true
         
         /// topExpand view
-        self.upExpand = ExpandingButtonsView(frame: CGRect(x: dX, y: self.view.frame.height - (expandHeight / 1.15), width: expandWidth / 4, height: expandHeight / 2), numberOfButtons: 4, symbolNames: circleSymbolNames.shuffled(), symbolTint: symbolTint.shuffled(), expandDirection: .up,  largeButtonSize: 46, smallButtonSize: 32)
+        self.upExpand = ExpandingButtonsView(numberOfButtons: 4,
+                                             symbolNames: circleSymbolNames.shuffled(),
+                                             symbolTint: symbolTint.shuffled(),
+                                             expandDirection: .up,
+                                             largeButtonSize: 46,
+                                             smallButtonSize: 32)
         self.view.addSubview(upExpand)
+        self.upExpand.translatesAutoresizingMaskIntoConstraints = false
+        self.upExpand.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: spacing).isActive = true
+        self.upExpand.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -spacing).isActive = true
+        self.upExpand.widthAnchor.constraint(equalToConstant: self.upExpand.expandedSize().width).isActive = true
+        self.upExpand.heightAnchor.constraint(equalToConstant: self.upExpand.expandedSize().height).isActive = true
         
         /// downExpand view
-        self.downExpand = ExpandingButtonsView(frame: CGRect(x: self.view.frame.width - expandWidth / 2.1, y: dY, width: expandWidth / 2, height: expandHeight), numberOfButtons: 6, symbolNames: circleSymbolNames.shuffled(), symbolTint: symbolTint.shuffled(), expandDirection: .down,  largeButtonSize: 46, smallButtonSize: 32)
+        self.downExpand = ExpandingButtonsView(numberOfButtons: 6,
+                                               symbolNames: circleSymbolNames.shuffled(),
+                                               symbolTint: symbolTint.shuffled(),
+                                               expandDirection: .down,
+                                               largeButtonSize: 46,
+                                               smallButtonSize: 32)
         self.view.addSubview(downExpand)
-        
+        self.downExpand.translatesAutoresizingMaskIntoConstraints = false
+        self.downExpand.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -spacing).isActive = true
+        self.downExpand.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: spacing).isActive = true
+        self.downExpand.widthAnchor.constraint(equalToConstant: self.downExpand.expandedSize().width).isActive = true
+        self.downExpand.heightAnchor.constraint(equalToConstant: self.downExpand.expandedSize().height).isActive = true
     }
 }
