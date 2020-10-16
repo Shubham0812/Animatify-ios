@@ -99,11 +99,11 @@ extension TableAnimationViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 42))
-        headerView.backgroundColor = UIColor(named: "background")
+        headerView.backgroundColor = Colors.background
         let label = UILabel()
         label.frame = CGRect(x: 24, y: 12, width: self.view.frame.width, height: 42)
         label.text = tableViewHeaderText
-        label.textColor = UIColor.white
+        label.textColor = Colors.label
         label.font = UIFont(name: "Raleway-SemiBold", size: 24)
         headerView.addSubview(label)
         return headerView
