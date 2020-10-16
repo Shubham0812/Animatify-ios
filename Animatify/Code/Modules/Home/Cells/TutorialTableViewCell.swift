@@ -43,16 +43,4 @@ class TutorialTableViewCell: UITableViewCell {
         self.tutorialLabel.text = transition.title
         self.tutorialDifficulyLabel.text = transition.difficulty
     }
-    
-    
-    
-    func setDarkMode() {
-        self.tutorialLabel.textColor = UIColor.white
-        self.tutorialDifficulyLabel.textColor = UIColor.white
-        self.iconButton.backgroundColor = Colors.accent.withAlphaComponent(0.25)
-        self.iconButton.tintColor = UIColor.white
-        
-        self.containerView.backgroundColor = Colors.background
-        self.backgroundColor = Colors.background
-    }
 }

@@ -187,18 +187,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (tableView == tutorialsTableView) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            
+            if (tableView == tutorialsTableView) {
                 cell.setupTutorial(tutorial: tutorials[indexPath.row])
-                return cell
-            }
-        } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            } else {
                 cell.setupTransition(transition: transitions[indexPath.row])
-                cell.setDarkMode()
-                return cell
             }
+            
+            return cell
         }
+        
         fatalError()
     }
     
