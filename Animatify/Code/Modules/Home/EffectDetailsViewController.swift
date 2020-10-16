@@ -103,13 +103,13 @@ class EffectDetailsViewController: UIViewController {
             stepLabel.font = UIFont(name: "MuseoModerno-Medium", size: 21)
             stepLabel.text = "\(ix + 1)"
             stepLabel.textAlignment = .center
-            stepLabel.textColor = UIColor.white
+            stepLabel.textColor = Colors.label
             stepLabel.setBorderAndCorner(borderColor: UIColor.systemTeal, borderWidth: 2, cornerRadius: 21)
             stepLabel.frame = CGRect(x: 24, y: dy + stepLabel.intrinsicContentSize.height / 2, width: stepLabelSize, height: stepLabelSize)
             
             let descriptionLabel = UILabel()
             descriptionLabel.font = UIFont(name: "Montserrat-Regular", size: 18.5)
-            descriptionLabel.textColor = UIColor.white
+            descriptionLabel.textColor = Colors.label
             descriptionLabel.text = instruction
             descriptionLabel.numberOfLines = 3
             
