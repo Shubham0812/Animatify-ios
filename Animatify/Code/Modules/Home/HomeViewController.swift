@@ -89,6 +89,12 @@ class HomeViewController: UIViewController {
         setupContainer()        
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        drawLogo()
+    }
+    
     // MARK:- action outlets for the viewController
     @IBAction func expandButtonPressed(_ sender: Any) {
         if self.containerToggled {
