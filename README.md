@@ -13,6 +13,7 @@ An iOS application/project, that contains various classes/tutorials for effects,
 
 
 ## What's New ?
+- Toast Views
 - Text-Type & Text-Gradient Effects.
 - Image Transition.
 
@@ -31,7 +32,7 @@ An iOS application/project, that contains various classes/tutorials for effects,
 The guidelines for contributon is covered in the [contributing document](CONTRIBUTING.md). (Do read it first, it'll help you maintain the hierarchy of the project and it also will help the users to find things easily)
 
 ## How to run the project ?
-* Download the zip file or clone the project.
+* Fork the project.
 * Switch to the `dev` branch (it's where all the active code is present).
 * Run the project using Xcode.
 
@@ -40,7 +41,7 @@ The guidelines for contributon is covered in the [contributing document](CONTRIB
 * Alternatively, you can drop me a mail @ singh.shubham0812@gmail.com.
 
 ## Donation 
-If you like this project and want to support me, you can do it by helping me to get a cup of coffee :)
+If you like this project and want to support me, you can do it by helping me to get a pint. ;)
 
 [![Paypal](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/dev/Animatify/Screenshots/Others/paypal_paym.png)](https://www.paypal.me/theiosdev)
 
