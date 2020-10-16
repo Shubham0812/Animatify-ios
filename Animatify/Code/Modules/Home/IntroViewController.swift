@@ -22,7 +22,7 @@ class IntroViewController: UIViewController, CoreAnimationDelegate {
         logoView.backgroundColor = UIColor(named: "background")
         guard let accentColor = UIColor(named: "accentColor") else { return }
     
-        let logoLayer = LogoLayer(for: logoView, scale: 2, duration: self.animationDuration, lineWidth: 6, trackColor: accentColor, glideColor: UIColor(hex: "#18FFFF"), strokeColor: UIColor.white)
+        let logoLayer = LogoLayer(for: logoView, scale: 2, duration: self.animationDuration, lineWidth: 6, trackColor: accentColor, glideColor: UIColor.white, strokeColor: UIColor.white)
         logoView.layer.insertSublayer(logoLayer, below: logoView.layer)
         logoLayer.coreAnimationDelegate = self
         
