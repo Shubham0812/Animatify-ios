@@ -14,7 +14,7 @@ final class CodeSymbolView: UIView {
     private let leftChevronImageView: UIImageView
     private let rightChevronImageView: UIImageView
 
-    init(color: UIColor, config: UIImage.SymbolConfiguration) {
+    init(color: UIColor, config: UIImage.SymbolConfiguration = .init(scale: .default)) {
         let leftChevronImage = UIImage(systemName: "chevron.left", withConfiguration: config)
         leftChevronImageView = UIImageView(image: leftChevronImage?.withTintColor(color, renderingMode: .alwaysOriginal))
         
