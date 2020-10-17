@@ -80,6 +80,7 @@
 		5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99424AFB2D5007D541C /* WifiEffects.swift */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
 		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
+		B6BD98E1253A8BD30055A673 /* CodeSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		5B4ED99424AFB2D5007D541C /* WifiEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiEffects.swift; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
 		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
+		B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSymbolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 				5B4ED99024AF7EEA007D541C /* BluetoothButton.swift */,
 				5B4ED99224AFB1C2007D541C /* WifiButton.swift */,
 				5136CE03252E3A4A00E80031 /* ToastView.swift */,
+				B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BD98E1253A8BD30055A673 /* CodeSymbolView.swift in Sources */,
 				5161E1EA249A1B12008D1368 /* CAExtensions.swift in Sources */,
 				518AC31C24AF424200EAC380 /* ExpandingButtonsView.swift in Sources */,
 				518AC30D24AA499E00EAC380 /* ButtonViewController.swift in Sources */,
