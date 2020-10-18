@@ -39,7 +39,7 @@ class MoreTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor(named: "background")
+        backgroundColor = Colors.background
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 6
         

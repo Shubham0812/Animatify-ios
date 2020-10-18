@@ -18,7 +18,7 @@ final class MoreViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor(named: "background")
+        tableView.backgroundColor = Colors.background
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
@@ -29,7 +29,7 @@ final class MoreViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor(named: "background")
+        label.backgroundColor = Colors.background
         label.text = "More"
         label.font = UIFont(name: "Raleway-SemiBold", size: 30)
         label.textColor = .white
@@ -47,7 +47,7 @@ final class MoreViewController: UIViewController {
     }
 
     private func setupViews() {
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = Colors.background
         
         view.addSubview(titleLabel)
         view.addSubview(tableView)
