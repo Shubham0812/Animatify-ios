@@ -19,6 +19,7 @@ final class MoreViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Colors.background
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
@@ -32,7 +33,7 @@ final class MoreViewController: UIViewController {
         label.backgroundColor = Colors.background
         label.text = "More"
         label.font = UIFont(name: "Raleway-SemiBold", size: 30)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     
