@@ -214,18 +214,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else if (action == .loaders(type: .success)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .loaders(type: .failure)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .bluetooth)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .wifi)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .snapCollections) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
