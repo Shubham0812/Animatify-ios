@@ -26,7 +26,7 @@ class TutorialTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = .clear
         iconButton.roundCorners(cornerRadius: iconButton.layer.frame.width / 2.0 - 3)
     }
     
@@ -42,17 +42,5 @@ class TutorialTableViewCell: UITableViewCell {
         self.iconButton.setImage(UIImage(systemName: transition.icon, withConfiguration: imageConfiguration), for: .normal)
         self.tutorialLabel.text = transition.title
         self.tutorialDifficulyLabel.text = transition.difficulty
-    }
-    
-    
-    
-    func setDarkMode() {
-        self.tutorialLabel.textColor = UIColor.white
-        self.tutorialDifficulyLabel.textColor = UIColor.white
-        self.iconButton.backgroundColor = UIColor(named: "accentColor")?.withAlphaComponent(0.25)
-        self.iconButton.tintColor = UIColor.white
-        
-        self.containerView.backgroundColor = UIColor(named: "background")
-        self.backgroundColor = UIColor(named: "background")
     }
 }

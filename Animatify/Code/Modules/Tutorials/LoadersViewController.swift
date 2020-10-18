@@ -62,7 +62,7 @@ class LoadersViewController: UIViewController {
         let submitButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
         
         submitButton = SubmitButton(type: .system, frame: submitButtonFrame, borderColor: UIColor.systemGreen, borderWidth: 4,
-                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.white)
+                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.systemGreen)
         submitButton.setTitle("Submit", for: .normal)
         self.view.addSubview(submitButton)
         
@@ -99,7 +99,7 @@ extension LoadersViewController {
         let rejectButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
         
         rejectButton = RejectButton(type: .system, frame: rejectButtonFrame, borderColor: .red, borderWidth: 4,
-                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.white)
+                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.red)
         rejectButton.setTitle("Decline", for: .normal)
         self.view.addSubview(rejectButton)
         
@@ -140,7 +140,7 @@ extension LoadersViewController {
                                           borderWidth: 4,
                                           font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                           cornerRadius: 12,
-                                          tintColor: UIColor.white)
+                                          tintColor: UIColor.blue)
         
         
         bluetoothButton.setTitle("Bluetooth", for: .normal)
@@ -163,7 +163,7 @@ extension LoadersViewController {
         self.view.addSubview(view)
         
         /// Wifi effect
-        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 12, trackColor: UIColor.white, fillingColor: .white)
+        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 12, trackColor: Colors.label, fillingColor: Colors.label)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
@@ -182,7 +182,7 @@ extension LoadersViewController {
                                           borderWidth: 4,
                                           font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                           cornerRadius: 12,
-                                          tintColor: UIColor.white)
+                                          tintColor: UIColor.blue)
         
         
         wifiButton.setTitle("Wifi", for: .normal)

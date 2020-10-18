@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172D561C253A47F80058F5DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D561B253A47F80058F5DD /* Colors.swift */; };
 		5107017E249E0765004E6DDE /* MuseoModerno-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5107017C249E0758004E6DDE /* MuseoModerno-Light.ttf */; };
 		5107017F249E076A004E6DDE /* MuseoModerno-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5107017D249E0758004E6DDE /* MuseoModerno-Medium.ttf */; };
 		51070180249E076E004E6DDE /* MuseoModerno-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5107017A249E0758004E6DDE /* MuseoModerno-Regular.ttf */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		172D561B253A47F80058F5DD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5107017A249E0758004E6DDE /* MuseoModerno-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoModerno-Regular.ttf"; sourceTree = "<group>"; };
 		5107017B249E0758004E6DDE /* MuseoModerno-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoModerno-SemiBold.ttf"; sourceTree = "<group>"; };
 		5107017C249E0758004E6DDE /* MuseoModerno-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoModerno-Light.ttf"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				518AC30E24AA59FE00EAC380 /* Transitions.swift */,
 				5189CDEB24A4C36F00026FF4 /* Tutorial.swift */,
 				5107018D249E8B27004E6DDE /* Tables.swift */,
+				172D561B253A47F80058F5DD /* Colors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			files = (
 				B6BD98E1253A8BD30055A673 /* CodeSymbolView.swift in Sources */,
 				5161E1EA249A1B12008D1368 /* CAExtensions.swift in Sources */,
+				172D561C253A47F80058F5DD /* Colors.swift in Sources */,
 				518AC31C24AF424200EAC380 /* ExpandingButtonsView.swift in Sources */,
 				518AC30D24AA499E00EAC380 /* ButtonViewController.swift in Sources */,
 				51DCDF372495006800911EAB /* AppDelegate.swift in Sources */,
