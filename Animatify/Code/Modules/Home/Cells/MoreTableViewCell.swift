@@ -25,7 +25,7 @@ class MoreTableViewCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
+        label.textColor = .darkGray
         label.font = UIFont(name: "Montserrat-Regular", size: 16)
         return label
     }()
