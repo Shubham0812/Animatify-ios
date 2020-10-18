@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,17 +35,18 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once Upon A Time In Hollywood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXm-21-lPV">
                         <rect key="frame" x="0.0" y="228" width="351" height="28"/>
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" name="label"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christopher Nolan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PER-Kr-aWs">
                         <rect key="frame" x="0.0" y="260" width="154.5" height="22.5"/>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="19"/>
-                        <color key="textColor" name="whiteAccent"/>
+                        <color key="textColor" name="label"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="gXm-21-lPV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6e4-KP-a6m"/>
                 <constraint firstAttribute="trailing" secondItem="jGx-Aw-Jl1" secondAttribute="trailing" id="PbI-uN-twe"/>
@@ -54,7 +56,6 @@
                 <constraint firstItem="jGx-Aw-Jl1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="km4-KF-Ndo"/>
                 <constraint firstItem="jGx-Aw-Jl1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rd8-sU-hR3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="movieDirectorLabel" destination="PER-Kr-aWs" id="yGf-oU-Wh5"/>
                 <outlet property="movieImageView" destination="jGx-Aw-Jl1" id="kWr-Be-Osh"/>
@@ -65,8 +66,8 @@
     </objects>
     <resources>
         <image name="2" width="1200" height="665"/>
-        <namedColor name="whiteAccent">
-            <color red="0.86274509803921573" green="0.89803921568627454" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="label">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
