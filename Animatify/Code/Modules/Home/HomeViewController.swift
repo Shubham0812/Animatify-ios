@@ -235,7 +235,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
                     self.present(tutorialVC, animated: true)
                 } else if (action == .toast) {
-                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ToastViewController.description()) as? ToastViewController else { return }
                     self.present(tutorialVC, animated: true)
                 }
             }
