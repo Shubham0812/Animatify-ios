@@ -58,8 +58,9 @@ class ToastViewController: UIViewController {
     fileprivate func configure(button: UIButton) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = Colors.label.cgColor
         button.layer.cornerRadius = 5
+        button.setTitleColor(Colors.label, for: .normal)
     }
     
     @objc func infoButtonTouched() {
