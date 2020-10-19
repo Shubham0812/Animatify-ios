@@ -49,8 +49,8 @@ class ExpandingButtonsView: UIView {
     /// expandDirection - an enum specifying the direction of the expansion
     /// largeButtonSize - buttonSize for the primary button
     /// smallButtonSize - buttonSize for the additional buttons
-    init(frame: CGRect, numberOfButtons: Int, symbolNames: [String], symbolTint: [UIColor], expandDirection: ExpandDirection, largeButtonSize: CGFloat, smallButtonSize: CGFloat) {
-        super.init(frame: frame)
+    init(numberOfButtons: Int, symbolNames: [String], symbolTint: [UIColor], expandDirection: ExpandDirection, largeButtonSize: CGFloat, smallButtonSize: CGFloat) {
+        super.init(frame: .zero)
         self.numberOfButtons = numberOfButtons
         self.symbolNames = symbolNames
         self.symbolTint = symbolTint
@@ -81,6 +81,16 @@ class ExpandingButtonsView: UIView {
         super.init(frame: frame)
     }
     
+    /// returns the size the view will have when expanded
+    public func expandedSize() -> CGSize {
+        var majorDimension: CGFloat = primaryButtonWidth
+        majorDimension += CGFloat(numberOfButtons) * secondaryButtonWidth
+        if self.expandDirection == .up || self.expandDirection == .down {
+            return CGSize(width: primaryButtonWidth, height: majorDimension)
+        }
+        return CGSize(width: majorDimension, height: primaryButtonWidth)
+    }
+    
     // MARK:- functions for the view
     func setButtons() {
         
@@ -98,7 +108,10 @@ class ExpandingButtonsView: UIView {
         
         /// adding the primary button, this is the button that gets expanded
         let primaryButton = UIButton(type: .system)
-        primaryButton.frame = CGRect(x: cX - (primaryButtonWidth) / 2, y: cY - (primaryButtonWidth) / 2, width: primaryButtonWidth, height: primaryButtonWidth)
+        let primaryButtonOriginX = self.expandDirection == .right ? 0 : expandedSize().width - primaryButtonWidth
+        let primaryButtonOriginY = self.expandDirection == .down ? 0 : expandedSize().height - primaryButtonWidth
+        
+        primaryButton.frame = CGRect(x: primaryButtonOriginX , y: primaryButtonOriginY , width: primaryButtonWidth, height: primaryButtonWidth)
         primaryButton.layer.borderColor = UIColor.orange.cgColor
         primaryButton.setImage(UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: largeButtonSize, weight: .medium)), for: .normal)
         primaryButton.tintColor = UIColor.white

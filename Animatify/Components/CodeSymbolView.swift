@@ -9,11 +9,12 @@
 import UIKit
 
 final class CodeSymbolView: UIView {
+    let kPadding: CGFloat = 0
     
     private let leftChevronImageView: UIImageView
     private let rightChevronImageView: UIImageView
 
-    init(color: UIColor, config: UIImage.SymbolConfiguration) {
+    init(color: UIColor, config: UIImage.SymbolConfiguration = .init(scale: .default)) {
         let leftChevronImage = UIImage(systemName: "chevron.left", withConfiguration: config)
         leftChevronImageView = UIImageView(image: leftChevronImage?.withTintColor(color, renderingMode: .alwaysOriginal))
         
@@ -30,14 +31,22 @@ final class CodeSymbolView: UIView {
     
     private func setupView() {
         let stackView = UIStackView()
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(leftChevronImageView)
         stackView.addArrangedSubview(rightChevronImageView)
         
         addSubview(stackView)
         
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor, constant: kPadding),
+            stackView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: kPadding),
+            stackView.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -kPadding),
+            stackView.bottomAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -kPadding),
+            stackView.widthAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 1.5)
+        ])
     }
     
 }

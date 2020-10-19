@@ -4,8 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,7 +36,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Q-jq-9XG">
                                         <rect key="frame" x="24" y="24" width="97.5" height="31"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="label"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvB-17-mX3">
@@ -56,7 +58,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="alternateBackground"/>
                                 <constraints>
                                     <constraint firstItem="30Q-jq-9XG" firstAttribute="top" secondItem="Zxn-jI-eeW" secondAttribute="top" constant="24" id="5xO-UU-K53"/>
                                     <constraint firstItem="JvB-17-mX3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="30Q-jq-9XG" secondAttribute="trailing" constant="8" symbolic="YES" id="C1s-Xg-lWm"/>
@@ -80,7 +82,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCv-xN-TgW">
                                 <rect key="frame" x="24" y="128" width="80.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r7Q-pM-Gcm">
@@ -100,13 +102,29 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-XQ-PDr">
                                 <rect key="frame" x="24" y="391" width="125" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cC9-r2-4Z4">
                                 <rect key="frame" x="0.0" y="446" width="414" height="416"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Io-5g-de4" userLabel="More Button">
+                                <rect key="frame" x="340" y="44" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="L4B-CW-G6O"/>
+                                    <constraint firstAttribute="width" constant="50" id="lYY-mU-E3y"/>
+                                </constraints>
+                                <color key="tintColor" name="label"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="label"/>
+                                    <imageReference key="image" image="gear" catalog="system" symbolScale="large" renderingMode="template"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8s-K4-bOt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="background"/>
@@ -119,8 +137,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cC9-r2-4Z4" secondAttribute="trailing" id="Eul-g9-nad"/>
                             <constraint firstItem="JvB-17-mX3" firstAttribute="centerY" secondItem="30Q-jq-9XG" secondAttribute="centerY" id="F3j-tb-Bh5"/>
                             <constraint firstItem="rdI-XQ-PDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Fhh-R2-5Jd"/>
+                            <constraint firstItem="2Io-5g-de4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lz0-SH-1tv" secondAttribute="trailing" constant="10" id="Khs-1a-vKF"/>
                             <constraint firstItem="lz0-SH-1tv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="MyW-Wf-6ti"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7Q-pM-Gcm" secondAttribute="trailing" constant="24" id="PrZ-UL-naj"/>
+                            <constraint firstItem="2Io-5g-de4" firstAttribute="top" secondItem="lz0-SH-1tv" secondAttribute="top" id="Ud0-Pm-rrg"/>
                             <constraint firstItem="Zxn-jI-eeW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.635" id="Z0O-j5-VCy"/>
                             <constraint firstItem="rdI-XQ-PDr" firstAttribute="top" secondItem="r7Q-pM-Gcm" secondAttribute="bottom" constant="34" id="Z3X-gw-h9A"/>
                             <constraint firstAttribute="bottom" secondItem="Zxn-jI-eeW" secondAttribute="bottom" id="bZF-cm-zGX"/>
@@ -129,6 +149,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zxn-jI-eeW" secondAttribute="trailing" id="jzI-z1-wJj"/>
                             <constraint firstItem="cC9-r2-4Z4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWR-Lh-qeb"/>
                             <constraint firstItem="r7Q-pM-Gcm" firstAttribute="top" secondItem="VCv-xN-TgW" secondAttribute="bottom" constant="18" id="lhd-tV-hT3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Io-5g-de4" secondAttribute="trailing" constant="24" id="nvg-HC-1jD"/>
                             <constraint firstItem="lz0-SH-1tv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oxQ-us-c3J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cC9-r2-4Z4" secondAttribute="bottom" id="uob-j4-vhY"/>
                         </constraints>
@@ -158,8 +179,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY6-Eq-UhV">
                                 <rect key="frame" x="24" y="64" width="33" height="27.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="label"/>
                                 <state key="normal" image="arrow.left" catalog="system">
+                                    <color key="titleColor" name="label"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
@@ -169,7 +191,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pulse Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-hd-AOK">
                                 <rect key="frame" x="24" y="119.5" width="160" height="35"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-cw-0ZC">
@@ -185,7 +207,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="wTx-6d-9Xx"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -198,7 +220,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMo-Br-Gmf">
                                                 <rect key="frame" x="24" y="20" width="125.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="label"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unU-qP-vz4">
@@ -209,6 +231,7 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="chevron.down" catalog="system">
+                                                    <color key="titleColor" name="label"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium" weight="medium"/>
                                                 </state>
                                                 <connections>
@@ -281,8 +304,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GP-4Y-gt9">
                                 <rect key="frame" x="24" y="64" width="33" height="27.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="arrow.left" catalog="system">
+                                    <color key="titleColor" name="label"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
@@ -292,7 +316,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text-Typing Effect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="uNW-08-crE">
                                 <rect key="frame" x="24" y="119.5" width="366" height="37"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -302,7 +326,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="BjV-MN-ebx"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="label"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -315,7 +339,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EH-Nh-1u8">
                                                 <rect key="frame" x="24" y="20" width="125.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="label"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX8-d8-ajA">
@@ -324,8 +348,9 @@
                                                     <constraint firstAttribute="width" constant="36" id="LhP-GA-m76"/>
                                                     <constraint firstAttribute="height" constant="36" id="i4S-n3-aEy"/>
                                                 </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="chevron.down" catalog="system">
+                                                    <color key="titleColor" name="label"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium" weight="medium"/>
                                                 </state>
                                                 <connections>
@@ -357,7 +382,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gradients also work on static text." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="AJi-fD-egA">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="68.5"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="label"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -446,14 +471,21 @@
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <namedColor name="accentColor">
-            <color red="0.40000000000000002" green="0.39215686274509803" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36862745098039218" green="0.20784313725490197" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="alternateBackground">
-            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.9100000262260437" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="background">
-            <color red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="label">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

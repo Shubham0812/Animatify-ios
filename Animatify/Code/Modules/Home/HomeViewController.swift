@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.effects.append(contentsOf: [Effect](repeatElement(Effect(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: UIColor(named: "background")!, gradientColor2: UIColor(named: "alternateBackground")!), count: 4)))
+        self.effects.append(contentsOf: [Effect](repeatElement(Effect(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: Colors.background, gradientColor2: Colors.alternateBackground), count: 4)))
         
         // registering the collectionView
         self.effectsCollectionView.delegate = self
@@ -90,6 +90,12 @@ class HomeViewController: UIViewController {
         setupContainer()        
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        drawLogo()
+    }
+    
     // MARK:- action outlets for the viewController
     @IBAction func expandButtonPressed(_ sender: Any) {
         if self.containerToggled {
@@ -104,6 +110,10 @@ class HomeViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.containerToggled = !self.containerToggled
         }
+    }
+    
+    @IBAction func moreButtonPressed(_ sender: UIButton) {
+        navigationController?.present(MoreViewController(), animated: true)
     }
     
     // MARK:- utility functions for the viewController
@@ -129,8 +139,7 @@ class HomeViewController: UIViewController {
     }
     
     func drawLogo(){
-        guard let accentColor = UIColor(named: "accentColor") else { return }
-        let logoLayer = LogoLayer(for: logoView, scale: 1.1, duration: 0, lineWidth: 4, trackColor: accentColor, glideColor: UIColor.clear, strokeColor: UIColor.white)
+        let logoLayer = LogoLayer(for: logoView, scale: 1.1, duration: 0, lineWidth: 4, trackColor: Colors.accent, glideColor: UIColor.clear, strokeColor: Colors.logo)
         self.view.layer.insertSublayer(logoLayer, below: self.logoView.layer)
     }
 }
@@ -189,18 +198,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (tableView == tutorialsTableView) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            
+            if (tableView == tutorialsTableView) {
                 cell.setupTutorial(tutorial: tutorials[indexPath.row])
-                return cell
-            }
-        } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
+            } else {
                 cell.setupTransition(transition: transitions[indexPath.row])
-                cell.setDarkMode()
-                return cell
             }
+            
+            return cell
         }
+        
         fatalError()
     }
     
