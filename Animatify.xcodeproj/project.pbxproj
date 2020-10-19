@@ -81,6 +81,8 @@
 		5B4ED99524AFB2D5007D541C /* WifiEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4ED99424AFB2D5007D541C /* WifiEffects.swift */; };
 		5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D524A99EFB00FA9A69 /* RejectButton.swift */; };
 		5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5310D724A9A66600FA9A69 /* FailureEffects.swift */; };
+		B6625562253A9D5E00A11BC3 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6625561253A9D5E00A11BC3 /* MoreViewController.swift */; };
+		B6625565253A9D9400A11BC3 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6625564253A9D9400A11BC3 /* MoreTableViewCell.swift */; };
 		B6BD98E1253A8BD30055A673 /* CodeSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,8 @@
 		5B4ED99424AFB2D5007D541C /* WifiEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiEffects.swift; sourceTree = "<group>"; };
 		5B5310D524A99EFB00FA9A69 /* RejectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectButton.swift; sourceTree = "<group>"; };
 		5B5310D724A9A66600FA9A69 /* FailureEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureEffects.swift; sourceTree = "<group>"; };
+		B6625561253A9D5E00A11BC3 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		B6625564253A9D9400A11BC3 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSymbolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +198,7 @@
 				5161E1D224964024008D1368 /* HomeViewController.swift */,
 				5161E202249CAA53008D1368 /* EffectDetailsViewController.swift */,
 				51935D4F24BDC998000A9F64 /* TextTypeViewController.swift */,
+				B6625561253A9D5E00A11BC3 /* MoreViewController.swift */,
 				51DCDF3C2495006800911EAB /* Home.storyboard */,
 			);
 			path = Home;
@@ -300,6 +305,7 @@
 				5161E1EC249A22E5008D1368 /* EffectCollectionViewCell.xib */,
 				5161E1FE249CA752008D1368 /* TutorialTableViewCell.swift */,
 				5161E1FF249CA752008D1368 /* TutorialTableViewCell.xib */,
+				B6625564253A9D9400A11BC3 /* MoreTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				51935D4924BDB00B000A9F64 /* CharactersViewController.swift in Sources */,
 				5161E203249CAA53008D1368 /* EffectDetailsViewController.swift in Sources */,
 				5161E1D6249640B7008D1368 /* ColorExtensions.swift in Sources */,
+				B6625565253A9D9400A11BC3 /* MoreTableViewCell.swift in Sources */,
 				5136CE04252E3A4A00E80031 /* ToastView.swift in Sources */,
 				51935D4C24BDB12B000A9F64 /* CharactersCollectionViewCell.swift in Sources */,
 				5161E1DE24965567008D1368 /* UIViewAnimations.swift in Sources */,
@@ -563,6 +570,7 @@
 				5189CDEA24A4C28F00026FF4 /* LoadersViewController.swift in Sources */,
 				51935D5024BDC998000A9F64 /* TextTypeViewController.swift in Sources */,
 				5B5310D624A99EFB00FA9A69 /* RejectButton.swift in Sources */,
+				B6625562253A9D5E00A11BC3 /* MoreViewController.swift in Sources */,
 				5B4ED99324AFB1C3007D541C /* WifiButton.swift in Sources */,
 				5161E1E024966D6E008D1368 /* ButtonAnimations.swift in Sources */,
 				518AC30324A7A62A00EAC380 /* FoundationExtensions.swift in Sources */,

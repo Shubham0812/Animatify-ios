@@ -111,6 +111,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func moreButtonPressed(_ sender: UIButton) {
+        navigationController?.present(MoreViewController(), animated: true)
+    }
+    
     // MARK:- utility functions for the viewController
     func setupViews() {
         self.containerView.roundCorners(cornerRadius: 42)
