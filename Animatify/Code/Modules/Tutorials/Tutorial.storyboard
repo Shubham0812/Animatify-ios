@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -37,7 +39,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="mOs-6z-gEY"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" image="1.circle.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
                                         </state>
@@ -50,7 +52,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="V2l-a0-JeE"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" image="2.circle" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
                                         </state>
@@ -63,7 +65,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="oq9-kk-NEh"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" image="3.circle" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
                                         </state>
@@ -76,7 +78,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Zg2-n8-GJ7"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" image="4.circle" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="semibold"/>
                                         </state>
@@ -93,6 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="t4a-m3-5PU"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="t4a-m3-5PU" firstAttribute="trailing" secondItem="lIw-g4-8il" secondAttribute="trailing" constant="24" id="28y-uI-HDc"/>
@@ -107,7 +110,6 @@
                             <constraint firstItem="thI-Yg-Kgx" firstAttribute="height" secondItem="LOU-4t-Chu" secondAttribute="height" multiplier="0.75" id="rva-8c-F3T"/>
                             <constraint firstItem="thI-Yg-Kgx" firstAttribute="leading" secondItem="t4a-m3-5PU" secondAttribute="leading" id="vzX-2b-Wlz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="t4a-m3-5PU"/>
                     </view>
                     <connections>
                         <outlet property="button1" destination="svH-Hv-dIQ" id="yvd-hA-qQn"/>
@@ -129,8 +131,8 @@
                     <view key="view" contentMode="scaleToFill" id="YWk-sI-rCO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="background"/>
                         <viewLayoutGuide key="safeArea" id="qse-Gw-jcR"/>
+                        <color key="backgroundColor" name="background"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDc-DW-wMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,6 +178,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FNp-Xt-UO4"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="uD9-A8-Kde" firstAttribute="top" secondItem="FNp-Xt-UO4" secondAttribute="top" constant="20" id="1rx-iy-Srx"/>
@@ -188,7 +191,6 @@
                             <constraint firstItem="pyP-9s-SYy" firstAttribute="leading" secondItem="FNp-Xt-UO4" secondAttribute="leading" constant="24" id="rVF-MK-qfR"/>
                             <constraint firstItem="FNp-Xt-UO4" firstAttribute="trailing" secondItem="uWh-81-S0x" secondAttribute="trailing" constant="24" id="umC-81-0lD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FNp-Xt-UO4"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="pyP-9s-SYy" id="P3Q-GF-21l"/>
@@ -223,6 +225,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Rb-DY-2dz"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="3Rb-DY-2dz" firstAttribute="trailing" secondItem="Mhr-Ug-iba" secondAttribute="trailing" constant="84" id="5dm-1R-Kir"/>
@@ -231,7 +234,6 @@
                             <constraint firstItem="sUD-Xh-SjC" firstAttribute="top" secondItem="3Rb-DY-2dz" secondAttribute="top" constant="20" id="VEq-cB-DNS"/>
                             <constraint firstItem="Mhr-Ug-iba" firstAttribute="top" secondItem="sUD-Xh-SjC" secondAttribute="bottom" constant="180" id="mg1-dB-2Z3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3Rb-DY-2dz"/>
                     </view>
                     <connections>
                         <outlet property="titleLabel" destination="sUD-Xh-SjC" id="vmc-by-eaq"/>
@@ -241,6 +243,21 @@
             </objects>
             <point key="canvasLocation" x="2395" y="87"/>
         </scene>
+        <!--Toast View Controller-->
+        <scene sceneID="pLw-Qy-AKf">
+            <objects>
+                <viewController storyboardIdentifier="ToastViewController" id="kdf-Ef-f0R" customClass="ToastViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uE4-nR-fCY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="olG-qd-QVK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owi-4U-mzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="86"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.circle.fill" catalog="system" width="128" height="121"/>
@@ -248,7 +265,13 @@
         <image name="3.circle" catalog="system" width="128" height="121"/>
         <image name="4.circle" catalog="system" width="128" height="121"/>
         <namedColor name="background">
-            <color red="0.12549019607843137" green="0.12941176470588237" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

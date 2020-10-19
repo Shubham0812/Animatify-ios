@@ -70,6 +70,7 @@
 		51935D4C24BDB12B000A9F64 /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51935D4A24BDB12B000A9F64 /* CharactersCollectionViewCell.swift */; };
 		51935D4D24BDB12B000A9F64 /* CharactersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51935D4B24BDB12B000A9F64 /* CharactersCollectionViewCell.xib */; };
 		51935D5024BDC998000A9F64 /* TextTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51935D4F24BDC998000A9F64 /* TextTypeViewController.swift */; };
+		51A50204253DE1AF00D92677 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A50203253DE1AF00D92677 /* ToastViewController.swift */; };
 		51DCDF372495006800911EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDF362495006800911EAB /* AppDelegate.swift */; };
 		51DCDF3E2495006800911EAB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3C2495006800911EAB /* Home.storyboard */; };
 		51DCDF402495006C00911EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDF3F2495006C00911EAB /* Assets.xcassets */; };
@@ -147,6 +148,7 @@
 		51935D4A24BDB12B000A9F64 /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
 		51935D4B24BDB12B000A9F64 /* CharactersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionViewCell.xib; sourceTree = "<group>"; };
 		51935D4F24BDC998000A9F64 /* TextTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTypeViewController.swift; sourceTree = "<group>"; };
+		51A50203253DE1AF00D92677 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		51DCDF332495006800911EAB /* Animatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDF362495006800911EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDF3D2495006800911EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */,
 				518AC31724AF398900EAC380 /* ButtonsViewController.swift */,
 				5161E205249CC011008D1368 /* Tutorial.storyboard */,
+				51A50203253DE1AF00D92677 /* ToastViewController.swift */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				518AC30524A8E49200EAC380 /* CollectionTutorialViewController.swift in Sources */,
 				51935D4724BD8BC0000A9F64 /* IntroExpandViewController.swift in Sources */,
 				5161E1DB24964B7B008D1368 /* ViewExtensions.swift in Sources */,
+				51A50204253DE1AF00D92677 /* ToastViewController.swift in Sources */,
 				5161E1E8249A1361008D1368 /* IntroViewController.swift in Sources */,
 				518AC30824A8E52600EAC380 /* SnapCollectionViewCell.swift in Sources */,
 				51935D4924BDB00B000A9F64 /* CharactersViewController.swift in Sources */,

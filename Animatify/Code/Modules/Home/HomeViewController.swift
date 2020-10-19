@@ -50,7 +50,8 @@ class HomeViewController: UIViewController {
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .bluetooth), title: "Bluetooth Animations", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .buttons, title: "Floating Button Animations", difficulty: "Medium", icon: "bolt.fill"),
-        Tutorial(action: .loaders(type: .wifi), title: "Wifi Animations", difficulty: "Medium", icon: "bolt.fill")
+        Tutorial(action: .loaders(type: .wifi), title: "Wifi Animations", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .toast, title: "Toast views", difficulty: "Easy", icon: "bolt.fill")
     ]
     
     var transitions: [Transition] = [
@@ -231,6 +232,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
                     self.present(tutorialVC, animated: true)
                 } else if (action == .buttons) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                } else if (action == .toast) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
                     self.present(tutorialVC, animated: true)
                 }
