@@ -243,6 +243,21 @@
             </objects>
             <point key="canvasLocation" x="2395" y="87"/>
         </scene>
+        <!--Toast View Controller-->
+        <scene sceneID="pLw-Qy-AKf">
+            <objects>
+                <viewController storyboardIdentifier="ToastViewController" id="kdf-Ef-f0R" customClass="ToastViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uE4-nR-fCY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="olG-qd-QVK"/>
+                        <color key="backgroundColor" name="background"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owi-4U-mzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="86"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.circle.fill" catalog="system" width="128" height="121"/>
