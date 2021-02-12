@@ -40,12 +40,6 @@ The guidelines for contributon is covered in the [contributing document](CONTRIB
 * If you are having trouble with this project or if you find any bugs, do open a new issue and describe the problem.
 * Alternatively, you can drop me a mail @ singh.shubham0812@gmail.com.
 
-## Donation 
-If you like this project and want to support me, you can do it by helping me to get a pint. ;)
-
-[![Paypal](https://raw.githubusercontent.com/Shubham0812/Animatify-ios/dev/Animatify/Screenshots/Others/paypal_paym.png)](https://www.paypal.me/theiosdev)
-
-
 ## Spread the word!
 Liked the project? Just give it a star ⭐️ and spread the word!
 
