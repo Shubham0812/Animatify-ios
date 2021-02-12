@@ -13,9 +13,9 @@ An iOS application/project, that contains various classes/tutorials for effects,
 
 
 ## What's New ?
+- Row View Transition
 - Toast Views
 - Text-Type & Text-Gradient Effects.
-- Image Transition.
 
 <img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/0905733C-6EA7-4C4B-8C43-1A22000D6B8B.gif" width="300"> | <img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/texttypeeffects.png" width="300"> | <img src="https://raw.githubusercontent.com/aheze/DeveloperAssets/master/B68CAFA5-97AD-4194-9B52-22A4A133EBF9.gif" width="300">
  --- | --- | ---
