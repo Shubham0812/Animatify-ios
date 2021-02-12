@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -23,11 +23,11 @@
             <objects>
                 <viewController storyboardIdentifier="CircleViewController" id="oOW-SC-ymV" customClass="CircleViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbq-F3-wOZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpd-YG-wAZ">
-                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <rect key="frame" x="24" y="20" width="33" height="26"/>
                                 <color key="tintColor" name="label"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
@@ -38,13 +38,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-8b-5fE">
-                                <rect key="frame" x="24" y="118" width="352.5" height="33"/>
+                                <rect key="frame" x="24" y="74" width="331.33333333333331" height="33"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="28"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-EY-L7J">
-                                <rect key="frame" x="24" y="231" width="140" height="140"/>
+                                <rect key="frame" x="24" y="187" width="140" height="140"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Rw6-kv-bnc"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utB-hX-Bfj">
-                                <rect key="frame" x="250" y="231" width="140" height="140"/>
+                                <rect key="frame" x="250" y="187" width="140" height="140"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="T2I-7N-BzL"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llJ-qU-TL3">
-                                <rect key="frame" x="24" y="622" width="140" height="140"/>
+                                <rect key="frame" x="24" y="496" width="140" height="140"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="aPM-J7-r26"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21o-oa-tnC">
-                                <rect key="frame" x="250" y="622" width="140" height="140"/>
+                                <rect key="frame" x="250" y="496" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.28627450980000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="UGL-7K-PA0"/>
@@ -122,11 +122,11 @@
             <objects>
                 <viewController storyboardIdentifier="CharactersViewController" id="8n3-Lh-Iyt" customClass="CharactersViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GVu-cG-c59">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vF-a9-5YI">
-                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <rect key="frame" x="24" y="20" width="33" height="26"/>
                                 <color key="tintColor" name="label"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
@@ -138,19 +138,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Launch Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-fM-9hB">
-                                <rect key="frame" x="24" y="110" width="323.5" height="33"/>
+                                <rect key="frame" x="24" y="66" width="305.66666666666669" height="33"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="28"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the characters to know more about them." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJ2-dW-2RL">
-                                <rect key="frame" x="24" y="167" width="366" height="47"/>
+                                <rect key="frame" x="24" y="123.00000000000001" width="366" height="46.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="weg-Bn-Jpv">
-                                <rect key="frame" x="24" y="286" width="366" height="576"/>
+                                <rect key="frame" x="24" y="241.66666666666666" width="366" height="494.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="32" id="AkF-1Y-dGD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -190,11 +190,11 @@
             <objects>
                 <viewController storyboardIdentifier="RowTransitionViewController" id="jCd-rY-he8" customClass="RowTransitionViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Trd-eQ-lhA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XhF-oh-VXi">
-                                <rect key="frame" x="24" y="175" width="366" height="721"/>
+                                <rect key="frame" x="24" y="131" width="366" height="605"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jCd-rY-he8" id="CfB-gs-rx6"/>
@@ -202,7 +202,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pk1-7e-KGK">
-                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <rect key="frame" x="24" y="20" width="33" height="26"/>
                                 <color key="tintColor" name="label"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
@@ -215,7 +215,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Row Transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yz-Un-0lg">
-                                <rect key="frame" x="24" y="110" width="356.5" height="33"/>
+                                <rect key="frame" x="24" y="66" width="356.33333333333331" height="33"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="28"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
@@ -249,19 +249,9 @@
             <objects>
                 <viewController storyboardIdentifier="ColorViewController" id="OoA-c7-RfL" customClass="ColorViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmx-NX-8Kt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-kh-Dtb">
-                                <rect key="frame" x="364" y="92" width="26" height="25"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="multiply" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
-                                </state>
-                                <connections>
-                                    <action selector="closeButtonPressed:" destination="OoA-c7-RfL" eventType="touchUpInside" id="AAX-sr-42G"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-El-YyG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                 <subviews>
@@ -279,22 +269,32 @@
                                     <constraint firstAttribute="bottom" secondItem="BLY-ec-HX4" secondAttribute="bottom" constant="8" id="tD4-IW-ZLY"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-kh-Dtb">
+                                <rect key="frame" x="364" y="-4" width="26" height="25"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="multiply" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="OoA-c7-RfL" eventType="touchUpInside" id="AAX-sr-42G"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Ideas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48k-zO-rI5">
-                                <rect key="frame" x="37" y="165" width="117.5" height="28.5"/>
+                                <rect key="frame" x="37.000000000000007" y="69" width="117.66666666666669" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Implementation and Usage " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4O-3g-Bfx">
-                                <rect key="frame" x="37" y="219.5" width="337" height="20"/>
+                                <rect key="frame" x="37" y="123.66666666666669" width="337" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16.600000381469727"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h36-Ja-3Gy">
-                                <rect key="frame" x="36" y="92" width="33" height="29.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="square.and.pencil" catalog="system">
+                                <rect key="frame" x="36" y="-4" width="27" height="25.666666666666668"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="pencil" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
@@ -312,7 +312,7 @@
                             <constraint firstItem="Z4O-3g-Bfx" firstAttribute="top" secondItem="48k-zO-rI5" secondAttribute="bottom" constant="26" id="NY3-s0-s6x"/>
                             <constraint firstItem="0Gr-El-YyG" firstAttribute="top" secondItem="vmx-NX-8Kt" secondAttribute="top" id="Xeh-cy-WFf"/>
                             <constraint firstItem="48k-zO-rI5" firstAttribute="top" secondItem="qsc-kh-Dtb" secondAttribute="bottom" constant="48" id="cBv-ZC-tAv"/>
-                            <constraint firstItem="qsc-kh-Dtb" firstAttribute="top" secondItem="pNS-gr-wic" secondAttribute="top" constant="48" id="f8c-Qp-6vF"/>
+                            <constraint firstItem="qsc-kh-Dtb" firstAttribute="top" secondItem="pNS-gr-wic" secondAttribute="top" constant="-4" id="f8c-Qp-6vF"/>
                             <constraint firstItem="pNS-gr-wic" firstAttribute="trailing" secondItem="Z4O-3g-Bfx" secondAttribute="trailing" constant="40" id="fQK-BJ-mNg"/>
                             <constraint firstItem="pNS-gr-wic" firstAttribute="trailing" secondItem="qsc-kh-Dtb" secondAttribute="trailing" constant="24" id="jVq-2H-fXH"/>
                             <constraint firstItem="Z4O-3g-Bfx" firstAttribute="leading" secondItem="pNS-gr-wic" secondAttribute="leading" constant="37" id="nSA-dh-eIp"/>
@@ -321,6 +321,7 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="qsc-kh-Dtb" id="K26-nr-RGE"/>
+                        <outlet property="closeButtonTop" destination="f8c-Qp-6vF" id="gyH-qL-T04"/>
                         <outlet property="dateLabel" destination="BLY-ec-HX4" id="z3N-Ie-2Ix"/>
                         <outlet property="dateView" destination="0Gr-El-YyG" id="jgh-h3-oUU"/>
                         <outlet property="noteDescriptionLabel" destination="Z4O-3g-Bfx" id="Itq-6z-PbK"/>
@@ -336,11 +337,11 @@
             <objects>
                 <viewController storyboardIdentifier="IntroExpandViewController" id="4pz-PW-Qwf" customClass="IntroExpandViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JFh-Zr-he5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itachi" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-bW-b77">
-                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <rect key="frame" x="147" y="308" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <constraints>
@@ -349,13 +350,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded VC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-9R-DV3">
-                                <rect key="frame" x="24" y="110" width="190" height="35.5"/>
+                                <rect key="frame" x="24" y="66" width="184.66666666666666" height="35"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-cf-zid">
-                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <rect key="frame" x="24" y="20" width="33" height="26"/>
                                 <color key="tintColor" name="label"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
@@ -366,13 +367,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How it works ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-A4-SsR">
-                                <rect key="frame" x="24" y="173.5" width="161" height="28"/>
+                                <rect key="frame" x="24" y="129" width="160" height="28"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
                                 <color key="textColor" name="label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tS6-V3-LlH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" name="alternateBackground"/>
                             </view>
                         </subviews>
@@ -408,11 +409,11 @@
             <objects>
                 <viewController storyboardIdentifier="ButtonViewController" id="xrw-0x-Wvv" customClass="ButtonViewController" customModule="Animatify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYs-FQ-YlR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUh-BN-6D9">
-                                <rect key="frame" x="24" y="64" width="33" height="26"/>
+                                <rect key="frame" x="24" y="20" width="33" height="26"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="default" weight="medium"/>
@@ -422,13 +423,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitioned VC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-bD-Ihu">
-                                <rect key="frame" x="24" y="110" width="366" height="35.5"/>
+                                <rect key="frame" x="24" y="66" width="366" height="35"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-XE-4nd">
-                                <rect key="frame" x="24" y="165.5" width="366" height="28.5"/>
+                                <rect key="frame" x="24" y="121" width="366" height="28"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -461,7 +462,7 @@
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="itachi" width="640" height="832"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="alternateBackground">
             <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

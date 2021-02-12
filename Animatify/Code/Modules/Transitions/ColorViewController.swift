@@ -18,6 +18,8 @@ class ColorViewController: UIViewController, UIViewControllerTransitioningDelega
     @IBOutlet weak var noteDescriptionLabel: UILabel!
     
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var closeButtonTop: NSLayoutConstraint!
+    
     // MARK:- variables
     override class func description() -> String {
         return "ColorViewController"
@@ -40,6 +42,10 @@ class ColorViewController: UIViewController, UIViewControllerTransitioningDelega
             self?.closeButton.layer.opacity = 0
             
             self?.setupData()
+            
+            if (UIScreen.main.bounds.height <= 736) {
+                self?.closeButtonTop.constant = 44
+            }
         }
         hideViews()
     }
