@@ -75,7 +75,7 @@ final class SubmitEffect1: CAShapeLayer, CAAnimationDelegate {
         let tickPath = UIBezierPath()
         tickPath.move(to: CGPoint(x: cX - (42 * scaleFactor), y: cY - (4 * scaleFactor)))
         tickPath.addLine(to: CGPoint(x: cX - (scaleFactor * 18), y: cY + (scaleFactor * 28)))
-        tickPath.addLine(to: CGPoint(x: cX + (scaleFactor * 46), y: cY - (scaleFactor * 36)))
+        tickPath.addLine(to: CGPoint(x: cX + (scaleFactor * 40), y: cY - (scaleFactor * 30)))
         
         circleLayer.setShapeLayer(path: circlePath, fillColor: UIColor.clear, lineWidth: lineW - 1.5, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor)
         tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: lineW, strokeStart: 0, strokeEnd: 0, strokeColor: self.lineColor)

@@ -65,19 +65,19 @@ class ToastViewController: UIViewController {
     
     @objc func infoButtonTouched() {
         let toastView = ToastView()
-        let configuration = ToastViewConfiguration(title: "Info", caption: "Some information.", theme: .dark, contentType: .info)
+        let configuration = ToastViewConfiguration(title: "Info", caption: "Check it out.", theme: .dark, contentType: .info)
         toastView.show(on: self, configuration: configuration)
     }
 
     @objc func warningButtonTouched() {
         let toastView = ToastView()
-        let configuration = ToastViewConfiguration(title: "Waring", caption: "Something could happen !", theme: .dark, contentType: .warning)
+        let configuration = ToastViewConfiguration(title: "Warning", caption: "Something could happen !", theme: .dark, contentType: .warning)
         toastView.show(on: self, configuration: configuration)
     }
 
     @objc func successButtonTouched() {
         let toastView = ToastView()
-        let configuration = ToastViewConfiguration(title: "Success", caption: "OMG it works !", theme: .dark, contentType: .success)
+        let configuration = ToastViewConfiguration(title: "Success", caption: "Ah it works !", theme: .dark, contentType: .success)
         toastView.show(on: self, configuration: configuration)
     }
 }
