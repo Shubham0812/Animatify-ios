@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcr-oN-7n4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcr-oN-7n4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -118,7 +118,7 @@
                                 <color key="tintColor" name="label"/>
                                 <state key="normal">
                                     <color key="titleColor" name="label"/>
-                                    <imageReference key="image" image="gear" catalog="system" symbolScale="large" renderingMode="template"/>
+                                    <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
@@ -365,6 +365,11 @@
                                             <constraint firstItem="RX8-d8-ajA" firstAttribute="centerY" secondItem="4EH-Nh-1u8" secondAttribute="centerY" id="fwk-Pa-jq1"/>
                                             <constraint firstItem="4EH-Nh-1u8" firstAttribute="leading" secondItem="d59-L9-8mP" secondAttribute="leading" constant="24" id="gcd-Vr-bfS"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="RX8-d8-ajA"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="alternateBackground"/>
@@ -471,7 +476,7 @@
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <namedColor name="accentColor">
             <color red="0.36862745098039218" green="0.20784313725490197" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

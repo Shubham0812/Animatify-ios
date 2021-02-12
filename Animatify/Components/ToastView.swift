@@ -98,14 +98,14 @@ class ToastView: UIView {
     }
     
     fileprivate func fadeIn() {
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            self?.alpha = 1
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.layer.opacity = 1
         }
     }
     
     fileprivate func fadeOut() {
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            self?.alpha = 0
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.layer.opacity = 0
         }
     }
     

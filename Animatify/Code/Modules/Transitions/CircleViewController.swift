@@ -35,14 +35,14 @@ class CircleViewController: UIViewController, UIViewControllerTransitioningDeleg
     // MARK:- UIViewControllerTrasitioningDelegates method
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let backgroundColor = selectedButton.backgroundColor else { return circleAnimator }
-        circleAnimator = CircleAnimator(view: selectedButton, color: backgroundColor, duration: 0.4)
+        circleAnimator = CircleAnimator(view: selectedButton, color: backgroundColor, duration: 0.3)
         circleAnimator?.mode = .dismiss
         return circleAnimator
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let backgroundColor = selectedButton.backgroundColor else { return circleAnimator }
-        circleAnimator = CircleAnimator(view: selectedButton, color: backgroundColor, duration: 0.5)
+        circleAnimator = CircleAnimator(view: selectedButton, color: backgroundColor, duration: 0.2)
         circleAnimator?.mode = .present
         
         return circleAnimator

@@ -85,6 +85,11 @@
 		B6625562253A9D5E00A11BC3 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6625561253A9D5E00A11BC3 /* MoreViewController.swift */; };
 		B6625565253A9D9400A11BC3 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6625564253A9D9400A11BC3 /* MoreTableViewCell.swift */; };
 		B6BD98E1253A8BD30055A673 /* CodeSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */; };
+		F312C82825D51640003F3B5A /* RowAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312C82725D51640003F3B5A /* RowAnimator.swift */; };
+		F312C82B25D51C5D003F3B5A /* RowTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312C82A25D51C5D003F3B5A /* RowTransitionViewController.swift */; };
+		F312C83025D51CFC003F3B5A /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312C82E25D51CFC003F3B5A /* NoteTableViewCell.swift */; };
+		F312C83125D51CFC003F3B5A /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F312C82F25D51CFC003F3B5A /* NoteTableViewCell.xib */; };
+		F312C83425D52043003F3B5A /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312C83325D52043003F3B5A /* ColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +173,11 @@
 		B6625561253A9D5E00A11BC3 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		B6625564253A9D9400A11BC3 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		B6BD98E0253A8BD30055A673 /* CodeSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSymbolView.swift; sourceTree = "<group>"; };
+		F312C82725D51640003F3B5A /* RowAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowAnimator.swift; sourceTree = "<group>"; };
+		F312C82A25D51C5D003F3B5A /* RowTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTransitionViewController.swift; sourceTree = "<group>"; };
+		F312C82E25D51CFC003F3B5A /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		F312C82F25D51CFC003F3B5A /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		F312C83325D52043003F3B5A /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,8 +349,8 @@
 				5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */,
 				518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */,
 				518AC31724AF398900EAC380 /* ButtonsViewController.swift */,
-				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 				51A50203253DE1AF00D92677 /* ToastViewController.swift */,
+				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -367,6 +377,8 @@
 				518AC30C24AA499E00EAC380 /* ButtonViewController.swift */,
 				51935D4824BDB00B000A9F64 /* CharactersViewController.swift */,
 				51935D4624BD8BC0000A9F64 /* IntroExpandViewController.swift */,
+				F312C82A25D51C5D003F3B5A /* RowTransitionViewController.swift */,
+				F312C83325D52043003F3B5A /* ColorViewController.swift */,
 				518AC31124AA63A800EAC380 /* Transition.storyboard */,
 			);
 			path = Transitions;
@@ -377,6 +389,8 @@
 			children = (
 				51935D4A24BDB12B000A9F64 /* CharactersCollectionViewCell.swift */,
 				51935D4B24BDB12B000A9F64 /* CharactersCollectionViewCell.xib */,
+				F312C82E25D51CFC003F3B5A /* NoteTableViewCell.swift */,
+				F312C82F25D51CFC003F3B5A /* NoteTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -420,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				518AC30A24AA45E800EAC380 /* CircleAnimator.swift */,
+				F312C82725D51640003F3B5A /* RowAnimator.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -507,6 +522,7 @@
 				51070180249E076E004E6DDE /* MuseoModerno-Regular.ttf in Resources */,
 				51070181249E0771004E6DDE /* MuseoModerno-SemiBold.ttf in Resources */,
 				5161E1BF249637B1008D1368 /* Raleway-Medium.ttf in Resources */,
+				F312C83125D51CFC003F3B5A /* NoteTableViewCell.xib in Resources */,
 				51DCDF432495006C00911EAB /* LaunchScreen.storyboard in Resources */,
 				51DCDF402495006C00911EAB /* Assets.xcassets in Resources */,
 				5161E1C1249637B7008D1368 /* Raleway-Thin.ttf in Resources */,
@@ -536,6 +552,7 @@
 				5161E1EA249A1B12008D1368 /* CAExtensions.swift in Sources */,
 				172D561C253A47F80058F5DD /* Colors.swift in Sources */,
 				518AC31C24AF424200EAC380 /* ExpandingButtonsView.swift in Sources */,
+				F312C83025D51CFC003F3B5A /* NoteTableViewCell.swift in Sources */,
 				518AC30D24AA499E00EAC380 /* ButtonViewController.swift in Sources */,
 				51DCDF372495006800911EAB /* AppDelegate.swift in Sources */,
 				5B5310D824A9A66600FA9A69 /* FailureEffects.swift in Sources */,
@@ -546,6 +563,7 @@
 				518AC31824AF398900EAC380 /* ButtonsViewController.swift in Sources */,
 				5161E1D324964024008D1368 /* HomeViewController.swift in Sources */,
 				5161E1D824964114008D1368 /* PulseEffect.swift in Sources */,
+				F312C82B25D51C5D003F3B5A /* RowTransitionViewController.swift in Sources */,
 				5B4ED99124AF7EEA007D541C /* BluetoothButton.swift in Sources */,
 				518AC2FE24A65A2F00EAC380 /* SuccessEffects.swift in Sources */,
 				5161E1F8249A4770008D1368 /* Effect.swift in Sources */,
@@ -570,6 +588,7 @@
 				518AC31424AA63C200EAC380 /* CircleViewController.swift in Sources */,
 				5189CDEC24A4C36F00026FF4 /* Tutorial.swift in Sources */,
 				518AC30B24AA45E800EAC380 /* CircleAnimator.swift in Sources */,
+				F312C83425D52043003F3B5A /* ColorViewController.swift in Sources */,
 				5107018E249E8B27004E6DDE /* Tables.swift in Sources */,
 				5189CDEA24A4C28F00026FF4 /* LoadersViewController.swift in Sources */,
 				51935D5024BDC998000A9F64 /* TextTypeViewController.swift in Sources */,
@@ -577,6 +596,7 @@
 				B6625562253A9D5E00A11BC3 /* MoreViewController.swift in Sources */,
 				5B4ED99324AFB1C3007D541C /* WifiButton.swift in Sources */,
 				5161E1E024966D6E008D1368 /* ButtonAnimations.swift in Sources */,
+				F312C82825D51640003F3B5A /* RowAnimator.swift in Sources */,
 				518AC30324A7A62A00EAC380 /* FoundationExtensions.swift in Sources */,
 				5161E1E224977FFF008D1368 /* Logo.swift in Sources */,
 				5161E200249CA752008D1368 /* TutorialTableViewCell.swift in Sources */,
