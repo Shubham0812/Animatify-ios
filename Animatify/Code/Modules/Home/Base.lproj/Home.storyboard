@@ -365,6 +365,11 @@
                                             <constraint firstItem="RX8-d8-ajA" firstAttribute="centerY" secondItem="4EH-Nh-1u8" secondAttribute="centerY" id="fwk-Pa-jq1"/>
                                             <constraint firstItem="4EH-Nh-1u8" firstAttribute="leading" secondItem="d59-L9-8mP" secondAttribute="leading" constant="24" id="gcd-Vr-bfS"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="RX8-d8-ajA"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="alternateBackground"/>

@@ -76,7 +76,7 @@ class CircleAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(presentedView)
             
             /// animate the circle and the presentedView and remove it after completion
-            UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseInOut, animations: {
                 self.circle.transform = CGAffineTransform.identity
                 presentedView.transform = CGAffineTransform.identity
                 presentedView.center = viewCenter
@@ -99,7 +99,7 @@ class CircleAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(circle)
             
             /// animate the circle and the returningController and remove it after completion
-            UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseInOut, animations: {
                 self.circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 returnController.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 returnController.center = self.circleOrigin

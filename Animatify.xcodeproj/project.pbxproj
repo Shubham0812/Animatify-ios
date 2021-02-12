@@ -349,8 +349,8 @@
 				5189CDE924A4C28F00026FF4 /* LoadersViewController.swift */,
 				518AC30424A8E49200EAC380 /* CollectionTutorialViewController.swift */,
 				518AC31724AF398900EAC380 /* ButtonsViewController.swift */,
-				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 				51A50203253DE1AF00D92677 /* ToastViewController.swift */,
+				5161E205249CC011008D1368 /* Tutorial.storyboard */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
