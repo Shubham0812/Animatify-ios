@@ -55,8 +55,9 @@ class HomeViewController: UIViewController {
     ]
     
     var transitions: [Transition] = [
-        Transition(title: "Circular View Transitioning", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill"),
-        Transition(title: "Image Launch Transitioning", action: .expand, difficulty: "Medium", icon: "bolt.horizontal.fill")
+        Transition(title: "Circular View Transitions", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill"),
+        Transition(title: "Image Transitions", action: .expand, difficulty: "Medium", icon: "bolt.horizontal.fill"),
+        Transition(title: "Row View Transitions", action: .row, difficulty: "Hard", icon: "bolt.horizontal.fill")
 
     ]
     
@@ -139,7 +140,7 @@ class HomeViewController: UIViewController {
     }
     
     func drawLogo(){
-        let logoLayer = LogoLayer(for: logoView, scale: 1.1, duration: 0, lineWidth: 4, trackColor: Colors.accent, glideColor: UIColor.clear, strokeColor: Colors.logo)
+        let logoLayer = LogoLayer(for: logoView, scale: 0.8, duration: 0, lineWidth: 4, trackColor: Colors.accent, glideColor: UIColor.clear, strokeColor: Colors.logo)
         self.view.layer.insertSublayer(logoLayer, below: self.logoView.layer)
     }
 }
@@ -256,6 +257,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     self.present(transitionVC, animated: true)
                 } else if (action == .expand) {
                     guard let transitionVC = UIStoryboard(name: "Transition", bundle: nil).instantiateViewController(withIdentifier: CharactersViewController.description()) as? CharactersViewController else { return }
+                    transitionVC.modalPresentationStyle = .fullScreen
+                    self.present(transitionVC, animated: true)
+                } else if (action == .row) {
+                    guard let transitionVC = UIStoryboard(name: "Transition", bundle: nil).instantiateViewController(identifier: RowTransitionViewController.description()) as? RowTransitionViewController else { return }
                     transitionVC.modalPresentationStyle = .fullScreen
                     self.present(transitionVC, animated: true)
                 }
