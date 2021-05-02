@@ -108,11 +108,9 @@ extension CollectionTutorialViewController: UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SnapCollectionViewCell.description(), for: indexPath) as? SnapCollectionViewCell {
-            cell.setupCell(movie: movies[indexPath.row])
-            return cell
-        }
-        fatalError()
+        let cell = collectionView.dequeueReusableCell(SnapCollectionViewCell.self, for: indexPath)
+        cell.setupCell(movie: movies[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

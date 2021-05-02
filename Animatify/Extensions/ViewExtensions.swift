@@ -127,11 +127,19 @@ extension UITableView {
     func register(cell: (ReusableCellProtocol & UINibInstantiable).Type) {
         self.register(UINib(for: cell), forCellReuseIdentifier: cell.reuseIdentifier)
     }
+    
+    func dequeueReusableCell<T>(_ cell: T.Type, for indexPath: IndexPath) -> T where T: ReusableCellProtocol & UINibInstantiable {
+        dequeueReusableCell(withIdentifier: cell.reuseIdentifier, for: indexPath) as! T
+    }
 }
 
 extension UICollectionView {
     func register(cell: (ReusableCellProtocol & UINibInstantiable).Type) {
         self.register(UINib(for: cell), forCellWithReuseIdentifier: cell.reuseIdentifier)
+    }
+    
+    func dequeueReusableCell<T>(_ cell: T.Type, for indexPath: IndexPath) -> T where T: ReusableCellProtocol & UINibInstantiable {
+        dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: indexPath) as! T
     }
 }
 

@@ -46,11 +46,9 @@ extension CharactersViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionViewCell.description(), for: indexPath) as? CharactersCollectionViewCell {
-            cell.setupCharacter(character: self.characters[indexPath.item])
-            return cell
-        }
-        fatalError()
+        let cell = collectionView.dequeueReusableCell(CharactersCollectionViewCell.self, for: indexPath)
+        cell.setupCharacter(character: self.characters[indexPath.item])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

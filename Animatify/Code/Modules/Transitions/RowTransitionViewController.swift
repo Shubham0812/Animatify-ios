@@ -66,7 +66,7 @@ extension RowTransitionViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.description(), for: indexPath) as! NoteTableViewCell
+        let cell = tableView.dequeueReusableCell(NoteTableViewCell.self, for: indexPath)
         cell.setupCell(note: notes[indexPath.row])
         return cell
     }

@@ -90,11 +90,9 @@ extension TableAnimationViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TableAnimationViewCell.description(), for: indexPath) as? TableAnimationViewCell {
-            cell.color = colors[indexPath.row]
-            return cell
-        }
-        fatalError()
+        let cell = tableView.dequeueReusableCell(TableAnimationViewCell.self, for: indexPath)
+        cell.color = colors[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
