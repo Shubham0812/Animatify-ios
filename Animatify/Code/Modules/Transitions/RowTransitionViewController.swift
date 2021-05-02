@@ -29,7 +29,7 @@ class RowTransitionViewController: UIViewController, UIViewControllerTransitioni
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: NoteTableViewCell.description(), bundle: nil), forCellReuseIdentifier: NoteTableViewCell.description())
+        self.tableView.register(UINib(for: NoteTableViewCell.self), forCellReuseIdentifier: NoteTableViewCell.description())
     }
     
     // MARK:- UIViewControllerTrasitioningDelegates method

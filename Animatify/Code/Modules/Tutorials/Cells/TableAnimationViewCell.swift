@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableAnimationViewCell: UITableViewCell {
+class TableAnimationViewCell: UITableViewCell, UINibInstantiable {
     override class func description() -> String {
         return "TableAnimationViewCell"
     }

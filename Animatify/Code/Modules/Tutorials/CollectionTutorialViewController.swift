@@ -40,7 +40,7 @@ class CollectionTutorialViewController: UIViewController {
         /// registering the collectionView
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.register(UINib(nibName: SnapCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: SnapCollectionViewCell.description())
+        self.collectionView.register(UINib(for: SnapCollectionViewCell.self), forCellWithReuseIdentifier: SnapCollectionViewCell.description())
         
         /// setting the collectionView to the secondCell
         DispatchQueue.main.async {

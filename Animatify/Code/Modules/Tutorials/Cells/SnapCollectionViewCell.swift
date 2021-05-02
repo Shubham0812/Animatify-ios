@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SnapCollectionViewCell: UICollectionViewCell {
+class SnapCollectionViewCell: UICollectionViewCell, UINibInstantiable {
     
     override class func description() -> String {
         return "SnapCollectionViewCell"
