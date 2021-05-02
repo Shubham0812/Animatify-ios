@@ -30,7 +30,7 @@ class CharactersViewController: UIViewController {
         
         self.characterCollectionView.delegate = self
         self.characterCollectionView.dataSource = self
-        self.characterCollectionView.register(UINib(for: CharactersCollectionViewCell.self), forCellWithReuseIdentifier: CharactersCollectionViewCell.description())
+        self.characterCollectionView.register(cell: CharactersCollectionViewCell.self)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

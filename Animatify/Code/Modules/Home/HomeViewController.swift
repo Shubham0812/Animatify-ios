@@ -69,18 +69,18 @@ class HomeViewController: UIViewController {
         // registering the collectionView
         self.effectsCollectionView.delegate = self
         self.effectsCollectionView.dataSource = self
-        self.effectsCollectionView.register(UINib(for: EffectCollectionViewCell.self), forCellWithReuseIdentifier: EffectCollectionViewCell.description())
+        self.effectsCollectionView.register(cell: EffectCollectionViewCell.self)
         self.view.bringSubviewToFront(containerView)
         
         // registering the tutorial tableView
         self.tutorialsTableView.delegate = self
         self.tutorialsTableView.dataSource = self
-        self.tutorialsTableView.register(UINib(for: TutorialTableViewCell.self), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.tutorialsTableView.register(cell: TutorialTableViewCell.self)
         
         // registering the transition tableView
         self.transitionsTableView.delegate = self
         self.transitionsTableView.dataSource = self
-        self.transitionsTableView.register(UINib(for: TutorialTableViewCell.self), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.transitionsTableView.register(cell: TutorialTableViewCell.self)
         
         self.setupViews()
         self.drawLogo()

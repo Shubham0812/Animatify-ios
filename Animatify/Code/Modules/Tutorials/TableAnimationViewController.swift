@@ -41,7 +41,7 @@ class TableAnimationViewController: UIViewController {
         colors.append(contentsOf: colors[0..<4])
         
         // registering the tableView
-        self.tableView.register(UINib(for: TableAnimationViewCell.self), forCellReuseIdentifier: TableAnimationViewCell.description())
+        self.tableView.register(cell: TableAnimationViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.isHidden = true
