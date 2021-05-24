@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialTableViewCell: UITableViewCell {
+class TutorialTableViewCell: UITableViewCell, UINibInstantiable, ReusableCellProtocol {
     
     override class func description() -> String {
         return "TutorialTableViewCell"

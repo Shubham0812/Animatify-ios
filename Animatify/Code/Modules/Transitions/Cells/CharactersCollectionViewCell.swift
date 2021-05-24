@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersCollectionViewCell: UICollectionViewCell {
+class CharactersCollectionViewCell: UICollectionViewCell, UINibInstantiable, ReusableCellProtocol {
     
     override class func description() -> String {
         return "CharactersCollectionViewCell"
