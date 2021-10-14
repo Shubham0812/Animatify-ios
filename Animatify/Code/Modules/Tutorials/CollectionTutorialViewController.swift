@@ -40,7 +40,7 @@ class CollectionTutorialViewController: UIViewController {
         /// registering the collectionView
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.register(UINib(nibName: SnapCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: SnapCollectionViewCell.description())
+        self.collectionView.register(cell: SnapCollectionViewCell.self)
         
         /// setting the collectionView to the secondCell
         DispatchQueue.main.async {
@@ -108,11 +108,9 @@ extension CollectionTutorialViewController: UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SnapCollectionViewCell.description(), for: indexPath) as? SnapCollectionViewCell {
-            cell.setupCell(movie: movies[indexPath.row])
-            return cell
-        }
-        fatalError()
+        let cell = collectionView.dequeueReusableCell(SnapCollectionViewCell.self, for: indexPath)
+        cell.setupCell(movie: movies[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

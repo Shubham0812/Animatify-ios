@@ -41,11 +41,14 @@ class LoadersViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK:- functions for the viewController
     func drawSubmit(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// successEffect1
@@ -81,7 +84,7 @@ extension LoadersViewController {
     // MARK:- functions for the viewController
     func drawReject(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// FailureEffect
@@ -117,7 +120,7 @@ extension LoadersViewController {
     // MARK:- functions for the viewController
     func drawBluetooth(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// Bluetooth effect
@@ -159,7 +162,7 @@ extension LoadersViewController {
     // MARK:- functions for the viewController
     func drawWifi(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// Wifi effect

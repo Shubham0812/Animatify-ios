@@ -69,18 +69,18 @@ class HomeViewController: UIViewController {
         // registering the collectionView
         self.effectsCollectionView.delegate = self
         self.effectsCollectionView.dataSource = self
-        self.effectsCollectionView.register(UINib(nibName: EffectCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: EffectCollectionViewCell.description())
+        self.effectsCollectionView.register(cell: EffectCollectionViewCell.self)
         self.view.bringSubviewToFront(containerView)
         
         // registering the tutorial tableView
         self.tutorialsTableView.delegate = self
         self.tutorialsTableView.dataSource = self
-        self.tutorialsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.tutorialsTableView.register(cell: TutorialTableViewCell.self)
         
         // registering the transition tableView
         self.transitionsTableView.delegate = self
         self.transitionsTableView.dataSource = self
-        self.transitionsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.transitionsTableView.register(cell: TutorialTableViewCell.self)
         
         self.setupViews()
         self.drawLogo()
@@ -152,11 +152,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectCollectionViewCell.description(), for: indexPath) as? EffectCollectionViewCell {
-            cell.setupCell(effect: effects[indexPath.item])
-            return cell
-        }
-        fatalError()
+        let cell = collectionView.dequeueReusableCell(EffectCollectionViewCell.self, for: indexPath)
+        cell.setupCell(effect: effects[indexPath.item])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -199,18 +197,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
-            
-            if (tableView == tutorialsTableView) {
-                cell.setupTutorial(tutorial: tutorials[indexPath.row])
-            } else {
-                cell.setupTransition(transition: transitions[indexPath.row])
-            }
-            
-            return cell
+        let cell = tableView.dequeueReusableCell(TutorialTableViewCell.self, for: indexPath)
+        
+        if (tableView == tutorialsTableView) {
+            cell.setupTutorial(tutorial: tutorials[indexPath.row])
+        } else {
+            cell.setupTransition(transition: transitions[indexPath.row])
         }
         
-        fatalError()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -224,18 +219,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else if (action == .loaders(type: .success)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .loaders(type: .failure)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .bluetooth)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .wifi)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .snapCollections) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }

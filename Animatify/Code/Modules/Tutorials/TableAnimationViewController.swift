@@ -41,7 +41,7 @@ class TableAnimationViewController: UIViewController {
         colors.append(contentsOf: colors[0..<4])
         
         // registering the tableView
-        self.tableView.register(UINib(nibName: TableAnimationViewCell.description(), bundle: nil), forCellReuseIdentifier: TableAnimationViewCell.description())
+        self.tableView.register(cell: TableAnimationViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.isHidden = true
@@ -90,11 +90,9 @@ extension TableAnimationViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TableAnimationViewCell.description(), for: indexPath) as? TableAnimationViewCell {
-            cell.color = colors[indexPath.row]
-            return cell
-        }
-        fatalError()
+        let cell = tableView.dequeueReusableCell(TableAnimationViewCell.self, for: indexPath)
+        cell.color = colors[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

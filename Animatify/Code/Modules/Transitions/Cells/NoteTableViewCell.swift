@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteTableViewCell: UITableViewCell {
+class NoteTableViewCell: UITableViewCell, UINibInstantiable, ReusableCellProtocol {
     
     // MARK:- outlets
     @IBOutlet weak var containerView: UIView!
