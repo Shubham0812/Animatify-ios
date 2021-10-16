@@ -50,35 +50,37 @@ class HomeViewController: UIViewController {
         Tutorial(action: .snapCollections, title: "Snap Collection View", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .loaders(type: .bluetooth), title: "Bluetooth Animations", difficulty: "Medium", icon: "bolt.fill"),
         Tutorial(action: .buttons, title: "Floating Button Animations", difficulty: "Medium", icon: "bolt.fill"),
-        Tutorial(action: .loaders(type: .wifi), title: "Wifi Animations", difficulty: "Medium", icon: "bolt.fill")
+        Tutorial(action: .loaders(type: .wifi), title: "Wifi Animations", difficulty: "Medium", icon: "bolt.fill"),
+        Tutorial(action: .toast, title: "Toast views", difficulty: "Easy", icon: "bolt.fill")
     ]
     
     var transitions: [Transition] = [
-        Transition(title: "Circular View Transitioning", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill"),
-        Transition(title: "Image Launch Transitioning", action: .expand, difficulty: "Medium", icon: "bolt.horizontal.fill")
+        Transition(title: "Circular View Transitions", action: .circular, difficulty: "Hard", icon: "bolt.horizontal.fill"),
+        Transition(title: "Image Transitions", action: .expand, difficulty: "Medium", icon: "bolt.horizontal.fill"),
+        Transition(title: "Row View Transitions", action: .row, difficulty: "Hard", icon: "bolt.horizontal.fill")
 
     ]
     
     // MARK:- lifecycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.effects.append(contentsOf: [Effect](repeatElement(Effect(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: UIColor(named: "background")!, gradientColor2: UIColor(named: "alternateBackground")!), count: 4)))
+        self.effects.append(contentsOf: [Effect](repeatElement(Effect(action: .none, title: "Coming soon", description: "", instructions: [], gradientColor1: Colors.background, gradientColor2: Colors.alternateBackground), count: 4)))
         
         // registering the collectionView
         self.effectsCollectionView.delegate = self
         self.effectsCollectionView.dataSource = self
-        self.effectsCollectionView.register(UINib(nibName: EffectCollectionViewCell.description(), bundle: nil), forCellWithReuseIdentifier: EffectCollectionViewCell.description())
+        self.effectsCollectionView.register(cell: EffectCollectionViewCell.self)
         self.view.bringSubviewToFront(containerView)
         
         // registering the tutorial tableView
         self.tutorialsTableView.delegate = self
         self.tutorialsTableView.dataSource = self
-        self.tutorialsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.tutorialsTableView.register(cell: TutorialTableViewCell.self)
         
         // registering the transition tableView
         self.transitionsTableView.delegate = self
         self.transitionsTableView.dataSource = self
-        self.transitionsTableView.register(UINib(nibName: TutorialTableViewCell.description(), bundle: nil), forCellReuseIdentifier: TutorialTableViewCell.description())
+        self.transitionsTableView.register(cell: TutorialTableViewCell.self)
         
         self.setupViews()
         self.drawLogo()
@@ -87,6 +89,12 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupContainer()        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        drawLogo()
     }
     
     // MARK:- action outlets for the viewController
@@ -103,6 +111,10 @@ class HomeViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.containerToggled = !self.containerToggled
         }
+    }
+    
+    @IBAction func moreButtonPressed(_ sender: UIButton) {
+        navigationController?.present(MoreViewController(), animated: true)
     }
     
     // MARK:- utility functions for the viewController
@@ -128,8 +140,7 @@ class HomeViewController: UIViewController {
     }
     
     func drawLogo(){
-        guard let accentColor = UIColor(named: "accentColor") else { return }
-        let logoLayer = LogoLayer(for: logoView, scale: 1.1, duration: 0, lineWidth: 4, trackColor: accentColor, glideColor: UIColor.clear, strokeColor: UIColor.white)
+        let logoLayer = LogoLayer(for: logoView, scale: 0.8, duration: 0, lineWidth: 4, trackColor: Colors.accent, glideColor: UIColor.clear, strokeColor: Colors.logo)
         self.view.layer.insertSublayer(logoLayer, below: self.logoView.layer)
     }
 }
@@ -141,11 +152,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectCollectionViewCell.description(), for: indexPath) as? EffectCollectionViewCell {
-            cell.setupCell(effect: effects[indexPath.item])
-            return cell
-        }
-        fatalError()
+        let cell = collectionView.dequeueReusableCell(EffectCollectionViewCell.self, for: indexPath)
+        cell.setupCell(effect: effects[indexPath.item])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -188,19 +197,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(TutorialTableViewCell.self, for: indexPath)
+        
         if (tableView == tutorialsTableView) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
-                cell.setupTutorial(tutorial: tutorials[indexPath.row])
-                return cell
-            }
+            cell.setupTutorial(tutorial: tutorials[indexPath.row])
         } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TutorialTableViewCell.description(), for: indexPath) as? TutorialTableViewCell {
-                cell.setupTransition(transition: transitions[indexPath.row])
-                cell.setDarkMode()
-                return cell
-            }
+            cell.setupTransition(transition: transitions[indexPath.row])
         }
-        fatalError()
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -214,24 +219,31 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else if (action == .loaders(type: .success)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .loaders(type: .failure)) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .bluetooth)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if( action == .loaders(type: .wifi)){
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: LoadersViewController.description()) as? LoadersViewController else { return }
                     tutorialVC.loaderType = action.getLoaderType()
+                    tutorialVC.modalPresentationStyle = .overCurrentContext
                     self.present(tutorialVC, animated: true)
                 } else if (action == .snapCollections) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: CollectionTutorialViewController.description()) as? CollectionTutorialViewController else { return }
                     self.present(tutorialVC, animated: true)
                 } else if (action == .buttons) {
                     guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ButtonEffectsViewController.description()) as? ButtonEffectsViewController else { return }
+                    self.present(tutorialVC, animated: true)
+                } else if (action == .toast) {
+                    guard let tutorialVC = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: ToastViewController.description()) as? ToastViewController else { return }
                     self.present(tutorialVC, animated: true)
                 }
             }
@@ -244,6 +256,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     self.present(transitionVC, animated: true)
                 } else if (action == .expand) {
                     guard let transitionVC = UIStoryboard(name: "Transition", bundle: nil).instantiateViewController(withIdentifier: CharactersViewController.description()) as? CharactersViewController else { return }
+                    transitionVC.modalPresentationStyle = .fullScreen
+                    self.present(transitionVC, animated: true)
+                } else if (action == .row) {
+                    guard let transitionVC = UIStoryboard(name: "Transition", bundle: nil).instantiateViewController(identifier: RowTransitionViewController.description()) as? RowTransitionViewController else { return }
                     transitionVC.modalPresentationStyle = .fullScreen
                     self.present(transitionVC, animated: true)
                 }

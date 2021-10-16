@@ -41,7 +41,7 @@ class TableAnimationViewController: UIViewController {
         colors.append(contentsOf: colors[0..<4])
         
         // registering the tableView
-        self.tableView.register(UINib(nibName: TableAnimationViewCell.description(), bundle: nil), forCellReuseIdentifier: TableAnimationViewCell.description())
+        self.tableView.register(cell: TableAnimationViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.isHidden = true
@@ -90,20 +90,18 @@ extension TableAnimationViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TableAnimationViewCell.description(), for: indexPath) as? TableAnimationViewCell {
-            cell.color = colors[indexPath.row]
-            return cell
-        }
-        fatalError()
+        let cell = tableView.dequeueReusableCell(TableAnimationViewCell.self, for: indexPath)
+        cell.color = colors[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 42))
-        headerView.backgroundColor = UIColor(named: "background")
+        headerView.backgroundColor = Colors.background
         let label = UILabel()
         label.frame = CGRect(x: 24, y: 12, width: self.view.frame.width, height: 42)
         label.text = tableViewHeaderText
-        label.textColor = UIColor.white
+        label.textColor = Colors.label
         label.font = UIFont(name: "Raleway-SemiBold", size: 24)
         headerView.addSubview(label)
         return headerView

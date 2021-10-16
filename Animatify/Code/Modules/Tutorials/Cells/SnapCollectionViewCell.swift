@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SnapCollectionViewCell: UICollectionViewCell {
+class SnapCollectionViewCell: UICollectionViewCell, UINibInstantiable, ReusableCellProtocol {
     
     override class func description() -> String {
         return "SnapCollectionViewCell"
@@ -28,7 +28,7 @@ class SnapCollectionViewCell: UICollectionViewCell {
         self.roundCorners(cornerRadius: 12)
         self.movieImageView.roundCorners(cornerRadius: 12)
         
-        self.movieImageView.layer.borderColor = UIColor.white.cgColor
+        self.movieImageView.layer.borderColor = Colors.label.cgColor
         self.movieImageView.layer.borderWidth = 2
     }
     

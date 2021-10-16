@@ -20,7 +20,7 @@ enum TutorialAction: Equatable {
     case loaders(type : LoaderType)
     case snapCollections
     case buttons
-
+    case toast
     
     func getLoaderType() -> LoaderType? {
         switch self {

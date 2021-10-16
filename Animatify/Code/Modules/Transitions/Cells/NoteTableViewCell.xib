@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NoteTableViewCell" customModule="Animatify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIk-qz-cJG">
+                        <rect key="frame" x="0.0" y="11" width="320" height="93"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOf-XT-qMA">
+                                <rect key="frame" x="12" y="12" width="46" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="label"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb 02, 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-we-xbG">
+                                <rect key="frame" x="12" y="37.5" width="71" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" name="label"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb 02, 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDK-k0-Rqs">
+                                <rect key="frame" x="12" y="64.5" width="296" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="label"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="aDK-k0-Rqs" firstAttribute="top" secondItem="pUC-we-xbG" secondAttribute="bottom" constant="10" id="4Fa-ta-3me"/>
+                            <constraint firstItem="mOf-XT-qMA" firstAttribute="leading" secondItem="iIk-qz-cJG" secondAttribute="leading" constant="12" id="AQI-zf-1Z5"/>
+                            <constraint firstAttribute="trailing" secondItem="aDK-k0-Rqs" secondAttribute="trailing" constant="12" id="Edv-vA-zaP"/>
+                            <constraint firstItem="aDK-k0-Rqs" firstAttribute="leading" secondItem="iIk-qz-cJG" secondAttribute="leading" constant="12" id="S6q-OC-82l"/>
+                            <constraint firstItem="mOf-XT-qMA" firstAttribute="top" secondItem="iIk-qz-cJG" secondAttribute="top" constant="12" id="i2c-JK-G7P"/>
+                            <constraint firstItem="pUC-we-xbG" firstAttribute="leading" secondItem="iIk-qz-cJG" secondAttribute="leading" constant="12" id="mbr-DD-Ndv"/>
+                            <constraint firstItem="pUC-we-xbG" firstAttribute="top" secondItem="mOf-XT-qMA" secondAttribute="bottom" constant="4" id="s5a-c0-xYw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iIk-qz-cJG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="J1R-wL-vI0"/>
+                    <constraint firstAttribute="bottom" secondItem="iIk-qz-cJG" secondAttribute="bottom" constant="11" id="N2q-bS-RkB"/>
+                    <constraint firstAttribute="trailing" secondItem="iIk-qz-cJG" secondAttribute="trailing" id="bi8-Vm-ItD"/>
+                    <constraint firstItem="iIk-qz-cJG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cbR-1f-SmQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="iIk-qz-cJG" id="7yN-8t-de2"/>
+                <outlet property="noteDateLabel" destination="pUC-we-xbG" id="EEy-w1-Umk"/>
+                <outlet property="noteDescriptionLabel" destination="aDK-k0-Rqs" id="rGg-Uv-XuB"/>
+                <outlet property="noteTitleLabel" destination="mOf-XT-qMA" id="2lD-80-a6B"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="label">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

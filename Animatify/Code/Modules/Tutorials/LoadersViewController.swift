@@ -40,14 +40,17 @@ class LoadersViewController: UIViewController {
             print("none")
         }
     }
-    
 }
 
 // MARK:- extension for Submit animations
 extension LoadersViewController {
     // MARK:- functions for the viewController
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: true, completion: nil)
+    }
+  
     func drawSubmit() {
-        
+    // MARK:- functions for the viewController        
         // Submit effect view
         let childView = UIView()
         self.view.addSubview(childView)
@@ -83,7 +86,6 @@ extension LoadersViewController {
                                        y: cY - (buttonHeight / 2),
                                        width: buttonWidth,
                                        height: buttonHeight)
-
         submitButton = SubmitButton(type: .system,
                                     frame: submitButtonFrame,
                                     borderColor: UIColor.systemGreen,
@@ -91,7 +93,6 @@ extension LoadersViewController {
                                     font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                     cornerRadius: 12,
                                     tintColor: UIColor.white)
-
         submitButton.setTitle("Submit", for: .normal)
         self.view.addSubview(submitButton)
 
@@ -125,7 +126,6 @@ extension LoadersViewController {
 
 //MARK:- extension for Reject animations
 extension LoadersViewController {
-    
     // MARK:- functions for the viewController
     func drawReject(){
         
@@ -170,7 +170,6 @@ extension LoadersViewController {
                                     font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                     cornerRadius: 12,
                                     tintColor: UIColor.white)
-        
         rejectButton.setTitle("Decline", for: .normal)
         self.view.addSubview(rejectButton)
         
@@ -206,7 +205,7 @@ extension LoadersViewController {
     // MARK:- functions for the viewController
     func drawBluetooth(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// Bluetooth effect
@@ -229,7 +228,7 @@ extension LoadersViewController {
                                           borderWidth: 4,
                                           font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                           cornerRadius: 12,
-                                          tintColor: UIColor.white)
+                                          tintColor: UIColor.blue)
         
         
         bluetoothButton.setTitle("Bluetooth", for: .normal)
@@ -248,11 +247,11 @@ extension LoadersViewController {
     // MARK:- functions for the viewController
     func drawWifi(){
         let view = UIView()
-        view.frame = CGRect(x: 60, y: 240, width: 300, height: 200)
+        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
         self.view.addSubview(view)
         
         /// Wifi effect
-        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 12, trackColor: UIColor.white, fillingColor: .white)
+        let effect1 = WifiEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 12, trackColor: Colors.label, fillingColor: Colors.label)
         
         self.view.layer.insertSublayer(effect1, above: self.view.layer)
         
@@ -271,7 +270,7 @@ extension LoadersViewController {
                                           borderWidth: 4,
                                           font: UIFont(name: "Raleway-SemiBold", size: 24)!,
                                           cornerRadius: 12,
-                                          tintColor: UIColor.white)
+                                          tintColor: UIColor.blue)
         
         
         wifiButton.setTitle("Wifi", for: .normal)

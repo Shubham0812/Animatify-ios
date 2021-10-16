@@ -52,7 +52,7 @@ class SubmitButton: UIButton {
                 let tickPath = UIBezierPath()
                 tickPath.move(to: CGPoint(x: cX - (42 * scale), y: cY - (4 * scale)))
                 tickPath.addLine(to: CGPoint(x: cX - (scale * 18), y: cY + (scale * 28)))
-                tickPath.addLine(to: CGPoint(x: cX + (scale * 42), y: cY - (scale * 30)))
+                tickPath.addLine(to: CGPoint(x: cX + (scale * 36), y: cY - (scale * 24)))
                 
                 self.tickLayer.setShapeLayer(path: tickPath, fillColor: UIColor.clear, lineWidth: tickWidth, strokeStart: 0, strokeEnd: 0, strokeColor: tickColor)
                 parentView.layer.insertSublayer(self.tickLayer, above: self.layer)

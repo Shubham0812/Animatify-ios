@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,11 +30,12 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-Nu-eCp">
                         <rect key="frame" x="0.0" y="148" width="120" height="24"/>
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" name="label"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="Joi-sO-6oL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Yj-7b-M7U"/>
                 <constraint firstAttribute="bottom" secondItem="Joi-sO-6oL" secondAttribute="bottom" constant="42" id="GAe-MN-Suv"/>
@@ -42,7 +44,6 @@
                 <constraint firstAttribute="trailing" secondItem="Joi-sO-6oL" secondAttribute="trailing" id="sb3-fY-4ny"/>
                 <constraint firstItem="6d8-Nu-eCp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yuI-aq-F6g"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="containerView" destination="Joi-sO-6oL" id="YpS-5r-PCc"/>
                 <outlet property="titleLabel" destination="6d8-Nu-eCp" id="Siz-VQ-QMg"/>
@@ -52,7 +53,10 @@
     </objects>
     <resources>
         <namedColor name="accentColor">
-            <color red="0.40000000000000002" green="0.39215686274509803" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36862745098039218" green="0.20784313725490197" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="label">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

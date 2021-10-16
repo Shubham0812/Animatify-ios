@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EffectCollectionViewCell: UICollectionViewCell {
+class EffectCollectionViewCell: UICollectionViewCell, UINibInstantiable, ReusableCellProtocol {
     
     override class func description() -> String {
         return "EffectCollectionViewCell"
