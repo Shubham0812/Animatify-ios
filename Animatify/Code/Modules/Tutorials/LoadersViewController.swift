@@ -40,77 +40,162 @@ class LoadersViewController: UIViewController {
             print("none")
         }
     }
-    
+}
+
+// MARK:- extension for Submit animations
+extension LoadersViewController {
+    // MARK:- functions for the viewController
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    // MARK:- functions for the viewController
-    func drawSubmit(){
-        let view = UIView()
-        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
-        self.view.addSubview(view)
+  
+    func drawSubmit() {
+    // MARK:- functions for the viewController        
+        // Submit effect view
+        let childView = UIView()
+        self.view.addSubview(childView)
         
+        childView.addAnchor(top: view.topAnchor, paddingTop: 200,
+                        left: nil, paddingLeft: 0,
+                        bottom: nil, paddingBottom: 0,
+                        right: nil, paddingRight: 0,
+                        width: 300, height: 300, enableInsets: true)
+        childView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
         /// successEffect1
-        let effect1 = SubmitEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 8, trackColor: UIColor.systemGreen)
-        self.view.layer.insertSublayer(effect1, above: self.view.layer)
+        let successEffect = SubmitEffect1(for: childView,
+                                    circleRadius: 74,
+                                    scale: 1.5,
+                                    duration: 1,
+                                    lineWidth: 8,
+                                    trackColor: UIColor.systemGreen)
         
-        /// submit Button
+        childView.layer.insertSublayer(successEffect, above: childView.layer)
+        childView.layer.masksToBounds = false
+        childView.layer.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        
+        
+        // submit Button
         let buttonWidth: CGFloat = 160
-        let buttonHeight: CGFloat = 62
-        
+        let buttonHeight: CGFloat = 70
+
         let cX: CGFloat = self.view.center.x
         let cY: CGFloat = self.view.center.y + 260
-        
-        let submitButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
-        
-        submitButton = SubmitButton(type: .system, frame: submitButtonFrame, borderColor: UIColor.systemGreen, borderWidth: 4,
-                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.systemGreen)
+
+        let submitButtonFrame = CGRect(x: cX - (buttonWidth / 2),
+                                       y: cY - (buttonHeight / 2),
+                                       width: buttonWidth,
+                                       height: buttonHeight)
+        submitButton = SubmitButton(type: .system,
+                                    frame: submitButtonFrame,
+                                    borderColor: UIColor.systemGreen,
+                                    borderWidth: 4,
+                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!,
+                                    cornerRadius: 12,
+                                    tintColor: UIColor.white)
         submitButton.setTitle("Submit", for: .normal)
         self.view.addSubview(submitButton)
-        
+
+        submitButton.addAnchor(top: childView.bottomAnchor, paddingTop: 150,
+                               left: nil, paddingLeft: 0,
+                               bottom: nil, paddingBottom: 0,
+                               right: nil, paddingRight: 0,
+                               width: buttonWidth, height: buttonHeight,
+                               enableInsets: true)
+        submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+
         submitButton.addTarget(self, action: #selector(performSubmit), for: .touchUpInside)
     }
     
     @objc func performSubmit(){
-        submitButton.perfomSubmitAction(parentView: self.view, circleButton: 84, duration: 0.75, borderWidth: 4, scale: 0.6, tickWidth: 6,
-                                        tickColor:  UIColor.white, backgroundColor: UIColor.systemGreen)
+        submitButton.perfomSubmitAction(parentView: self.view,
+                                        circleButton: 84,
+                                        duration: 0.75,
+                                        borderWidth: 4,
+                                        scale: 0.6,
+                                        tickWidth: 6,
+                                        tickColor:  UIColor.white,
+                                        backgroundColor: UIColor.systemGreen)
+        
+        submitButton.heightAnchor.constraint(equalToConstant: 70.0).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
+
     }
 }
 
 //MARK:- extension for Reject animations
 extension LoadersViewController {
-    
     // MARK:- functions for the viewController
     func drawReject(){
-        let view = UIView()
-        view.frame = CGRect(x: (UIScreen.main.bounds.size.width / 2) - 150, y: 240, width: 300, height: 200)
-        self.view.addSubview(view)
+        
+        // Reject effect view
+        let childView = UIView()
+        self.view.addSubview(childView)
+        
+        childView.addAnchor(top: view.topAnchor, paddingTop: 200,
+                        left: nil, paddingLeft: 0,
+                        bottom: nil, paddingBottom: 0,
+                        right: nil, paddingRight: 0,
+                        width: 300, height: 300, enableInsets: true)
+        childView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         /// FailureEffect
-        let effect1 = RejectEffect1(for: view, circleRadius: 74, scale: 1.5, duration: 1, lineWidth: 8, trackColor: UIColor.red)
+        let rejectEffect = RejectEffect1(for: childView,
+                                    circleRadius: 74,
+                                    scale: 1.5,
+                                    duration: 1,
+                                    lineWidth: 8,
+                                    trackColor: UIColor.red)
         
-        self.view.layer.insertSublayer(effect1, above: self.view.layer)
+        childView.layer.insertSublayer(rejectEffect, above: childView.layer)
+        childView.layer.masksToBounds = false
+        childView.layer.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         
-        /// Reject Button
+        // Reject Button
         let buttonWidth: CGFloat = 160
         let buttonHeight: CGFloat = 62
         
         let cX: CGFloat = self.view.center.x
         let cY: CGFloat = self.view.center.y + 260
         
-        let rejectButtonFrame = CGRect(x: cX - (buttonWidth / 2), y: cY - (buttonHeight / 2), width: buttonWidth, height: buttonHeight)
+        let rejectButtonFrame = CGRect(x: cX - (buttonWidth / 2),
+                                       y: cY - (buttonHeight / 2),
+                                       width: buttonWidth, height: buttonHeight)
         
-        rejectButton = RejectButton(type: .system, frame: rejectButtonFrame, borderColor: .red, borderWidth: 4,
-                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!, cornerRadius: 12, tintColor: UIColor.red)
+        rejectButton = RejectButton(type: .system,
+                                    frame: rejectButtonFrame,
+                                    borderColor: .red,
+                                    borderWidth: 4,
+                                    font: UIFont(name: "Raleway-SemiBold", size: 24)!,
+                                    cornerRadius: 12,
+                                    tintColor: UIColor.white)
         rejectButton.setTitle("Decline", for: .normal)
         self.view.addSubview(rejectButton)
+        
+        rejectButton.addAnchor(top: childView.bottomAnchor, paddingTop: 150,
+                               left: nil, paddingLeft: 0,
+                               bottom: nil, paddingBottom: 0,
+                               right: nil, paddingRight: 0,
+                               width: buttonWidth, height: buttonHeight,
+                               enableInsets: true)
+        rejectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         rejectButton.addTarget(self, action: #selector(performReject), for: .touchUpInside)
     }
     
     @objc func performReject(){
-        rejectButton.performRejectAction(parentView: self.view, circleButton: 84, duration: 0.75, borderWidth: 4, scale: 0.6, crossWidth: 6, tickColor: .white, backgroundColor: .systemRed)
+        rejectButton.performRejectAction(parentView: self.view,
+                                         circleButton: 84,
+                                         duration: 0.75,
+                                         borderWidth: 4,
+                                         scale: 0.6,
+                                         crossWidth: 6,
+                                         tickColor: .white,
+                                         backgroundColor: .systemRed)
+        
+        rejectButton.heightAnchor.constraint(equalToConstant: 70.0).isActive = true
+        rejectButton.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
     }
 }
 
