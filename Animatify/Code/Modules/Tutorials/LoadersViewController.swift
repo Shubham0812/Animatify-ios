@@ -55,12 +55,12 @@ extension LoadersViewController {
         let childView = UIView()
         self.view.addSubview(childView)
         
-        childView.addAnchor(top: view.topAnchor, paddingTop: 200,
+        childView.addAnchor(top: view.topAnchor, paddingTop: 75,
                         left: nil, paddingLeft: 0,
                         bottom: nil, paddingBottom: 0,
                         right: nil, paddingRight: 0,
                         width: 300, height: 300, enableInsets: true)
-        childView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        childView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant:  -150 / 4 + 24).isActive = true
 
         /// successEffect1
         let successEffect = SubmitEffect1(for: childView,
@@ -71,10 +71,7 @@ extension LoadersViewController {
                                     trackColor: UIColor.systemGreen)
         
         childView.layer.insertSublayer(successEffect, above: childView.layer)
-        childView.layer.masksToBounds = false
-        childView.layer.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        
-        
+                
         // submit Button
         let buttonWidth: CGFloat = 160
         let buttonHeight: CGFloat = 70
